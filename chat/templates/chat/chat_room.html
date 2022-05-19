@@ -5,8 +5,25 @@
 
 <h2>chat page</h2>
 
-<input type="hidden" value="{{ chat_room }}" id="chat-room">
-<div class="chat-container"></div>
+<input type="hidden" value="{{ chat.id }}" id="chat-id">
+<input type="hidden" value="{{ request.user.username }}" id="username">
+<div class="chat-container">
+    {% for message in chat.messages.all %}
+        <div class="message">
+            <div class="message-header">
+                <div class="message-header-username">
+                    {{ message.user.username }}
+                </div>
+                <div class="message-header-time">
+                    {{ message.created_at }}
+                </div>
+            </div>
+            <div class="message-body">
+                {{ message.content }}
+            </div>
+        </div>
+    {% endfor %}
+</div>
 <input type="text" id="chat-input">
 
 
