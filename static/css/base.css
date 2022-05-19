@@ -46,3 +46,11 @@ img {
 .header {
   background-color: orange;
 }
+
+
+/* Profile */
+#profile-img {
+  height: 300px !important;
+  width: 300px !important;
+  border-radius: 50%;
+}
