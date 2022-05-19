@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="row my-3 p-3">
+        <h1>Profile page</h1>
+        {{ user.username }}
+        {{ user.avatar }}
+    </div>
+{% endblock content %}
