@@ -49,8 +49,14 @@ img {
 
 
 /* Profile */
-#profile-img {
-  height: 300px !important;
-  width: 300px !important;
+.profile-img {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+}
+
+.profile-mini {
+  height: 30px;
+  width: 30px;
   border-radius: 50%;
 }
