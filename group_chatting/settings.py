@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'home',
     'crispy_forms',
     'chat',
+    'profiles',
 ]
 
 MIDDLEWARE = [
@@ -107,7 +108,7 @@ WSGI_APPLICATION = 'group_chatting.wsgi.application'
 # if "DATABASE_URL" in os.environ:
 #     print("database = PostgreSQL via Heroku")
 #     DATABASES = {
-        # "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
+# "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
 #     }
 # else:
 #     print("database = db.sqlite3")
@@ -164,6 +165,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Media files
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

@@ -2,6 +2,12 @@
 <html>
   <head>
     <title>{% block head_title %}{% endblock %}</title>
+     <!--Bootstrap CDN -->
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
     {% block extra_head %}
     {% endblock %}
   </head>
@@ -19,18 +25,21 @@
     </div>
     {% endif %}
 
-    <div>
-      <strong>Menu:</strong>
-      <ul>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+      <ul class="list-group">
         {% if user.is_authenticated %}
-        <li><a href="{% url 'account_email' %}">Change E-mail</a></li>
-        <li><a href="{% url 'account_logout' %}">Sign Out</a></li>
+        <li class="list-item"><a href="{% url 'account_email' %}">Change E-mail</a></li>
+        <li class="list-item"><a href="{% url 'account_logout' %}">Sign Out</a></li>
         {% else %}
-        <li><a href="{% url 'account_login' %}">Sign In</a></li>
-        <li><a href="{% url 'account_signup' %}">Sign Up</a></li>
+        <li class="list-item"><a href="{% url 'account_login' %}">Sign In</a></li>
+        <li class="list-item"><a href="{% url 'account_signup' %}">Sign Up</a></li>
         {% endif %}
       </ul>
     </div>
+        </div>
+      </div>
     {% block content %}
     {% endblock %}
     {% endblock %}
