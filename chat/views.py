@@ -11,8 +11,7 @@ class ChatRoomView(View):
             request,
             'chat/chat_room.html',
             {
-                'chat': chat,
-                'messages': messages
+                'chat': chat,     
             }
         )
 
