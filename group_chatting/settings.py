@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'channels',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -95,7 +96,7 @@ LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'
 
 WSGI_APPLICATION = 'group_chatting.wsgi.application'
-ASGI_APLICATION = 'group_chatting.asgi.application'
+ASGI_APPLICATION = 'group_chatting.asgi.application'
 
 
 # Database
