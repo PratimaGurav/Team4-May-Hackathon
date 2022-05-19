@@ -19,14 +19,11 @@ if os.path.exists('env.py'):
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
+# Secret key set in the env.py
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# Debu set in the env.py
+DEBUG = os.environ['DEBUG'] == 'True'
 
 ALLOWED_HOSTS = []
 
@@ -76,12 +73,20 @@ WSGI_APPLICATION = 'group_chatting.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+# DATABASES
+if "DATABASE_URL" in os.environ:
+    print("database = PostgreSQL via Heroku")
+    DATABASES = {
+        # "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
     }
-}
+else:
+    print("database = db.sqlite3")
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": BASE_DIR / "db.sqlite3",
+        }
+    }
 
 
 # Password validation
