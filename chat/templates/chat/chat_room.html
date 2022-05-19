@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<h2>chat page</h2>
+
+<input type="hidden" value="{{ chat_room }}" id="chat-room">
+<div class="chat-container"></div>
+<input type="text" id="chat-input">
+
+
+<script src="{% static 'js/chat_room.js' %}"></script>
+{% endblock %}
