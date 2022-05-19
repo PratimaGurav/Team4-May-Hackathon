@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 class Chat(models.Model):
     """Chat model"""
     chat_name = models.CharField(max_length=100, unique=True)
-    slug = models.SlugField(unique=True)
+    slug = models.SlugField(unique=True, null=True)
     chat_description = models.CharField(max_length=250)
     members = models.ManyToManyField(User, related_name='chats')
     created_at = models.DateTimeField(auto_now_add=True)
