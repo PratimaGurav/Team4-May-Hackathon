@@ -1,10 +1,12 @@
 from django.db import models
+from django.utils.text import slugify
 from django.contrib.auth.models import User
 
 
 class Chat(models.Model):
     """Chat model"""
-    chat_name = models.CharField(max_length=100)
+    chat_name = models.CharField(max_length=100, unique=True)
+    slug = models.SlugField(unique=True)
     chat_description = models.CharField(max_length=250)
     members = models.ManyToManyField(User, related_name='chats')
     created_at = models.DateTimeField(auto_now_add=True)
@@ -15,6 +17,10 @@ class Chat(models.Model):
     class Meta:
         """Ordering chats by created_at"""
         ordering = ['-created_at']
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.chat_name, allow_unicode=True)
+        super().save(*args, **kwargs)
 
 
 class Message(models.Model):
