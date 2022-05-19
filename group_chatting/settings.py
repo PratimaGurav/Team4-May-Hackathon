@@ -23,7 +23,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # Debu set in the env.py
-DEBUG = "DEVELOPMENT" in os.environ
+# DEBUG = "DEVELOPMENT" in os.environ
+DEBUG = 'TRUE'
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
@@ -102,6 +103,7 @@ LOGIN_REDIRECT_URL = '/'
 WSGI_APPLICATION = 'group_chatting.wsgi.application'
 ASGI_APPLICATION = 'group_chatting.asgi.application'
 
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
