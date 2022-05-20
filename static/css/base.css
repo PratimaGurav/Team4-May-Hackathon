@@ -125,11 +125,13 @@ img {
 }
 
 /* Chat Room page */
-.chat__room {
+.chat__room,
+.chat__list {
   display: flex;
   width: 100%;
-  padding-top: 38px;
-  height: calc(100vh - 23px) !important;
+  /* padding-top: 38px; */
+  margin-top: 90px;
+  height: calc(100vh - 100px) !important;
   background-color: #acd68a;
   /* background-color: #a1ffa6; */
 }
@@ -148,15 +150,20 @@ img {
 
 .chats__navbar--item {
   width: 100%;
-  /* background-color: orange; */
   padding: 3em 0;
   text-decoration: none;
-  color: purple;
   -webkit-box-shadow: inset 0px 0px 63px -20px rgba(81, 166, 20, 1);
   -moz-box-shadow: inset 0px 0px 63px -20px rgba(81, 166, 20, 1);
   box-shadow: inset 0px 0px 63px -20px rgba(81, 166, 20, 1);
   border-radius: 0.4em;
   padding: 1em;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #5b5bbd;
 }
 
 .chat__main {
