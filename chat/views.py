@@ -6,11 +6,15 @@ from .models import Chat, ChatMessage
 class ChatRoomView(View):
     def get(self, request, *args, **kwargs):
         chat = Chat.objects.get(slug=kwargs['slug'])
+
+        chats = Chat.objects.all()
+
         return render(
             request,
             'chat/chat_room.html',
             {
-                'chat': chat,     
+                'chat': chat,
+                'chats': chats
             }
         )
 

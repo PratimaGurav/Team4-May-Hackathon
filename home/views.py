@@ -1,9 +1,11 @@
 from django.shortcuts import render
 from django.contrib import messages
 from django.views import View
+from chat.models import Chat
 
 
 # Create your views here.
 class HomeView(View):
     def get(self, request, *args, **kwargs):
-        return render(request, 'home/home.html', {})
+        chat = Chat.objects.all()
+        return render(request, 'index.html', {})

@@ -1,3 +1,4 @@
+
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -94,7 +95,7 @@
   </header>
   {% comment %} Main content container {% endcomment %}
   <main class="main">
-    <div class=" container content__container mt-4 pt-4">
+    <div class="content__container">
       {% if messages %}
       <div class="message-container" id="messages-notes">
         {% for message in messages %}
@@ -113,8 +114,20 @@
     </div>
   </main>
   {% comment %} Footer {% endcomment %}
-  <footer class="footer">
-
+    <!-- Footer -->
+    <footer class="footer mt-auto py-3">
+      <!-- Copyright -->
+      <p class="m-0 text-center">&copy; Connectify</p>
+      <p class="m-0 text-center " id="footer-external-links">Follow us: 
+          <a href="https://www.facebook.com/" aria-label="Visit our Facebook page" rel="noopener" target="_blank"><i
+              class="fab fa-facebook-square ms-3"><span class="visually-hidden">Facebook</span></i></a>
+          <a href="https://www.twitter.com/" aria-label="Visit our Twitter page" rel="noopener" target="_blank"><i
+                  class="fab fa-twitter-square ms-3"><span class="visually-hidden">Twitter</span></i></a>
+          <a href="https://www.instagram.com/" aria-label="Visit our Instagram page" rel="noopener" target="_blank"><i
+                  class="fab fa-instagram ms-3"><span class="visually-hidden">Instagram</span></i></a>
+          <a href="https://www.youtube.com/" aria-label="Visit our YouTube page" rel="noopener" target="_blank"><i
+                  class="fab fa-youtube ms-3"><span class="visually-hidden">Youtube</span></i></a>
+      </p>
   </footer>
   {% block postloadjs %}
   <script src="{% static 'js/base.js' %}"></script>
@@ -122,3 +135,17 @@
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
