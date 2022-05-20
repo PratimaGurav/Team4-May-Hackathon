@@ -1,10 +1,11 @@
 /* jshint esversion: 6 */
 document.addEventListener('DOMContentLoaded', function () {
   const roomName = window.location.pathname.split('/')[2];
-  const chatContainer = document.getElementsByClassName('chat-container')[0];
+  const chatContainer = document.getElementsByClassName('chat__container')[0];
   const chatInput = document.getElementById('chat-input');
   const fileInput = document.getElementById('chat-file');
   const sendButton = document.getElementById('chat-send');
+  const sendAnonymouslyCheckbox = document.getElementById('send-anonymously');
   const socketProtocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
   const socketUrl = `${socketProtocol}//${window.location.host}/ws/chat/${roomName}/`;
   const chatSocket = new WebSocket(socketUrl);
@@ -25,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let data = JSON.parse(e.data);
     console.log(data);
     let messageContent = data.message;
-    let messageUsername = data.username;
+    let messageUsername = data.username || 'Anonymous';
     let messageImageUrl = data.image;
 
     let message = document.createElement('div');
@@ -65,6 +66,8 @@ document.addEventListener('DOMContentLoaded', function () {
   // });
 
   sendButton.addEventListener('click', function (e) {
+    // need to check if send anonymously is checked
+    let sendAnonymously = sendAnonymouslyCheckbox.checked;    
     // need to check if file is selected
     console.log('Send button clicked');
     if (fileInput.files.length > 0) {
@@ -81,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const chatMessage = {
           'chat_id': chatId,
           'message': chatInput.value,
-          'username': username,
+          'username': sendAnonymously ? 'Anonymous' : username,
           'image': fileUrl
         };
         chatSocket.send(JSON.stringify(chatMessage));
@@ -92,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const chatMessage = {
         'chat_id': chatId,
         'message': chatInput.value,
-        'username': username,
+        'username': sendAnonymously ? 'Anonymous' : username,
         'image': null
       };
       chatSocket.send(JSON.stringify(chatMessage));
