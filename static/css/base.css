@@ -125,11 +125,13 @@ img {
 }
 
 /* Chat Room page */
-.chat__room {
+.chat__room,
+.chat__list {
   display: flex;
   width: 100%;
-  padding-top: 38px;
-  height: calc(100vh - 23px) !important;
+  /* padding-top: 38px; */
+  margin-top: 90px;
+  height: calc(100vh - 100px) !important;
   background-color: #acd68a;
   /* background-color: #a1ffa6; */
 }
