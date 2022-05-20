@@ -8,9 +8,11 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="This site aims to connect people who have issues regarding mental health. These rooms are not a substitute for professional treatment for mental health,
+  <meta name="description" 
+    content="This site aims to connect people who have issues regarding mental health. These rooms are not a substitute for professional treatment for mental health,
               but you may find the community to be supportive." />
-  <meta name="keywords" content="Mental Health, Chat Rooms, Anxiety" />
+  <meta name="keywords" 
+    content="Mental Health, Chat Rooms, Anxiety, Connectedsy, Depression" />
   <meta name="author" content="" />
 
   <!--Bootstrap CDN -->
@@ -50,31 +52,33 @@
   <header class="header mt-4">
     {% comment %} Navbar {% endcomment %}
     <div class="container d-flex">
-      <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
-        <a class="navbar-brand" href="{% url 'home' %}">CONNECTIFY</a>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only"></span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'chat_list' %}">Chat Rooms</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact us</a>
-            </li>
+          <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
+            <a class="navbar-brand" href="{% url 'home' %}">CONNECTEDSY</a>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'chat_list' %}">Chat Rooms</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Contact us</a>
+                </li>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="nav-profile navbar-nav mr-auto">
                 {% if user.is_authenticated %}
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="{% url 'profile' %}" id="navbarDropdown" role="button"
-                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <a class="nav-link dropdown-toggle" href="{% url 'profile' %}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <img class="profile-img profile-mini d-inline-block" src="{{ user.user_profile.avatar.url }}">
                     {{user.user_profile.user}}</a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item nav-link btn m-0" href="{% url 'profile' %}">Profile</a>
-                    <a class="dropdown-item nav-link btn m-0" href="{% url 'account_logout' %}">Sign out</a>
-                  </div>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item nav-link btn m-0" href="{% url 'account_logout' %}">Logout</a>
+                      <a class="dropdown-item nav-link btn m-0" href="{% url 'profile' %}">Profile</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                  <a class="dropdown-item nav-link btn m-0" href="{% url 'account_logout' %}">Logout</a>
                 </li>
                 {% else %}
                 <li class="nav-item">
@@ -86,9 +90,9 @@
                 </li>
                 {% endif %}
               </ul>
+              </div>
             </div>
-        </div>
-      </nav>
+        </nav>
     </div>
   </header>
   {% comment %} Main content container {% endcomment %}
@@ -112,20 +116,20 @@
     </div>
   </main>
   {% comment %} Footer {% endcomment %}
-  <!-- Footer -->
-  <footer class="footer mt-auto py-3" id="footer">
-    <!-- Copyright -->
-    <p class="m-0 text-center">&copy; Connectify</p>
-    <p class="m-0 text-center " id="footer-external-links">Follow us:
-      <a href="https://www.facebook.com/" aria-label="Visit our Facebook page" rel="noopener" target="_blank"><i
-          class="fab fa-facebook-square ms-3"><span class="visually-hidden">Facebook</span></i></a>
-      <a href="https://www.twitter.com/" aria-label="Visit our Twitter page" rel="noopener" target="_blank"><i
-          class="fab fa-twitter-square ms-3"><span class="visually-hidden">Twitter</span></i></a>
-      <a href="https://www.instagram.com/" aria-label="Visit our Instagram page" rel="noopener" target="_blank"><i
-          class="fab fa-instagram ms-3"><span class="visually-hidden">Instagram</span></i></a>
-      <a href="https://www.youtube.com/" aria-label="Visit our YouTube page" rel="noopener" target="_blank"><i
-          class="fab fa-youtube ms-3"><span class="visually-hidden">Youtube</span></i></a>
-    </p>
+    <!-- Footer -->
+    <footer class="footer mt-auto py-3">
+      <!-- Copyright -->
+      <p class="m-0 text-center">&copy; Connectedsy</p>
+      <p class="m-0 text-center " id="footer-external-links">Follow us: 
+          <a href="https://www.facebook.com/" aria-label="Visit our Facebook page" rel="noopener" target="_blank"><i
+              class="fab fa-facebook-square ms-3"><span class="visually-hidden">Facebook</span></i></a>
+          <a href="https://www.twitter.com/" aria-label="Visit our Twitter page" rel="noopener" target="_blank"><i
+                  class="fab fa-twitter-square ms-3"><span class="visually-hidden">Twitter</span></i></a>
+          <a href="https://www.instagram.com/" aria-label="Visit our Instagram page" rel="noopener" target="_blank"><i
+                  class="fab fa-instagram ms-3"><span class="visually-hidden">Instagram</span></i></a>
+          <a href="https://www.youtube.com/" aria-label="Visit our YouTube page" rel="noopener" target="_blank"><i
+                  class="fab fa-youtube ms-3"><span class="visually-hidden">Youtube</span></i></a>
+      </p>
   </footer>
   {% block postloadjs %}
   <script src="{% static 'js/base.js' %}"></script>
