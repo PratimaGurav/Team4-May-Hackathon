@@ -1,3 +1,22 @@
+/*import google fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,500&family=Raleway:ital,wght@1,500&display=swap');
+
+:root {
+
+    /*---------- TYPOGRAPHY ----------*/
+  
+    --header-text: 'Montserrat', sans-serif;
+    --content-text: 'Raleway', sans-serif;
+  
+  
+    /*---------- COLOURS ----------*/
+  
+    --base-color: #51A614;
+    --white-color: #FFFFFF;
+    --black-color: #000000;
+}
+
+
 /*------ Global Settings------*/
 *,
 *::before,
@@ -43,11 +62,6 @@ img {
 }
 
 
-.header {
-  background-color: orange;
-}
-
-
 /* Profile */
 .profile-img {
   height: 60px;
@@ -62,9 +76,57 @@ img {
 }
 
 .navbar {
-  padding-left: 20%;
+  font-size: 14px;
+  font-family: var(--header-text);
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+  background: var(--base-color) !important;
+  padding: 20px 20px;
+  z-index:999;
+}
+
+.navbar-brand {
+  font-size: 2rem;
+  font-family: var(--header-text);
+}
+
+.nav-link {
+  font-size: 20px;
+  font-family: var(--content-text);
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: var(--black-color);
+  padding-left: 20px;
+}
+
+.navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link:hover {
+  color: var(--white-color);
 }
 
 .nav-profile {
   padding-left: 220px;
 }
+
+.thin {
+  font-weight: 300;
+}
+
+/*---------- FOOTER ----------*/
+
+footer {
+  margin-top: auto;  
+  width:100%;
+  color: var(--black-color);
+  background: var(--base-color) !important;
+}
+
+#footer-external-links> a {
+  text-decoration: none;
+  color: var(--black-color);
+  font-size: 1.5rem;
+}
+
+#footer-external-links> a:hover {
+  color: var(--white-color);
+}  
