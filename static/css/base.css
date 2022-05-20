@@ -243,6 +243,21 @@ img {
   outline: none;
 }
 
+
+/*---------- PAGE LAYOUT UTILITIES ----------*/
+
+.header-container {
+  padding-top:100px;
+}
+
+.sub-content {
+  height: 5vh;
+}
+
+.index-container {
+  margin:1vh 5vw;
+}
+
 /*---------- FOOTER ----------*/
 
 footer {
