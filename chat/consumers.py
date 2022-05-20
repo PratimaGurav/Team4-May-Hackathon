@@ -8,7 +8,6 @@ from .models import Chat, ChatMessage
 import base64
 from django.core.files.base import ContentFile
 from django.core.files import File
-from django.core.files.temp import NamedTemporaryFile
 import cloudinary
 import cloudinary.uploader
 
@@ -105,7 +104,7 @@ class ChatConsumer(AsyncWebsocketConsumer):
         
         if user:
             message.user = user
-            message.save()
+        message.save()
         
         return message
     
