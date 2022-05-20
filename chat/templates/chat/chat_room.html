@@ -16,7 +16,9 @@
       <div class="message">
         <div class="message__header">
           <div class="message__header--data">
-            <div class="message__avatar--avatar"></div>
+            <div class="message__avatar--avatar">
+              <img src="{{ message.user.profile.avatar }}" alt="">
+            </div>
             <div class="message__header--username">
               {% if message.user %}
               {{ message.user.username }}

@@ -120,11 +120,11 @@ img {
 /*---------- PAGE LAYOUT UTILITIES ----------*/
 
 .header-container {
-  padding-top:100px;
+  padding-top: 100px;
 }
 
 .index-container {
-  margin:1vh 5vw;
+  margin: 1vh 5vw;
 }
 
 .index-card {
@@ -143,6 +143,8 @@ img {
   justify-content: center;
   align-items: center;
   background-color: var(--grad-2);
+  flex: 1 0 auto;
+  max-height: 100vh;
 }
 
 /* Chat Room page */
