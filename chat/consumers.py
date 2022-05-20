@@ -105,7 +105,7 @@ class ChatConsumer(AsyncWebsocketConsumer):
         
         if user:
             message.user = user
-            message.save()
+        message.save()
         
         return message
     
