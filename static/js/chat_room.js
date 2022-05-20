@@ -103,6 +103,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-
+  document.getElementById('footer').style.display = 'none';
 
 });
