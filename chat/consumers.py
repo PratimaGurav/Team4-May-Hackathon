@@ -63,7 +63,7 @@ class ChatConsumer(AsyncWebsocketConsumer):
             {
                 'type': 'chat_message',
                 'message': message.content,
-                'username': message.user.username,
+                'username': message.user.username if message.user else None,
                 'chat_id': message.chat.id,
                 'image': message.image if message.image else None
             }
@@ -86,14 +86,22 @@ class ChatConsumer(AsyncWebsocketConsumer):
     @database_sync_to_async      # Save message to db by converting to async
     def save_message(self, chat_id, username, message, image_file):
         chat = Chat.objects.get(id=chat_id)
-        user = User.objects.get(username=username)
+        if username == 'Anonymous':
+            user = None
+        else:
+            user = User.objects.get(username=username)
         
         # upload image to cloudinary and save it to the image CloudinaryField of the ChatMessage model
         if image_file:
             image = cloudinary.uploader.upload(image_file, folder='chat_images')
             image = image['url']
+            message = ChatMessage.objects.create(chat=chat, content=message, image=image)        
+        else:
+            message = ChatMessage.objects.create(chat=chat, content=message)
         
-        message = ChatMessage.objects.create(chat=chat, user=user, content=message, image=image)        
+        if user:
+            message.user = user
+            message.save()
         
         return message
     
