@@ -396,3 +396,52 @@ footer {
 #footer-external-links>a:hover {
   color: var(--white-color);
 }
+
+/*---------- CONTACT US PAGE ----------*/
+
+.contact-form{
+  width: 70%;
+}
+
+.contact-form .form-control{
+  border-radius:1rem;
+  margin-bottom: 10px;
+}
+
+.contact-form form{
+  padding-bottom: 15%;
+}
+
+.contact-form form .row{
+  margin-bottom: -7%;
+}
+
+.contact-form h2 {
+  color: var(--white-color);
+  margin-bottom: 10%;
+  margin-top: -10%;
+  text-align: center;
+}
+
+.contact-form h3{
+  color: var(--white-color);
+  margin-bottom: 5%;
+  margin-top: -5%;
+  text-align: center;
+}
+
+.contact-form .btnContact {
+  width: 50%;
+  border: none;
+  border-radius: 1rem;
+  margin-top: 2%;
+  padding: 2%;
+  background: var(--grad-2);
+  font-weight: 600;
+  color: var(--white-color);
+  cursor: pointer;
+}
+
+.contact {
+  padding-bottom: 2%;
+}
