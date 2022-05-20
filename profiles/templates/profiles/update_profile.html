@@ -13,7 +13,7 @@
         <form method="POST" enctype="multipart/form-data">
           {% csrf_token %}
           <fieldset class="form-group">
-            <legend class="border-bottom mb-4">Profile Info</legend>
+            <legend class="border-bottom mb-4 mt-5">Profile Info</legend>
             {{ user_form|crispy }}
             {{ profile_form|crispy }}
           </fieldset>

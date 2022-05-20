@@ -5,21 +5,20 @@
 <div class="container account-container mt-4 pt-4 bg-light">
   <div class="row mt-4 pt-4">
     <div class="col-md-8 mt-3 offset-md-2">
-      <div class="content-section">
-        <div class="col-md-3">
           <img class="profile-img d-inline-block" src="{{ user.user_profile.avatar.url }}" />
-          {% if user == user.user_profile.user %}
-          <a class="btn d-inline-block" href="{% url 'profile-update' %}"><i class="far fa-edit"></i></a>
-          <a class="btn d-inline-block" href="{% url 'profile-delete' user.user_profile.pk %}"><i class="fas fa-trash"></i></a>
-          {% endif %}
-          <h2 class="account-heading mt-2">{{ user.username }} <i class="fas fa-hand-holding-heart"></i> {{user.user_profile.stewardship.count}}</h2>
+          <h2 class="account-heading d-inline-block pt-5">{{ user.username }}</h2> <i
+            class="fas fa-hand-holding-heart"></i> {{user.user_profile.stewardship.count}}
+            {% if user == user.user_profile.user %}
+            <span class="mx-4 px-2 d-block">
+            <a class="btn d-inline-block small text-muted" href="{% url 'profile-update' %}"><i class="far fa-edit"></i></a>
+            <a class="btn d-inline-block small text-muted" href="{% url 'profile-delete' user.user_profile.pk %}"><i class="fas fa-trash"></i></a>
+            </span>
+            {% endif %}
+        <div class="mt-2 mb-4 mt-3 pt-3">
+          <h5> {% if user == user.user_profile.user %}Your {% else %}{{user.username}}'s {% endif %} bio</h5>
+          <p class="py-4">{{user.user_profile.bio}}</p>
         </div>
-          <div class="mt-2 mb-4">
-            <p class="py-4">{{user.user_profile.bio}}</p>
-          </div>
-        </form>
       </div>
-    </div>
   </div>
 </div>
 {% endblock content %}
