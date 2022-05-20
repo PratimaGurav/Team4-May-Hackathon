@@ -2,25 +2,20 @@
 {% load static %}
 {% load crispy_forms_tags %}
 {% block content %}
-<div class="container account-container">
-  <div class="row">
+<div class="container account-container mt-4 pt-4 bg-light">
+  <div class="row mt-4 pt-4">
     <div class="col-md-8 mt-3 offset-md-2">
       <div class="content-section">
         <div class="col-md-3">
-          <img class="profile-img" src="{{ user.user_profile.avatar.url }}" />
-          <h2 class="account-heading">{{ user.username }} <i class="fas fa-hand-holding-heart"></i> {{user.user_profile.stewardship.count}}</h2>
+          <img class="profile-img d-inline-block" src="{{ user.user_profile.avatar.url }}" /> 
+          <!-- show edit and delete icons only to profile owner-->
+          {% if request.user == user.user_profile.user %}
+          <a class="btn mx-2 px-2" href="{% url 'profile-update' %}"><i class="fas fa-edit"></i></a>
+          <a class="btn mx-2 px-2" href="{% url 'profile-delete' %}"> <i class="fas fa-trash"></i></a>
+          {% endif %}
         </div>
-        <form method="POST" enctype="multipart/form-data">
-          {% csrf_token %}
-          <fieldset class="form-group">
-            <legend class="border-bottom mb-4">Profile Info</legend>
-            {{ user_form|crispy }}
-            {{ profile_form|crispy }}
-          </fieldset>
-          <div class="form-group">
-            <button class="btn btn-success mt-3" type="submit">Update</button>
-          </div>
-        </form>
+        <h2 class="account-heading">{{ user.username }} <i class="fas fa-hand-holding-heart"></i> {{user.user_profile.stewardship.count}}</h2>
+        <p class="mt-4 pt-3 mb-4">{{user.user_profile.bio}}</p>
       </div>
     </div>
   </div>

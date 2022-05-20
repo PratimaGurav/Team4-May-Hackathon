@@ -7,8 +7,8 @@
 
 {% block content %}
 
-<div class="container account-container">
-  <div class="row">
+<div class="container account-container mt-4 pt-4 bg-light">
+  <div class="row mt-4 pt-4">
     <div class="col-md-8 mt-3 offset-md-2">
       <div class="content-section">
         <h1 class="m-4">{% trans "Sign In" %}</h1>
@@ -44,7 +44,7 @@
           <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
           {% endif %}
           <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
-          <button class="primaryAction btn btn-success" type="submit">{% trans "Sign In" %}</button>
+          <button class="primaryAction btn btn-success mb-4" type="submit">{% trans "Sign In" %}</button>
         </form>
 
       </div>
