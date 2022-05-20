@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   sendButton.addEventListener('click', function (e) {
     // need to check if send anonymously is checked
-    let sendAnonymously = sendAnonymouslyCheckbox.checked;    
+    let sendAnonymously = sendAnonymouslyCheckbox.checked;
     // need to check if file is selected
     console.log('Send button clicked');
     if (fileInput.files.length > 0) {
@@ -115,5 +115,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
+  document.getElementById('footer').style.display = 'none';
 
 });
