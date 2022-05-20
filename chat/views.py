@@ -7,11 +7,13 @@ class ChatRoomView(View):
     def get(self, request, *args, **kwargs):
         chat = Chat.objects.get(slug=kwargs['slug'])
         messages = Message.objects.filter(chat=chat).order_by('-created_at')
+        chats = Chat.objects.all()
         return render(
             request,
             'chat/chat_room.html',
             {
-                'chat': chat,     
+                'chat': chat,
+                'chats': chats
             }
         )
 

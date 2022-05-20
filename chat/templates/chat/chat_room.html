@@ -2,30 +2,40 @@
 {% load static %}
 
 {% block content %}
-
-<h2>chat page</h2>
-
-<input type="hidden" value="{{ chat.id }}" id="chat-id">
-<input type="hidden" value="{{ request.user.username }}" id="username">
-<div class="chat-container">
-    {% for message in chat.messages.all %}
-        <div class="message">
-            <div class="message-header">
-                <div class="message-header-username">
-                    {{ message.user.username }}
-                </div>
-                <div class="message-header-time">
-                    {{ message.created_at }}
-                </div>
-            </div>
-            <div class="message-body">
-                {{ message.content }}
-            </div>
-        </div>
+<div class="chat__room">
+  <div class="chats__navbar">
+    {% for chat_tab in chats %}
+    <a href="{% url 'chat_room' slug=chat_tab.slug %}" class="chats__navbar--item">{{ chat_tab }}</a>
     {% endfor %}
+  </div>
+  <div class="chat__main">
+    <input type="hidden" value="{{ chat.id }}" id="chat-id">
+    <input type="hidden" value="{{ request.user.username }}" id="username">
+    <div class="chat__container">
+      {% for message in chat.messages.all %}
+      <div class="message">
+        <div class="message-header">
+          <div class="message-header-username">
+            {{ message.user.username }}
+          </div>
+          <div class="message-header-time">
+            {{ message.created_at }}
+          </div>
+        </div>
+        <div class="message-body">
+          {{ message.content }}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="input__container">
+      <input type="text" id="chat-input">
+      <div>
+        <button>send</button>
+        <button>send anonymously</button>
+      </div>
+    </div>
+  </div>
 </div>
-<input type="text" id="chat-input">
-
-
 <script src="{% static 'js/chat_room.js' %}"></script>
 {% endblock %}
