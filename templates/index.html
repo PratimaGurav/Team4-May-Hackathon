@@ -2,23 +2,58 @@
 
 {% block content %}
 
-<div class="container-fluid">
+<!--Empty container to push body content below nav bars-->
+<div class="container header-container">
     <div class="row">
-        <!--Welcome title-->
-        <h2 class= "h2 text-center welcome-title">App name</h2>
-        <p>Meet, greet, share, support</p>
+      <div class="col"></div>
     </div>
-
-    <div class="col-12 mt-3 left">
-        <div class="row">
-            <div class="col-md-4">
-                
-            </div>
-
-        </div>
-
-    </div>
-
 </div>
+
+<!-- Page Title-->
+<div>
+    <h1 class="text-center mt-3">App name</h1>
+    <h2 class="text-center mt-3"><em>Meet, greet, share, support</em></h2>
+</div>
+
+<div class="clearfix index-card bg-transparent mt-5">  
+    <img src="..." class="col-md-6 float-md-end mb-3 ms-md-3" alt="self-care">
+    <h2>
+      Stay Connected!
+    </h2>
+  
+    <p>
+        These chat rooms can help you if you are feeling low and need to talk to someone who understands just what it is that you are going through.
+    </p>
+  
+    <p>
+        You can find a safe place to express yourself and get support from others who are also experiencing the same.
+    </p>
+    <p>
+        These rooms are not a substitute for professional treatment for mental health, but you may find the community to be supportive
+    </p>
+  </div>
+
+  <div class="row justify-content-around">
+    <div class="col-4 index-card bg-transparent">
+      <h2 class="text-center">Chat Rooms</h2>
+      <br>
+      <p>
+        Enter a Chat Room to connect instantly with others. Every chat room is designed to offer you immediate contact with people when you feel the desire to talk to someone right away. 
+      </p>
+      <p>
+        All you need to do is join Chat's network, type in a nickname and begin chatting.
+      </p>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button type="button" class="btn btn-outline-dark me-md-2">Click to Enter!</button>
+      </div>
+
+    </div>
+    <div class="col-4 index-card bg-transparent">
+      <h2 class="text-center">
+         Featuerd Chat Rooms
+      </h2>
+      <br>
+    </div>
+  </div>
 
 {%endblock%}
