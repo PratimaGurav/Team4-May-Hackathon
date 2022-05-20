@@ -32,7 +32,7 @@ DEBUG = 'TRUE'
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'https://127.0.0.1/']
+ALLOWED_HOSTS = ['connectedsy.herokuapp.com','localhost', '127.0.0.1', 'https://127.0.0.1/']
 
 
 # Application definition
