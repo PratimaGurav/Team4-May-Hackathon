@@ -29,20 +29,15 @@
       {% endfor %}
     </div>
     <div class="input__container">
-      <input type="text" id="chat-input" class="input__container--textarea">
+      <textarea type="text" id="chat-input" class="input__container--textarea"></textarea>
       <div class="input__container--buttons">
-        <button>Send</button>
+        <button id="chat-send">Send</button>
         <button>Send anonymously</button>
         <input type="file" id="chat-file" accept="image/*">
       </div>
     </div>
   </div>
 </div>
-
-<input type="text" id="chat-input">
-<input type="file" id="chat-file" accept="image/*">
-<button id="chat-send">Send</button>
-
 
 
 <script src="{% static 'js/chat_room.js' %}"></script>
