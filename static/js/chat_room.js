@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const socketProtocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
   const socketUrl = `${socketProtocol}//${window.location.host}/ws/chat/${roomName}/`;
   const chatSocket = new WebSocket(socketUrl);
-  
+
   const chatId = document.getElementById('chat-id').value;
   const username = document.getElementById('username').value;
 
@@ -49,7 +49,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     chatContainer.appendChild(message);
     chatContainer.scrollTop = chatContainer.scrollHeight;
-   
   };
 
   // document.addEventListener('keydown', function (e) {
@@ -67,6 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   sendButton.addEventListener('click', function (e) {
     // need to check if file is selected
+    console.log('Send button clicked');
     if (fileInput.files.length > 0) {
       console.log('File selected');
       // we need to temporarily store the file in the local storage
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const fileReader = new FileReader(file);
       fileReader.readAsDataURL(file);
       fileReader.onload = function (e) {
-        // console.log(e.target.result);
+        console.log(e.target.result);
         const fileUrl = e.target.result;
         const chatMessage = {
           'chat_id': chatId,
