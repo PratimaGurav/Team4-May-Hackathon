@@ -59,7 +59,9 @@ document.addEventListener('DOMContentLoaded', function () {
     message.appendChild(messageHeader);
     message.appendChild(messageBody);
     messageBody.appendChild(messageBodyText);
-    messageBody.appendChild(messageBodyImage);
+    if (data.image) {
+      messageBody.appendChild(messageBodyImage);
+    }
     chatContainer.appendChild(message);
     chatContainer.scrollTop = chatContainer.scrollHeight + 100;
   };
