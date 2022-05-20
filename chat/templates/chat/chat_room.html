@@ -19,9 +19,9 @@
             <div class="message__avatar--avatar"></div>
             <div class="message__header--username">
               {% if message.user %}
-                {{ message.user.username }}
+              {{ message.user.username }}
               {% else %}
-                Anonymous
+              Anonymous
               {% endif %}
             </div>
           </div>
@@ -33,7 +33,9 @@
           <div class="message__body--text">
             {{ message.content }}
           </div>
-          <div class="message__body--image"></div>
+          {% if message.image %}
+          <div class="message__body--image--container"></div>
+          {% endif %}
         </div>
       </div>
       {% endfor %}
