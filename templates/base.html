@@ -73,9 +73,6 @@
                     {{user.user_profile.user}}</a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item nav-link btn m-0" href="{% url 'profile' %}">Profile</a>
-                    <a class="dropdown-item nav-link btn m-0" href="{% url 'profile-update' %}">Update</a>
-                    <a class="dropdown-item nav-link btn m-0" href="{% url 'profile-delete' user.id %}">Delete</a>
-                    <hr>
                     <a class="dropdown-item nav-link btn m-0" href="{% url 'account_logout' %}">Sign out</a>
                   </div>
                 </li>
