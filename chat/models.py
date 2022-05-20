@@ -28,7 +28,7 @@ class ChatMessage(models.Model):
     """Message model"""
     chat = models.ForeignKey(Chat, on_delete=models.CASCADE, related_name='messages')
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='messages', null=True, blank=True)
-    content = models.CharField(max_length=500)
+    content = models.CharField(max_length=500, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     image = CloudinaryField(
         'chat_image',
@@ -42,4 +42,4 @@ class ChatMessage(models.Model):
 
     class Meta:
         """ Order messages by creation date. """
-        ordering = ['-created_at']
+        ordering = ['created_at']
