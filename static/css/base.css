@@ -14,6 +14,10 @@
   --base-color: #51A614;
   --white-color: #FFFFFF;
   --black-color: #000000;
+  --grad-1:#5b5bbd;
+  --grad-2:#7272cc;
+  --grad-3:#def8c6;
+  --grad-4:#F4FCED;
 }
 
 
@@ -121,7 +125,7 @@ img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: blue;
+  background-color: var(--grad-2);
 }
 
 /* Chat Room page */
@@ -137,7 +141,7 @@ img {
 }
 
 .chats__navbar {
-  background-color: rgba(0, 0, 0, 0.06);
+  background-color: var(--black-color);
   /* height: 100%; */
   width: 15rem;
   display: flex;
@@ -163,7 +167,7 @@ img {
   justify-content: flex-start;
   font-size: 1.5rem;
   font-weight: 500;
-  color: #5b5bbd;
+  color:var(--grad-1);
 }
 
 .chat__main {
@@ -171,14 +175,14 @@ img {
   flex-direction: column;
   width: 100%;
   height: 100%;
-  background-color: #def8c6;
+  background-color: var(--grad-3);
 }
 
 .chat__container {
   width: 100%;
   margin: 0 auto;
   height: calc(100% - 175px) !important;
-  background-color: #F4FCED;
+  background-color: var(--grad-4);
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
   position: relative;
 
@@ -194,7 +198,7 @@ img {
   justify-content: flex-start;
   align-items: center;
   position: relative;
-  background-color: #def8c6;
+  background-color: var(--grad-3);
 
 }
 
@@ -220,19 +224,19 @@ img {
 
 
 .input__container--buttons button {
-  background-color: #7272cc;
+  background-color: var(--grad-2);
   padding: 0.005em 1em 0.09em 1em;
   font-size: 1.2rem;
   font-weight: 500;
   border-radius: 0.2rem;
-  color: white;
+  color:  var(--white-color);
   outline: none;
   border: 1px solid black;
 }
 
 .input__container--buttons button:hover {
-  background-color: #5b5bbd;
-  color: white;
+  background-color: var(--grad-1);
+  color: var(--white-color);
 }
 
 .input__container--buttons button:focus {
