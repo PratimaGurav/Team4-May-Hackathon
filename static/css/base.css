@@ -117,6 +117,23 @@ img {
   font-weight: 300;
 }
 
+/*---------- PAGE LAYOUT UTILITIES ----------*/
+
+.header-container {
+  padding-top:100px;
+}
+
+.index-container {
+  margin:1vh 5vw;
+}
+
+.index-card {
+  background: var(--grad-2);
+  border-radius: 16px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.6);
+  margin-bottom: 80px;
+}
+
 /* Main container */
 .content__container {
   width: 100%;
