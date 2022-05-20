@@ -60,3 +60,11 @@ img {
   width: 30px;
   border-radius: 50%;
 }
+
+.navbar {
+  padding-left: 20%;
+}
+
+.nav-profile {
+  padding-left: 220px;
+}
