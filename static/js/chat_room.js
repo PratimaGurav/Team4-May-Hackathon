@@ -14,6 +14,9 @@ document.addEventListener('DOMContentLoaded', function () {
   const username = document.getElementById('username').value;
 
 
+  // scroll to bottom of chat
+  chatContainer.scrollTop = chatContainer.scrollHeight + 100;
+
   chatSocket.onopen = function () {
     console.log('Connected to chat server');
   };
@@ -24,32 +27,43 @@ document.addEventListener('DOMContentLoaded', function () {
 
   chatSocket.onmessage = function (e) {
     let data = JSON.parse(e.data);
-    console.log(data);
-    let messageContent = data.message;
-    let messageUsername = data.username || 'Anonymous';
-    let messageImageUrl = data.image;
-
     let message = document.createElement('div');
     message.classList.add('message');
-
-    let messageUsernameElement = document.createElement('span');
-    messageUsernameElement.classList.add('message-username');
-    messageUsernameElement.innerText = messageUsername;
-    message.appendChild(messageUsernameElement);
-
-    let messageContentElement = document.createElement('span');
-    messageContentElement.innerText = messageContent;
-    message.appendChild(messageContentElement);
-
-    if (messageImageUrl) {
-      let messageImage = document.createElement('img');
-      messageImage.classList.add('message-image');
-      messageImage.src = messageImageUrl;
-      message.appendChild(messageImage);
+    let messageHeader = document.createElement('div');
+    messageHeader.classList.add('message__header');
+    let messageHeaderData = document.createElement('div');
+    messageHeaderData.classList.add('message__header--data');
+    let messageHeaderAvatar = document.createElement('div');
+    messageHeaderAvatar.classList.add('message__avatar--avatar');
+    let messageHeaderUsername = document.createElement('div');
+    messageHeaderUsername.classList.add('message__header--username');
+    let messageHeaderTime = document.createElement('div');
+    messageHeaderTime.classList.add('message__header--time');
+    let messageBody = document.createElement('div');
+    messageBody.classList.add('message__body');
+    let messageBodyText = document.createElement('div');
+    messageBodyText.classList.add('message__body--text');
+    let messageBodyImage = document.createElement('div');
+    messageBodyImage.classList.add('message__body--image');
+    messageHeaderUsername.innerHTML = data.username || 'Anonymous';
+    messageHeaderTime.innerHTML = data.time;
+    messageBodyText.innerHTML = data.message;
+    if (data.image) {
+      messageBodyImage.innerHTML = `<img src="${data.image}" />`;
     }
-
+    // messageHeaderAvatar.innerHTML = `<img src="${data.avatar}" />`;
+    messageHeader.appendChild(messageHeaderData);
+    messageHeaderData.appendChild(messageHeaderAvatar);
+    messageHeaderData.appendChild(messageHeaderUsername);
+    messageHeaderData.appendChild(messageHeaderTime);
+    message.appendChild(messageHeader);
+    message.appendChild(messageBody);
+    messageBody.appendChild(messageBodyText);
+    if (data.image) {
+      messageBody.appendChild(messageBodyImage);
+    }
     chatContainer.appendChild(message);
-    chatContainer.scrollTop = chatContainer.scrollHeight;
+    chatContainer.scrollTop = chatContainer.scrollHeight + 100;
   };
 
   // document.addEventListener('keydown', function (e) {
@@ -67,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   sendButton.addEventListener('click', function (e) {
     // need to check if send anonymously is checked
-    let sendAnonymously = sendAnonymouslyCheckbox.checked;    
+    let sendAnonymously = sendAnonymouslyCheckbox.checked;
     // need to check if file is selected
     console.log('Send button clicked');
     if (fileInput.files.length > 0) {
@@ -103,5 +117,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
+  document.getElementById('footer').style.display = 'none';
 
 });

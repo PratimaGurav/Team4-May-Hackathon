@@ -14,10 +14,10 @@
   --base-color: #51A614;
   --white-color: #FFFFFF;
   --black-color: #000000;
-  --grad-1:#5b5bbd;
-  --grad-2:#7272cc;
-  --grad-3:#def8c6;
-  --grad-4:#F4FCED;
+  --grad-1: #5b5bbd;
+  --grad-2: #7272cc;
+  --grad-3: #def8c6;
+  --grad-4: #F4FCED;
 }
 
 
@@ -134,14 +134,17 @@ img {
   display: flex;
   width: 100%;
   /* padding-top: 38px; */
-  margin-top: 90px;
-  height: calc(100vh - 100px) !important;
+  margin-top: 74px;
+  /* height: calc(100vh - 74px) !important; */
+  height: calc(100vh - 98.5px) !important;
   background-color: #acd68a;
   /* background-color: #a1ffa6; */
 }
 
+
 .chats__navbar {
-  background-color: var(--black-color);
+  /* background-color: var(--black-color); */
+  background-color: #acd68a;
   /* height: 100%; */
   width: 15rem;
   display: flex;
@@ -167,7 +170,7 @@ img {
   justify-content: flex-start;
   font-size: 1.5rem;
   font-weight: 500;
-  color:var(--grad-1);
+  color: var(--grad-1);
 }
 
 .chat__main {
@@ -185,6 +188,7 @@ img {
   background-color: var(--grad-4);
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
   position: relative;
+  overflow-y: scroll;
 
   /* margin-top: 2.8rem; */
 }
@@ -192,7 +196,7 @@ img {
 .input__container {
   height: 174.4px;
   width: 100%;
-  padding: 1em;
+  padding: 0.5em;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -211,6 +215,10 @@ img {
   border-radius: .3em;
 }
 
+.input__container--textarea:focus {
+  outline: 1px solid var(--base-color);
+}
+
 .input__container--buttons {
   height: 10%;
   display: flex;
@@ -220,6 +228,7 @@ img {
   width: 100%;
   height: 50px;
   /* padding: 1em 0; */
+  margin-left: 0.2em;
 }
 
 
@@ -229,7 +238,7 @@ img {
   font-size: 1.2rem;
   font-weight: 500;
   border-radius: 0.2rem;
-  color:  var(--white-color);
+  color: var(--white-color);
   outline: none;
   border: 1px solid black;
 }
@@ -243,23 +252,111 @@ img {
   outline: none;
 }
 
-
-/*---------- PAGE LAYOUT UTILITIES ----------*/
-
-.header-container {
-  padding-top:100px;
+.send-anonymously--container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
 }
 
-.index-container {
-  margin:1vh 5vw;
+.send-anonymously--container label {
+  margin-right: 0.5em;
 }
 
-.index-card {
-  background: var(--grad-2);
-  border-radius: 16px;
-  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.6);
-  margin-bottom: 80px;
+/* Messages */
+
+.message {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: .5em;
+  margin: .5em;
+  border: 1px solid var(--base-color);
+  background-color: rgb(211, 255, 231);
+  border-radius: 0.2em;
 }
+
+.message:first-child {
+  margin-top: 0.5em;
+}
+
+
+
+.message-text {
+  padding-left: 0.5em;
+  padding-bottom: 0.3em;
+}
+
+.message__header {
+  position: relative;
+  width: 100%;
+  /* background-color: #5b5bbd; */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 0.7em;
+}
+
+.message__header--data {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.message__avatar--avatar {
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  margin-right: .5em;
+  background-color: #51A614;
+}
+
+.message__header--username {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-weight: bold;
+}
+
+.message__header--time {
+  /* position on the right side */
+  margin-left: auto;
+  color: rgb(43, 43, 43);
+  font-size: 0.8em;
+  font-style: italic;
+  margin-right: 0.5em;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.message__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+}
+
+.message__body--image {
+  width: 20rem;
+  height: 20rem;
+  align-self: center;
+  justify-self: center;
+}
+
+.message__body--image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+}
+
 
 /*---------- FOOTER ----------*/
 
