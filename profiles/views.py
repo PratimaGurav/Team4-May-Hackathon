@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
@@ -75,4 +76,5 @@ def update_profile(request):
 
 class DeleteProfileView(LoginRequiredMixin, DeleteView):
     model = Profile
-    success_url = reverse_lazy('/')
+    def get_success_url(self):
+        return reverse_lazy('home')
