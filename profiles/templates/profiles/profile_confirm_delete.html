@@ -2,11 +2,11 @@
 {% load static %}
 {% load crispy_forms_tags %}
 {% block content %}
-<div class="container account-container mt-4 pt-4 bg-light">
+<div class="container account-container chat_list mt-4 pt-4 bg-light">
     <div class="row mt-4 pt-4">
     <div class="col-md-8 mt-3 offset-md-2">
       <div class="content-section">
-        <form method="POST" enctype="multipart/form-data">
+        <form method="POST">
                 {% csrf_token %}
                 <h5 class="bg-warning">Are you sure you want to delete your profile?</h5> 
           <div class="form-group">

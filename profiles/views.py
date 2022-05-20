@@ -15,9 +15,9 @@ def register(request):
         form = UserRegisterForm(request.POST) 
         if form.is_valid():
             username = form.cleaned_data.get('username') 
-            form.save() 
+            form.save()
             messages.success(request, f'Your account has been created! You are now able to log in') 
-            return redirect('login')
+            return redirect('')
     else:
         form = UserRegisterForm()
     return render(request, 'accounts/signup.html', {'form': form})
@@ -76,5 +76,4 @@ def update_profile(request):
 
 class DeleteProfileView(LoginRequiredMixin, DeleteView):
     model = Profile
-    def get_success_url(self):
-        return reverse_lazy('home')
+    success_url = reverse_lazy('account_signup')
