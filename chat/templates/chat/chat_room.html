@@ -34,7 +34,9 @@
             {{ message.content }}
           </div>
           {% if message.image %}
-          <div class="message__body--image--container"></div>
+          <div class="message__body--image">
+            <img src="{{ message.image }}" alt="">
+          </div>
           {% endif %}
         </div>
       </div>
