@@ -130,7 +130,8 @@ img {
   width: 100%;
   padding-top: 38px;
   height: calc(100vh - 23px) !important;
-  background-color: aqua;
+  background-color: #acd68a;
+  /* background-color: #a1ffa6; */
 }
 
 .chats__navbar {
@@ -141,17 +142,21 @@ img {
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  padding: 1em;
+
 
 }
 
 .chats__navbar--item {
   width: 100%;
-  background-color: orange;
+  /* background-color: orange; */
   padding: 3em 0;
   text-decoration: none;
   color: purple;
-
+  -webkit-box-shadow: inset 0px 0px 63px -20px rgba(81, 166, 20, 1);
+  -moz-box-shadow: inset 0px 0px 63px -20px rgba(81, 166, 20, 1);
+  box-shadow: inset 0px 0px 63px -20px rgba(81, 166, 20, 1);
+  border-radius: 0.4em;
+  padding: 1em;
 }
 
 .chat__main {
@@ -159,16 +164,15 @@ img {
   flex-direction: column;
   width: 100%;
   height: 100%;
-  background-color: rgb(255, 0, 119);
+  background-color: #def8c6;
 }
 
 .chat__container {
   width: 100%;
   margin: 0 auto;
   height: calc(100% - 175px) !important;
-  background-color: #2B2B2B;
-  background-color: #E5E5FA;
-  /* box-shadow: rgba(46, 5, 100, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(183, 0, 255, 0.13) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px; */
+  background-color: #F4FCED;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
   position: relative;
 
   /* margin-top: 2.8rem; */
@@ -183,6 +187,8 @@ img {
   justify-content: flex-start;
   align-items: center;
   position: relative;
+  background-color: #def8c6;
+
 }
 
 .input__container--textarea {
@@ -195,7 +201,6 @@ img {
 }
 
 .input__container--buttons {
-  background-color: bisque;
   height: 10%;
   display: flex;
   flex-direction: row;
@@ -204,6 +209,27 @@ img {
   width: 100%;
   height: 50px;
   /* padding: 1em 0; */
+}
+
+
+.input__container--buttons button {
+  background-color: #7272cc;
+  padding: 0.005em 1em 0.09em 1em;
+  font-size: 1.2rem;
+  font-weight: 500;
+  border-radius: 0.2rem;
+  color: white;
+  outline: none;
+  border: 1px solid black;
+}
+
+.input__container--buttons button:hover {
+  background-color: #5b5bbd;
+  color: white;
+}
+
+.input__container--buttons button:focus {
+  outline: none;
 }
 
 /*---------- FOOTER ----------*/
