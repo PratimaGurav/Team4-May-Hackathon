@@ -34,7 +34,9 @@
             {{ message.content }}
           </div>
           {% if message.image %}
-          <div class="message__body--image--container"></div>
+          <div class="message__body--image">
+            <img src="{{ message.image }}" alt="">
+          </div>
           {% endif %}
         </div>
       </div>
@@ -44,8 +46,10 @@
       <textarea type="text" id="chat-input" class="input__container--textarea"></textarea>
       <div class="input__container--buttons">
         <button id="chat-send">Send</button>
-        <label for="send-anonymously">Send anonymously</label>
-        <input type="checkbox" id="send-anonymously">
+        <div class="send-anonymously--container">
+          <label for="send-anonymously">Send anonymously</label>
+          <input type="checkbox" id="send-anonymously">
+        </div>
         <input type="file" id="chat-file" accept="image/*">
       </div>
     </div>
