@@ -68,3 +68,9 @@ img {
 .nav-profile {
   padding-left: 220px;
 }
+
+.container-footer {
+  background-color: rgba(120, 15, 137, 0.9);
+  margin: 0;
+  width: 100%;
+}
