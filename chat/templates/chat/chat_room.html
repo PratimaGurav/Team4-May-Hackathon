@@ -14,16 +14,20 @@
     <div class="chat__container">
       {% for message in chat.messages.all %}
       <div class="message">
-        <div class="message-header">
-          <div class="message-header-username">
+        <div class="message__header">
+          <div class="message__header--data">
+            <div class="message__avatar--avatar"></div>
+            <div class="message__header--username"></div>
             {{ message.user.username }}
           </div>
-          <div class="message-header-time">
+          <div class="message__header--time">
             {{ message.created_at }}
           </div>
         </div>
-        <div class="message-body">
+        <div class="message__body">
           {{ message.content }}
+          <div class="message__body--text"></div>
+          <div class="message__body--image"></div>
         </div>
       </div>
       {% endfor %}
