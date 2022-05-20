@@ -7,15 +7,17 @@
     <div class="col-md-8 mt-3 offset-md-2">
       <div class="content-section">
         <div class="col-md-3">
-          <img class="profile-img d-inline-block" src="{{ user.user_profile.avatar.url }}" /> 
-          <!-- show edit and delete icons only to profile owner-->
-          {% if request.user == user.user_profile.user %}
-          <a class="btn mx-2 px-2" href="{% url 'profile-update' %}"><i class="fas fa-edit"></i></a>
-          <a class="btn mx-2 px-2" href="{% url 'profile-delete' %}"> <i class="fas fa-trash"></i></a>
+          <img class="profile-img d-inline-block" src="{{ user.user_profile.avatar.url }}" />
+          {% if user == user.user_profile.user %}
+          <a class="btn d-inline-block" href="{% url 'profile-update' %}"><i class="far fa-edit"></i></a>
+          <a class="btn d-inline-block" href="{% url 'profile-delete' user.user_profile.pk %}"><i class="fas fa-trash"></i></a>
           {% endif %}
+          <h2 class="account-heading mt-2">{{ user.username }} <i class="fas fa-hand-holding-heart"></i> {{user.user_profile.stewardship.count}}</h2>
         </div>
-        <h2 class="account-heading">{{ user.username }} <i class="fas fa-hand-holding-heart"></i> {{user.user_profile.stewardship.count}}</h2>
-        <p class="mt-4 pt-3 mb-4">{{user.user_profile.bio}}</p>
+          <div class="mt-2 mb-4">
+            <p class="py-4">{{user.user_profile.bio}}</p>
+          </div>
+        </form>
       </div>
     </div>
   </div>
