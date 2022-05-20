@@ -148,15 +148,20 @@ img {
 
 .chats__navbar--item {
   width: 100%;
-  /* background-color: orange; */
   padding: 3em 0;
   text-decoration: none;
-  color: purple;
   -webkit-box-shadow: inset 0px 0px 63px -20px rgba(81, 166, 20, 1);
   -moz-box-shadow: inset 0px 0px 63px -20px rgba(81, 166, 20, 1);
   box-shadow: inset 0px 0px 63px -20px rgba(81, 166, 20, 1);
   border-radius: 0.4em;
   padding: 1em;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #5b5bbd;
 }
 
 .chat__main {
