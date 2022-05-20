@@ -8,10 +8,10 @@
     <a href="{% url 'chat_room' slug=chat_tab.slug %}" class="chats__navbar--item">{{ chat_tab }}</a>
     {% endfor %}
   </div>
-  <div>
+  <div class="chat__main">
     <input type="hidden" value="{{ chat.id }}" id="chat-id">
     <input type="hidden" value="{{ request.user.username }}" id="username">
-    <div class="chat-container">
+    <div class="chat__container">
       {% for message in chat.messages.all %}
       <div class="message">
         <div class="message-header">
