@@ -65,7 +65,9 @@ class ChatConsumer(AsyncWebsocketConsumer):
                 'message': message.content,
                 'username': message.user.username if message.user else None,
                 'chat_id': message.chat.id,
-                'image': message.image if message.image else None
+                'image': message.image if message.image else None,
+                # time format May 20, 2022, 7:55 a.m.
+                'time': message.created_at.strftime("%b %d, %Y, %I:%M %p")
             }
         )
 
@@ -74,13 +76,15 @@ class ChatConsumer(AsyncWebsocketConsumer):
         username = event['username']
         chat_id = event['chat_id']
         image = event['image']
+        time = event['time']
 
         # Send message to WebSocket
         await self.send(text_data=json.dumps({
             'message': message,
             'username': username,
             'chat_id': chat_id,
-            'image': image
+            'image': image,
+            'time': time
         }))
 
     @database_sync_to_async      # Save message to db by converting to async
