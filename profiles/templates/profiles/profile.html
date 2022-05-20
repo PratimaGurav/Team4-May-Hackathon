@@ -7,11 +7,8 @@
     <div class="col-md-8 mt-3 offset-md-2">
       <div class="content-section">
         <div class="col-md-3">
-          <img id="profile-img img-circle" src="{{ user.profile.avatar.url }}" />
-        </div>
-        {{user.profile.avatar.url}}
-        <div class="media-body">
-          <h2 class="account-heading">{{ user.username }}</h2>
+          <img class="profile-img" src="{{ user.user_profile.avatar.url }}" />
+          <h2 class="account-heading">{{ user.username }} <i class="fas fa-hand-holding-heart"></i> {{user.user_profile.stewardship.count}}</h2>
         </div>
         <form method="POST" enctype="multipart/form-data">
           {% csrf_token %}
