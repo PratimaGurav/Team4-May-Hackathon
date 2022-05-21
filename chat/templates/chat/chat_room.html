@@ -19,13 +19,16 @@
             <div class="message__avatar--avatar">
               <img src="{{ message.user.profile.avatar }}" alt="Avatar of {{ message.user.username }}">
             </div>
-            <div class="message__header--username">
-              {% if message.user %}
+
+            {% if message.user %}
+            <a class="message__header--username message__header--link">
               {{ message.user.username }}
-              {% else %}
+            </a>
+            {% else %}
+            <div class="message__header--username">
               Anonymous
-              {% endif %}
             </div>
+            {% endif %}
           </div>
           <div class="message__header--time">
             {{ message.created_at }}
