@@ -10,8 +10,8 @@
                 {% csrf_token %}
                 <h5 class="m-4 p-4 mb-4">Are you sure you want to delete your profile?</h5> 
           <div class="form-group m-4 p-4">
-            <a class="btn btn-secondary mt-3 mb-4" href="{% url 'profile' username=request.user %}">Cancel</a>
-            <button class="btn btn-danger m-3 mb-4" type="submit">Delete Profile</button>
+            <a class="btn btn-secondary mt-3 mb-4 d-inline-block" href="{% url 'profile' username=request.user %}">Cancel</a>
+            <button class="btn btn-danger m-3 mb-4 d-inline-block" type="submit">Delete Profile</button>
           </div>
         </form>
       </div>
