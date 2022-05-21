@@ -12,6 +12,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const reactionsTogglers = $('.reactions__toggle');
   const reactionsChoicesContainers = $('.reactions__choices');
+  const emojiLinks = [
+    'https://res.cloudinary.com/lexach91/image/upload/v1653110066/emojis/giphy-thumbs-up_rtp2ny.gif',
+    'https://res.cloudinary.com/lexach91/image/upload/v1653110066/emojis/party-scream_xkjxg7.gif',
+    'https://res.cloudinary.com/lexach91/image/upload/v1653110066/emojis/party-cry_sgfigm.gif',
+    'https://res.cloudinary.com/lexach91/image/upload/v1653110066/emojis/giphy-joy_oxskf3.gif'
+  ]
 
   $('.reactions__toggle').click(function (e) {
     // find sibling with class reactions__choices and toggle class hidden
@@ -39,6 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       let message = document.createElement('div');
       message.classList.add('message');
+      message.setAttribute('data-message-id', data.message_id);
       let messageHeader = document.createElement('div');
       messageHeader.classList.add('message__header');
       let messageHeaderData = document.createElement('div');
@@ -72,40 +79,46 @@ document.addEventListener('DOMContentLoaded', function () {
       if (data.image) {
         messageBody.appendChild(messageBodyImage);
       }
+      let messageReactions = document.createElement('div');
+      messageReactions.classList.add('message__reactions');
+      let messageReactionsContainer = document.createElement('div');
+      messageReactionsContainer.classList.add('message__reactions--container');
+      // add data-message-id to messageReactionsContainer
+      messageReactionsContainer.setAttribute('data-message-id', data.id);
+      let messageReactionsChoices = document.createElement('div');
+      messageReactionsChoices.classList.add('message__reactions--choices');
+      let reactionsToggle = document.createElement('span');
+      reactionsToggle.classList.add('reactions__toggle');
+      reactionsToggle.innerHTML = 'React';
+      reactionsToggle.addEventListener('click', function (e) {
+        $(this).siblings('.reactions__choices').toggleClass('hidden');
+      });
+      let reactionsChoices = document.createElement('div');
+      reactionsChoices.classList.add('reactions__choices');
+      reactionsChoices.classList.add('hidden');
+      for(let emoji_url of emojiLinks) {
+        let reaction = document.createElement('div');
+        let reactionImg = document.createElement('img');
+        reactionImg.setAttribute('src', emoji_url);
+        reactionImg.setAttribute('data-message-id', data.message_id);
+        reactionImg.classList.add('reaction_emoji--img');
+        reaction.appendChild(reactionImg);
+        reactionsChoices.appendChild(reaction);
+        // add event listener to reaction
+        reactionImg.addEventListener('click', reactionHandler);
+      }
+      messageReactions.appendChild(messageReactionsContainer);
+      messageReactions.appendChild(messageReactionsChoices);
+      messageReactionsChoices.appendChild(reactionsToggle);
+      messageReactionsChoices.appendChild(reactionsChoices);
+      message.appendChild(messageReactions);
       chatContainer.appendChild(message);
       chatContainer.scrollTop = chatContainer.scrollHeight + 100;
     } else if (data.type === 'message_reaction') {
       console.log(data);
       let reactions = data.reactions;
       console.log(reactions);
-      let message_id = data.message_id;
-      // now we need to recreate this django template loop in javascript:
-      // <div class="message__reactions--container" data-message-id="{{ message.id }}">
-      //     {% for reaction in message.get_reactions_with_users.items %}
-      //     {% if request.user.username in reaction.1 %}
-      //     <div class="reaction-item reacted" title="Users reacted like this: {{ reaction.1|join:', ' }}"> 
-      //       <img src="{{ reaction.0 }}" class="reaction_emoji--img" data-message-id="{{ message.id }}">
-      //       <span class="reactions__count">{{ reaction.1|length }}</span>
-      //     </div>
-      //     {% else %}
-      //     <div class="reaction-item" title="Users reacted like this: {{ reaction.1|join:', ' }}"></div>
-      //       <img src="{{ reaction.0 }}" class="reaction_emoji--img" data-message-id="{{ message.id }}">
-      //       <span class="reactions__count">{{ reaction.1|length }}</span>
-      //     </div>
-      //     {% endif %}
-      //   {% endfor %}
-      // </div>
-      // reaction that we get look this:
-      // {
-      //     "https://res.cloudinary.com/lexach91/image/upload/v1653110066/emojis/giphy-thumbs-up_rtp2ny.gif": [
-      //       "admin",
-      //       "user1",
-      //   ],
-      //   "https://res.cloudinary.com/lexach91/image/upload/v1653110066/emojis/party-scream_xkjxg7.gif": [
-      //       "admin"
-      //   ]
-      // }
-      // clear html of .message__reactions--container[data-message-id=message_id]
+      let message_id = data.message_id;      
       let container = $(`.message__reactions--container[data-message-id=${message_id}]`);
       container.html('');
       if (reactions){
