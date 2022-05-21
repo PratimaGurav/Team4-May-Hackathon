@@ -4,9 +4,9 @@
 
   <h2>Chat list</h2>
 
-  <ul>
+  <ul class="chats">
     {% for chat in chats %}
-    <li>
+    <li class="chats__single">
       <a href="{% url 'chat_room' slug=chat.slug %}">
         {{ chat.chat_name }}
       </a>

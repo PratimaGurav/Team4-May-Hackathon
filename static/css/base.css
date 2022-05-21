@@ -65,8 +65,13 @@ img {
   object-fit: contain;
 }
 
-body {
+.body {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  background-color: orange;
 }
 
 
@@ -83,6 +88,11 @@ body {
   border-radius: 50%;
 }
 
+.header {
+  width: 100%;
+  background: var(--base-color) !important;
+}
+
 .navbar {
   font-size: 14px;
   font-family: var(--header-text);
@@ -91,6 +101,8 @@ body {
   background: var(--base-color) !important;
   padding: 20px 20px;
   z-index: 999;
+  max-width: 100vw;
+  width: 100vh;
 }
 
 .navbar-brand {
@@ -139,6 +151,19 @@ body {
 }
 
 /* Main container */
+.main {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* height: calc(100vh - 100px); */
+  flex: 1 0 auto;
+
+}
+
 .content__container {
   width: 100%;
   /* height: 100%; */
@@ -147,27 +172,50 @@ body {
   justify-content: center;
   align-items: center;
   background-color: var(--grad-2);
+  /* min-height: calc(100vh - 120px); */
   flex: 1 0 auto;
+
 }
 
-/* Chat Room page */
+/* Chat Rooms page */
+
 .chat__room,
 .chat__list {
   display: flex;
   width: 100%;
-  /* padding-top: 38px; */
-  margin-top: 74px;
+  /* margin-top: 74px; */
   /* height: calc(100vh - 74px) !important; */
-  height: calc(100vh - 98.5px) !important;
+
   background-color: #acd68a;
-  /* background-color: #a1ffa6; */
 }
 
+.chat__list {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.chats {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-auto-flow: dense;
+  gap: 1rem;
+
+}
+
+.chats__single {
+  background-color: orange;
+}
+
+/* ----- Styling chat page ----- */
+.chat__room {
+  height: calc(100vh - 98.5px) !important;
+}
 
 .chats__navbar {
-  /* background-color: var(--black-color); */
   background-color: #acd68a;
-  /* height: 100%; */
   width: 15rem;
   display: flex;
   flex-direction: column;
@@ -392,6 +440,7 @@ footer {
   width: 100%;
   color: var(--black-color);
   background: var(--base-color) !important;
+  /* height: 120px; */
 }
 
 #footer-external-links>a {
