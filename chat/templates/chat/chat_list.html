@@ -1,28 +1,31 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-  <div class="chat__list">
-
-    <h2 class="chat__list--title">Chat list</h2>
-
-    <ul class="chats">
-      {% for chat in chats %}
-      <li class="chats__single">
-        <div class="chats__single--name">
-          {{ chat.chat_name }}
-        </div>
-        <div class="chats__single--image">
-          {% comment %} <img src="{{ chat.chat_logo }}" alt="Avatar for {{ chat.chat_name }} chat room">  {% endcomment %}
-          <img src="{% static 'images/follow_your_path.jpg' %}" alt="">
-        </div>
-        <div class="chats__single--description">
-          {{ chat.chat_description }}
-        </div>
-        <a href="{% url 'chat_room' slug=chat.slug %}" class="chats__single--link">
-          Enter Chat Room
-        </a>
-      </li>
-      {% endfor %}
-    </ul>
-  </div>
+  {% comment %} Access for authorized user {% endcomment %}
+  {% if user.is_authenticated %}
+    {% comment %} Chat list main content {% endcomment %}
+    <div class="chat__list">
+      <h2 class="chat__list--title">Chat list</h2>
+      <ul class="chats">
+        {% comment %} All chats {% endcomment %}
+        {% for chat in chats %}
+        <li class="chats__single">
+          <div class="chats__single--name">
+            {{ chat.chat_name }}
+          </div>
+          <div class="chats__single--image">
+            {% comment %} <img src="{{ chat.chat_logo }}" alt="Avatar for {{ chat.chat_name }} chat room">  {% endcomment %}
+            <img src="{% static 'images/follow_your_path.jpg' %}" alt="">
+          </div>
+          <div class="chats__single--description">
+            {{ chat.chat_description }}
+          </div>
+          <a href="{% url 'chat_room' slug=chat.slug %}" class="chats__single--link">
+            Enter Chat Room
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
 {% endblock %}

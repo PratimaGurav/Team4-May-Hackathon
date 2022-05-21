@@ -2,65 +2,68 @@
 {% load static %}
 
 {% block content %}
-<div class="chat__room">
-  <div class="chats__navbar">
-    {% for chat_tab in chats %}
-    <a href="{% url 'chat_room' slug=chat_tab.slug %}" class="chats__navbar--item">{{ chat_tab }}</a>
-    {% endfor %}
-  </div>
-  <div class="chat__main">
-    <input type="hidden" value="{{ chat.id }}" id="chat-id">
-    <input type="hidden" value="{{ request.user.username }}" id="username">
-    <div class="chat__container">
-      {% for message in chat.messages.all %}
-      <div class="message">
-        <div class="message__header">
-          <div class="message__header--data">
-            <div class="message__avatar--avatar">
-              <img src="{{ message.user.user_profile.avatar }}" alt="Avatar of {{ message.user.username }}">
+  {% comment %} Access for authorized user {% endcomment %}
+  {% if user.is_authenticated %}
+    {% comment %} Chat room main content {% endcomment %}
+    <div class="chat__room">
+      <div class="chats__navbar">
+        {% for chat_tab in chats %}
+          <a href="{% url 'chat_room' slug=chat_tab.slug %}" class="chats__navbar--item">{{ chat_tab }}</a>
+        {% endfor %}
+      </div>
+      <div class="chat__main">
+        <input type="hidden" value="{{ chat.id }}" id="chat-id">
+        <input type="hidden" value="{{ request.user.username }}" id="username">
+        <div class="chat__container">
+        {% comment %} Show all messages {% endcomment %}
+          {% for message in chat.messages.all %}
+            <div class="message">
+              <div class="message__header">
+                <div class="message__header--data">
+                  <div class="message__avatar--avatar">
+                    <img src="{{ message.user.user_profile.avatar }}" alt="Avatar of {{ message.user.username }}">
+                  </div>
+                  {% if message.user %}
+                    <a class="message__header--username message__header--link" href="{% url 'profile' username=message.user.username %}">
+                      {{ message.user.username }}
+                    </a>
+                  {% else %}
+                    <div class="message__header--username">
+                      Anonymous
+                    </div>
+                  {% endif %}
+                </div>
+                <div class="message__header--time">
+                  {{ message.created_at }}
+                </div>
+              </div>
+              <div class="message__body">
+                <div class="message__body--text">
+                  {{ message.content }}
+                </div>
+                {% if message.image %}
+                  <div class="message__body--image">
+                    <img src="{{ message.image }}" alt="Chat image sent by {{ message.user.username }}">
+                  </div>
+                {% endif %}
+              </div>
             </div>
-
-            {% if message.user %}
-            <a class="message__header--username message__header--link">
-              {{ message.user.username }}
-            </a>
-            {% else %}
-            <div class="message__header--username">
-              Anonymous
-            </div>
-            {% endif %}
-          </div>
-          <div class="message__header--time">
-            {{ message.created_at }}
-          </div>
+          {% endfor %}
         </div>
-        <div class="message__body">
-          <div class="message__body--text">
-            {{ message.content }}
+        {% comment %} Input box {% endcomment %}
+        <div class="input__container">
+          <textarea type="text" id="chat-input" class="input__container--textarea"></textarea>
+          <div class="input__container--buttons">
+            <button id="chat-send">Send</button>
+            <div class="send-anonymously--container">
+              <label for="send-anonymously">Send anonymously</label>
+              <input type="checkbox" id="send-anonymously">
+            </div>
+            <input type="file" id="chat-file" accept="image/*">
           </div>
-          {% if message.image %}
-          <div class="message__body--image">
-            <img src="{{ message.image }}" alt="Chat image sent by {{ message.user.username }}">
-          </div>
-          {% endif %}
         </div>
       </div>
-      {% endfor %}
     </div>
-    <div class="input__container">
-      <textarea type="text" id="chat-input" class="input__container--textarea"></textarea>
-      <div class="input__container--buttons">
-        <button id="chat-send">Send</button>
-        <div class="send-anonymously--container">
-          <label for="send-anonymously">Send anonymously</label>
-          <input type="checkbox" id="send-anonymously">
-        </div>
-        <input type="file" id="chat-file" accept="image/*">
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<script src="{% static 'js/chat_room.js' %}"></script>
+    <script src="{% static 'js/chat_room.js' %}"></script>
+  {% endif %}
 {% endblock %}
