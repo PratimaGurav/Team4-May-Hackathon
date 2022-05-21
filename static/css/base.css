@@ -115,14 +115,17 @@ img {
   padding-left: 20px;
 }
 
-.nav-profile {
+/* .nav-profile {
   padding-left: 220px;
-}
+} */
 
 .thin {
   font-weight: 300;
 }
 
+.logo {
+  height: 50px;
+}
 /*---------- PAGE LAYOUT UTILITIES ----------*/
 
 .index-container {
