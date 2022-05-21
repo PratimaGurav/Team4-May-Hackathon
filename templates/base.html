@@ -45,14 +45,18 @@
   {% block extra_js %}
   {% endblock%}
 
-  <title>Connectify {% block extra_title %}{% endblock %}</title>
+  <title>Connectedsy {% block extra_title %}{% endblock %}</title>
 </head>
 
+<<<<<<< HEAD
 <body>
   <header class="header">
+=======
+<body class="d-flex flex-column h-100">
+>>>>>>> bc55e7bbd74de28e0ffa7b0eb197126fcce7b129
     {% comment %} Navbar {% endcomment %}
-    <div class="container d-flex">
-          <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
+      <nav class="navbar navbar-expand-sm bg-dark">
+        <div class="container-fluid">
             <a class="navbar-brand" href="{% url 'home' %}">CONNECTEDSY</a>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav">
@@ -63,7 +67,7 @@
                   <a class="nav-link" href="{% url 'chat_list' %}">Chat Rooms</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Contact us</a>
+                  <a class="nav-link" href="">Contact us</a>
                 </li>
               </ul>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -92,7 +96,6 @@
             </div>
         </nav>
     </div>
-  </header>
   {% comment %} Main content container {% endcomment %}
   <main class="main">
     <div class="content__container">
