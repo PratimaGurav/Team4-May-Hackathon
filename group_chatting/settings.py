@@ -127,13 +127,6 @@ else:
             "NAME": BASE_DIR / "db.sqlite3",
         }
     }
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     },
-#     # 'default': dj_database_url.parse(os.environ.get("DATABASE_URL")),
-# }
 
 cloudinary.config(
     cloud_name = os.environ.get("CLOUDINARY_CLOUD_NAME"),
