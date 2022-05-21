@@ -200,6 +200,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
+
   const reactionHandler = (e) => {
     console.log('Reaction clicked');
     let messageId = $(e.target).data('message-id');
@@ -214,6 +215,9 @@ document.addEventListener('DOMContentLoaded', function () {
   };
   $('.reaction_emoji--img').click(reactionHandler);
 
-  // document.getElementById('footer').style.display = 'none';
+  
+
+  document.getElementsByTagName('footer')[0].style.display = 'none';
+
 
 });

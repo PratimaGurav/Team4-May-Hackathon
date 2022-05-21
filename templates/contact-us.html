@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- Page Title-->
+<div class="container">
+    <h2 class="text-center mt-3">Contact Us</h2>
+    <h3 class="text-center mt-3"><em>We would love to hear from you!</em></h3>
+</div>
+
+<!--Main content-->
+
+<div class="container contact-form">
+
+    <form method="post" action="https://formdump.codeinstitute.net/" target="_blank">
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input type="text" name="txtName" class="form-control" placeholder="Your Name *"
+                        value="" required />
+                </div>
+                <div class="form-group">
+                    <input type="text" name="txtEmail" class="form-control" placeholder="Your Email *"
+                        value="" required />
+                </div>
+                <div class="form-group">
+                    <input type="text" name="txtPhone" class="form-control"
+                        placeholder="Your Phone Number *" value="" required />
+                </div>
+                <div class="form-group">
+                    <input type="text" name="txtSubject" class="form-control" placeholder="Subject"
+                        value="" />
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <textarea name="txtMsg" class="form-control" placeholder="Your Message *"
+                        style="width: 100%; height: 150px;"></textarea>
+                </div>
+                <div class="form-group text-center">
+                    <input type="submit" name="btnSubmit" class="btnContact" value="Send Message"/>
+                </div>
+            </div>
+
+        </div>
+    </form>
+</div>
+
+<div class="container contact text-center">
+    <h2 class="font-weight-bold">Meet The Squad</h2>
+    <div class="row">
+        <div class="col-lg">
+            <div class="profile-card">
+                <img src="https://ca.slack-edge.com/T0L30B202-U029X3N2WN9-g65cf4c33d3e-512"
+                    class="profile-card-img-top" alt="...">
+                <div class="profile-card-body">
+                    <h5 class="profile-card-title">Aleksei</h5>
+                    <a href="http://github.com/lexach91/" aria-label="Visit the github page" class="fa fa-github" target="_blank"></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg">
+            <div class="profile-card">
+                <img src="https://ca.slack-edge.com/T0L30B202-U02S0ASP0NS-gb3125d2598a-512"
+                    class="profile-card-img-top" alt="...">
+                <div class="profile-card-body">
+                    <h5 class="profile-card-title">Amare</h5>
+                    <a href="https://github.com/Amareteklay/" aria-label="Visit the github page" class="fa fa-github" target="_blank"></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg">
+            <div class="profile-card">
+                <img src="https://ca.slack-edge.com/T0L30B202-U03DXG76QUC-66b6bab4b0d8-512"
+                    class="profile-card-img-top" alt="...">
+                <div class="profile-card-body">
+                    <h5 class="profile-card-title">David</h5>
+                    <a href="https://github.com/pizzaHunt3r" aria-label="Visit the github page" class="fa fa-github" target="_blank"></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg">
+            <div class="profile-card">
+                <img src="https://ca.slack-edge.com/T0L30B202-U02AQH7KYN4-a1bac0237083-512"
+                    class="profile-card-img-top" alt="...">
+                <div class="profile-card-body">
+                    <h5 class="profile-card-title">Juliia</h5>
+                    <a href="https://github.com/IuliiaKonovalova" aria-label="Visit the github page" class="fa fa-github" target="_blank"></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg">
+            <div class="profile-card">
+                <img src="https://ca.slack-edge.com/T0L30B202-U01T2KZ3GHL-34e45f047d1b-512"
+                    class="profile-card-img-top" alt="...">
+                <div class="profile-card-body">
+                    <h5 class="profile-card-title">Pratima</h5>
+                    <a href="https://github.com/PratimaGurav" aria-label="Visit the github page" class="fa fa-github" target="_blank"></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg">
+            <div class="profile-card">
+                <img src="https://ca.slack-edge.com/T0L30B202-U02HCLREB40-1d46ecacc07b-512"
+                    class="profile-card-img-top" alt="...">
+                <div class="profile-card-body">
+                    <h5 class="profile-card-title">Stephen</h5>
+                    <a href="https://github.com/StephenB92" aria-label="Visit the github page" class="fa fa-github" target="_blank"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{%endblock%}
