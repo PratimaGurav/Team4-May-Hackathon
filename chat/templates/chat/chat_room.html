@@ -22,7 +22,7 @@
                   </div>
 
                   {% if message.user %}
-                    <a class="message__header--username message__header--link" href="{%  %}">
+                    <a class="message__header--username message__header--link" href="{% url 'profiles/profile' username=message.user.username %}">
                       {{ message.user.username }}
                     </a>
                   {% else %}
