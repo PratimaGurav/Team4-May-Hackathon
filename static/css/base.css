@@ -210,17 +210,13 @@ img {
 }
 
 .chats__single {
-  background-color: #acd68a;
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; */
+  background-color: #b8d89d;
+  border-radius: 0.25em;
   display: grid;
   grid-template-rows: 0.5fr 2fr 1fr 0.2fr;
   gap: 1rem;
   width: 100%;
   padding: 1.2em 1em 1.5em 1em;
-  border-radius: 0.4em;
   box-shadow: 0 5px 18px rgba(0, 0, 0, 0.6);
 }
 
