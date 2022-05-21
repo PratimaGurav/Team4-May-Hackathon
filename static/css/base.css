@@ -120,10 +120,6 @@ img {
 
 /*---------- PAGE LAYOUT UTILITIES ----------*/
 
-.header-container {
-  padding-top: 100px;
-}
-
 .index-container {
   margin: 1vh 5vw;
 }
@@ -143,7 +139,7 @@ img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--grad-2);
+  background-color: var(--grad-3)!important;
   flex: 1 0 auto;
   max-height: 100vh;
 }
