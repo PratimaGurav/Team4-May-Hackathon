@@ -117,6 +117,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  document.getElementById('footer').style.display = 'none';
+  document.getElementsByTagName('footer')[0].style.display = 'none';
 
 });
