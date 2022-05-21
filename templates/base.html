@@ -35,6 +35,7 @@
   {% endblock%}
   {% block extra_js %}
   {% endblock%}
+
   <title>Connectedsy {% block extra_title %}{% endblock %}</title>
 </head>
 
@@ -54,38 +55,35 @@
           <li class="nav-item">
             <a class="nav-link" href="">Contact us</a>
           </li>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="nav-profile navbar-nav mr-auto">
-              {% if user.is_authenticated %}
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="{% url 'profile' %}" id="navbarDropdown" role="button"
-                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <img class="profile-img profile-mini d-inline-block" src="{{ user.user_profile.avatar.url }}">
-                  {{user.user_profile.user}}</a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item nav-link btn m-0" href="{% url 'account_logout' %}">Logout</a>
-                  <a class="dropdown-item nav-link btn m-0" href="{% url 'profile' %}">Profile</a>
-                </div>
-              </li>
-              <li class="nav-item">
-                <a class="dropdown-item nav-link btn m-0" href="{% url 'account_logout' %}">Logout</a>
-              </li>
-              {% else %}
-              <li class="nav-item">
-                <a class="nav-link btn btn-sm m-0" href="{% url 'account_login' %}"><i class="fa fa-user"></i>
-                  Login</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link btn m-0" href="{% url 'account_signup' %}">Sign up</a>
-              </li>
-              {% endif %}
-            </ul>
-          </div>
         </ul>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="nav-profile navbar-nav mr-auto">
+            {% if user.is_authenticated %}
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="{% url 'profile' %}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img class="profile-img profile-mini d-inline-block" src="{{ user.user_profile.avatar.url }}">
+                {{user.user_profile.user}}</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item nav-link btn m-0" href="{% url 'profile' %}">Profile</a>
+                <a class="dropdown-item nav-link btn m-0" href="{% url 'account_logout' %}">Logout</a>
+              </div>
+            </li>
+            {% else %}
+            <li class="nav-item">
+              <a class="nav-link btn btn-sm m-0" href="{% url 'account_login' %}"><i class="fa fa-user"></i>
+                Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link btn m-0" href="{% url 'account_signup' %}">Sign up</a>
+            </li>
+            {% endif %}
+          </ul>
+        </div>
       </div>
     </div>
   </nav>
-  </div>
+
+
   {% comment %} Main content container {% endcomment %}
   <main class="main">
     <div class="content__container">
