@@ -8,4 +8,9 @@ from chat.models import Chat
 class HomeView(View):
     def get(self, request, *args, **kwargs):
         chat = Chat.objects.all()
-        return render(request, 'index.html', {})
+        return render(request, 'index.html', {'chat': chat})
+
+class ContactView(View):
+    def get(self, request, *args, **kwargs):
+        chat = Chat.objects.all()
+        return render(request, 'contact-us.html', {})
