@@ -54,7 +54,10 @@
           <li class="nav-item active">
             <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only"></span></a>
           </li>
-           <li class="nav-item">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'chat_list' %}">Chat Rooms</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="{% url 'contact' %}">Contact us</a>
           </li>
         </ul>
@@ -65,11 +68,11 @@
               <a class="nav-link" href="{% url 'chat_list' %}">Chat Rooms</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="{% url 'profile' %}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="{% url 'profile' username=request.user %}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <img class="profile-img profile-mini d-inline-block" src="{{ user.user_profile.avatar.url }}">
                 {{user.user_profile.user}}</a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item nav-link btn m-0" href="{% url 'profile' %}">Profile</a>
+                <a class="dropdown-item nav-link btn m-0" href="{% url 'profile' username=request.user %}">Profile</a>
                 <a class="dropdown-item nav-link btn m-0" href="{% url 'account_logout' %}">Logout</a>
               </div>
             </li>
