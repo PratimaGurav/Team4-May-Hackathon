@@ -35,43 +35,103 @@ document.addEventListener('DOMContentLoaded', function () {
 
   chatSocket.onmessage = function (e) {
     let data = JSON.parse(e.data);
-    let message = document.createElement('div');
-    message.classList.add('message');
-    let messageHeader = document.createElement('div');
-    messageHeader.classList.add('message__header');
-    let messageHeaderData = document.createElement('div');
-    messageHeaderData.classList.add('message__header--data');
-    let messageHeaderAvatar = document.createElement('div');
-    messageHeaderAvatar.classList.add('message__avatar--avatar');
-    let messageHeaderUsername = document.createElement('div');
-    messageHeaderUsername.classList.add('message__header--username');
-    let messageHeaderTime = document.createElement('div');
-    messageHeaderTime.classList.add('message__header--time');
-    let messageBody = document.createElement('div');
-    messageBody.classList.add('message__body');
-    let messageBodyText = document.createElement('div');
-    messageBodyText.classList.add('message__body--text');
-    let messageBodyImage = document.createElement('div');
-    messageBodyImage.classList.add('message__body--image');
-    messageHeaderUsername.innerHTML = data.username || 'Anonymous';
-    messageHeaderTime.innerHTML = data.time;
-    messageBodyText.innerHTML = data.message;
-    if (data.image) {
-      messageBodyImage.innerHTML = `<img src="${data.image}" />`;
+    if(data.type === 'chat_message') {
+
+      let message = document.createElement('div');
+      message.classList.add('message');
+      let messageHeader = document.createElement('div');
+      messageHeader.classList.add('message__header');
+      let messageHeaderData = document.createElement('div');
+      messageHeaderData.classList.add('message__header--data');
+      let messageHeaderAvatar = document.createElement('div');
+      messageHeaderAvatar.classList.add('message__avatar--avatar');
+      let messageHeaderUsername = document.createElement('div');
+      messageHeaderUsername.classList.add('message__header--username');
+      let messageHeaderTime = document.createElement('div');
+      messageHeaderTime.classList.add('message__header--time');
+      let messageBody = document.createElement('div');
+      messageBody.classList.add('message__body');
+      let messageBodyText = document.createElement('div');
+      messageBodyText.classList.add('message__body--text');
+      let messageBodyImage = document.createElement('div');
+      messageBodyImage.classList.add('message__body--image');
+      messageHeaderUsername.innerHTML = data.username || 'Anonymous';
+      messageHeaderTime.innerHTML = data.time;
+      messageBodyText.innerHTML = data.message;
+      if (data.image) {
+        messageBodyImage.innerHTML = `<img src="${data.image}" />`;
+      }
+      // messageHeaderAvatar.innerHTML = `<img src="${data.avatar}" />`;
+      messageHeader.appendChild(messageHeaderData);
+      messageHeaderData.appendChild(messageHeaderAvatar);
+      messageHeaderData.appendChild(messageHeaderUsername);
+      messageHeaderData.appendChild(messageHeaderTime);
+      message.appendChild(messageHeader);
+      message.appendChild(messageBody);
+      messageBody.appendChild(messageBodyText);
+      if (data.image) {
+        messageBody.appendChild(messageBodyImage);
+      }
+      chatContainer.appendChild(message);
+      chatContainer.scrollTop = chatContainer.scrollHeight + 100;
+    } else if (data.type === 'message_reaction') {
+      console.log(data);
+      let reactions = data.reactions;
+      console.log(reactions);
+      let message_id = data.message_id;
+      // now we need to recreate this django template loop in javascript:
+      // <div class="message__reactions--container" data-message-id="{{ message.id }}">
+      //     {% for reaction in message.get_reactions_with_users.items %}
+      //     {% if request.user.username in reaction.1 %}
+      //     <div class="reaction-item reacted" title="Users reacted like this: {{ reaction.1|join:', ' }}"> 
+      //       <img src="{{ reaction.0 }}" class="reaction_emoji--img" data-message-id="{{ message.id }}">
+      //       <span class="reactions__count">{{ reaction.1|length }}</span>
+      //     </div>
+      //     {% else %}
+      //     <div class="reaction-item" title="Users reacted like this: {{ reaction.1|join:', ' }}"></div>
+      //       <img src="{{ reaction.0 }}" class="reaction_emoji--img" data-message-id="{{ message.id }}">
+      //       <span class="reactions__count">{{ reaction.1|length }}</span>
+      //     </div>
+      //     {% endif %}
+      //   {% endfor %}
+      // </div>
+      // reaction that we get look this:
+      // {
+      //     "https://res.cloudinary.com/lexach91/image/upload/v1653110066/emojis/giphy-thumbs-up_rtp2ny.gif": [
+      //       "admin",
+      //       "user1",
+      //   ],
+      //   "https://res.cloudinary.com/lexach91/image/upload/v1653110066/emojis/party-scream_xkjxg7.gif": [
+      //       "admin"
+      //   ]
+      // }
+      // clear html of .message__reactions--container[data-message-id=message_id]
+      let container = $(`.message__reactions--container[data-message-id=${message_id}]`);
+      container.html('');
+      if (reactions){
+        for (let reaction in reactions) {
+          let reaction_emoji = document.createElement('img');
+          reaction_emoji.classList.add('reaction_emoji--img');
+          reaction_emoji.src = reaction;
+          reaction_emoji.setAttribute('data-message-id', message_id);
+          let reaction_count = document.createElement('span');
+          reaction_count.classList.add('reactions__count');
+          reaction_count.innerHTML = reactions[reaction].length;
+          let reaction_item = document.createElement('div');
+          reaction_item.classList.add('reaction-item');
+          // add title attribute to reaction_item
+          reaction_item.setAttribute('title', `Users reacted like this: ${reactions[reaction].join(', ')}`);
+          if (reactions[reaction].includes(username)) {
+            reaction_item.classList.add('reacted');
+          }
+          reaction_item.appendChild(reaction_emoji);
+          reaction_item.appendChild(reaction_count);
+          container.append(reaction_item);
+          // restore event listeners
+          reaction_emoji.addEventListener('click', reactionHandler);
+        }
+      }
     }
-    // messageHeaderAvatar.innerHTML = `<img src="${data.avatar}" />`;
-    messageHeader.appendChild(messageHeaderData);
-    messageHeaderData.appendChild(messageHeaderAvatar);
-    messageHeaderData.appendChild(messageHeaderUsername);
-    messageHeaderData.appendChild(messageHeaderTime);
-    message.appendChild(messageHeader);
-    message.appendChild(messageBody);
-    messageBody.appendChild(messageBodyText);
-    if (data.image) {
-      messageBody.appendChild(messageBodyImage);
-    }
-    chatContainer.appendChild(message);
-    chatContainer.scrollTop = chatContainer.scrollHeight + 100;
   };
 
   // document.addEventListener('keydown', function (e) {
@@ -127,9 +187,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  $('.reactions__emoji--choice').click(function (e) {
-    let messageId = $(this).data('message-id');
-    let emojiUrl = $(this).find('img').attr('src');
+  const reactionHandler = (e) => {
+    console.log('Reaction clicked');
+    let messageId = $(e.target).data('message-id');
+    let emojiUrl = $(e.target).attr('src');
     let data = {
       'type': 'message_reaction',
       'message_id': messageId,
@@ -137,7 +198,8 @@ document.addEventListener('DOMContentLoaded', function () {
       'emoji_url': emojiUrl
     };
     chatSocket.send(JSON.stringify(data));
-  });
+  };
+  $('.reaction_emoji--img').click(reactionHandler);
 
   // document.getElementById('footer').style.display = 'none';
 
