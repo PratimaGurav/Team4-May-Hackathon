@@ -8,7 +8,7 @@
       <div class="content-section">
         <div class="col-md-3">
           <img class="profile-img" src="{{ user.user_profile.avatar.url }}" />
-          <h2 class="account-heading">{{ user.username }} <i class="fas fa-hand-holding-heart"></i> {{user.user_profile.stewardship.count}}</h2>
+          <h2 class="account-heading">{{ user.username | title }} <i class="fas fa-hand-holding-heart"></i> {{user.user_profile.stewardship.count}}</h2>
         </div>
         <form method="POST" enctype="multipart/form-data">
           {% csrf_token %}
