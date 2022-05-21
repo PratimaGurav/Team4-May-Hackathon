@@ -433,8 +433,13 @@ footer {
 .reaction_emoji--img {
   width: 1.5em;
   height: 1.5em;
+  cursor: pointer;
 }
 
 .reactions__toggle {
   cursor: pointer;
+}
+
+.reacted {
+  border: 1px solid black;
 }
