@@ -115,9 +115,9 @@ img {
   padding-left: 20px;
 }
 
-/* .nav-profile {
-  padding-left: 220px;
-} */
+.nav-profile {
+  padding-left: 420px;
+}
 
 .thin {
   font-weight: 300;
@@ -133,7 +133,7 @@ img {
 }
 
 .index-card {
-  background: var(--grad-2) !important;
+  background: var(--base-color) !important;
   border-radius: 16px;
   box-shadow: 0 5px 18px rgba(0, 0, 0, 0.6);
   margin-bottom: 20px;
