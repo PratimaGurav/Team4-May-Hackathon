@@ -1,7 +1,15 @@
 from django.shortcuts import render
 from django.views import View
-from .models import Chat, ChatMessage
+from django.http import JsonResponse
+from .models import Chat, ChatMessage, Reaction
 
+
+EMOJI_LIST = [
+        'https://res.cloudinary.com/lexach91/image/upload/v1653110066/emojis/giphy-thumbs-up_rtp2ny.gif',
+        'https://res.cloudinary.com/lexach91/image/upload/v1653110066/emojis/party-scream_xkjxg7.gif',
+        'https://res.cloudinary.com/lexach91/image/upload/v1653110066/emojis/party-cry_sgfigm.gif',
+        'https://res.cloudinary.com/lexach91/image/upload/v1653110066/emojis/giphy-joy_oxskf3.gif'
+]
 
 class ChatRoomView(View):
     def get(self, request, *args, **kwargs):
@@ -14,7 +22,8 @@ class ChatRoomView(View):
             'chat/chat_room.html',
             {
                 'chat': chat,
-                'chats': chats
+                'chats': chats,
+                'emojis': EMOJI_LIST
             }
         )
 

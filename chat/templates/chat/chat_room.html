@@ -48,23 +48,59 @@
                   </div>
                 {% endif %}
               </div>
+              <div class="message__reactions">
+          <div class="message__reactions--container" data-message-id="{{ message.id }}">
+            {% for reaction in message.get_reactions_with_users.items %}
+              {% if request.user.username in reaction.1 %}
+              <div class="reaction-item reacted" title="Users reacted like this: {{ reaction.1|join:', ' }}"> 
+                <img src="{{ reaction.0 }}" class="reaction_emoji--img" data-message-id="{{ message.id }}">
+                <span class="reactions__count">{{ reaction.1|length }}</span>
+              </div>
+              {% else %}
+              <div class="reaction-item" title="Users reacted like this: {{ reaction.1|join:', ' }}"></div>
+                <img src="{{ reaction.0 }}" class="reaction_emoji--img" data-message-id="{{ message.id }}">
+                <span class="reactions__count">{{ reaction.1|length }}</span>
+              </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+          <div class="message__reactions--choices">
+            <span class="reactions__toggle">React</span>
+            <div class="reactions__choices hidden">
+              {% for emoji in emojis %}
+              <div>
+                <img src="{{ emoji }}" alt="" class="reaction_emoji--img" data-message-id="{{ message.id }}">
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
             </div>
           {% endfor %}
         </div>
-        {% comment %} Input box {% endcomment %}
-        <div class="input__container">
-          <textarea type="text" id="chat-input" class="input__container--textarea"></textarea>
-          <div class="input__container--buttons">
-            <button id="chat-send">Send</button>
-            <div class="send-anonymously--container">
-              <label for="send-anonymously">Send anonymously</label>
-              <input type="checkbox" id="send-anonymously">
-            </div>
-            <input type="file" id="chat-file" accept="image/*">
-          </div>
-        </div>
+
+
+        
       </div>
     </div>
+
+   {% comment %} Input box {% endcomment %}
+    <div class="input__container">
+      <textarea type="text" id="chat-input" class="input__container--textarea"></textarea>
+      <div class="input__container--buttons">
+        <button id="chat-send">Send</button>
+        <div class="send-anonymously--container">
+          <label for="send-anonymously">Send anonymously</label>
+          <input type="checkbox" id="send-anonymously">
+        </div>
+        <input type="file" id="chat-file" accept="image/*">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="{% static 'js/chat_room.js' %}"></script>
   {% endif %}
 {% endblock %}
