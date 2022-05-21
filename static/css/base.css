@@ -111,23 +111,21 @@ img {
 }
 
 .navbar-dark .navbar-nav .nav-link {
-  color: var(--black-color);
+  color: var(--black-color) !important;
   padding-left: 20px;
 }
 
-.navbar-dark .navbar-nav .nav-link.active,
-.navbar-dark .navbar-nav .nav-link:hover {
-  color: var(--white-color);
-}
-
-.nav-profile {
+/* .nav-profile {
   padding-left: 220px;
-}
+} */
 
 .thin {
   font-weight: 300;
 }
 
+.logo {
+  height: 50px;
+}
 /*---------- PAGE LAYOUT UTILITIES ----------*/
 
 .index-container {
@@ -138,7 +136,7 @@ img {
   background: var(--grad-2) !important;
   border-radius: 16px;
   box-shadow: 0 5px 18px rgba(0, 0, 0, 0.6);
-  margin-bottom: 80px;
+  margin-bottom: 20px;
 }
 
 /* Main container */
@@ -516,12 +514,12 @@ footer {
 
 #footer-external-links>a {
   text-decoration: none;
-  color: var(--black-color);
+  color: #383d41!important;
   font-size: 1.5rem;
 }
 
-#footer-external-links>a:hover {
-  color: var(--white-color);
+#footer-external-links> a:hover {
+  color: var(--black-color)!important;
 }
 
 /*---------- CONTACT US PAGE ----------*/
@@ -586,6 +584,7 @@ footer {
   text-decoration: none;
   border-radius: 50%;
   color: var(--black-color);
+  display: inline-table !important;
 }
 
 .fa-github:hover {
@@ -689,4 +688,31 @@ footer {
   display: flex;
   overflow-y: scroll;
   flex-wrap: wrap;
+}
+
+.card {
+  background: var(--grad-2);
+  border-radius: 16px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.6);
+  margin-bottom: 20px;
+}
+
+.card-body {
+  height: 20vh;
+}
+
+.card> img {
+  height: 40vh;
+  object-fit: cover;
+}
+
+.card> a {
+  text-decoration: none;
+  color:  var(--white-color);
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
