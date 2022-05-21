@@ -42,15 +42,18 @@
           {% endif %}
         </div>
         <div class="message__reactions">
-          <div class="message__reactions--container">
+          <div class="message__reactions--container" data-message-id="{{ message.id }}">
             {% for reaction in message.get_reactions_with_users.items %}
-              {% if request.user in reaction.1 %}
-              <div class="reaction-item reacted">
-                <img src="{{ reaction.0 }}" class="reaction_emoji--img">
+              {% if request.user.username in reaction.1 %}
+              <div class="reaction-item reacted" title="Users reacted like this: {{ reaction.1|join:', ' }}"> 
+                <img src="{{ reaction.0 }}" class="reaction_emoji--img" data-message-id="{{ message.id }}">
                 <span class="reactions__count">{{ reaction.1|length }}</span>
               </div>
               {% else %}
+              <div class="reaction-item" title="Users reacted like this: {{ reaction.1|join:', ' }}"></div>
                 <img src="{{ reaction.0 }}" class="reaction_emoji--img" data-message-id="{{ message.id }}">
+                <span class="reactions__count">{{ reaction.1|length }}</span>
+              </div>
               {% endif %}
             {% endfor %}
           </div>
