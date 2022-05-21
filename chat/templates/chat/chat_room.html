@@ -17,7 +17,7 @@
         <div class="message__header">
           <div class="message__header--data">
             <div class="message__avatar--avatar">
-              <img src="{{ message.user.profile.avatar }}" alt="">
+              <img src="{{ message.user.profile.avatar }}" alt="Avatar of {{ message.user.username }}">
             </div>
             <div class="message__header--username">
               {% if message.user %}
@@ -37,7 +37,7 @@
           </div>
           {% if message.image %}
           <div class="message__body--image">
-            <img src="{{ message.image }}" alt="">
+            <img src="{{ message.image }}" alt="Chat image sent by {{ message.user.username }}">
           </div>
           {% endif %}
         </div>
