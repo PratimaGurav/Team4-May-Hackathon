@@ -111,13 +111,8 @@ img {
 }
 
 .navbar-dark .navbar-nav .nav-link {
-  color: var(--black-color);
+  color: var(--black-color) !important;
   padding-left: 20px;
-}
-
-.navbar-dark .navbar-nav .nav-link.active,
-.navbar-dark .navbar-nav .nav-link:hover {
-  color: var(--white-color);
 }
 
 .nav-profile {
@@ -516,12 +511,12 @@ footer {
 
 #footer-external-links>a {
   text-decoration: none;
-  color: var(--black-color);
+  color: #383d41!important;
   font-size: 1.5rem;
 }
 
-#footer-external-links>a:hover {
-  color: var(--white-color);
+#footer-external-links> a:hover {
+  color: var(--black-color)!important;
 }
 
 /*---------- CONTACT US PAGE ----------*/
@@ -586,6 +581,7 @@ footer {
   text-decoration: none;
   border-radius: 50%;
   color: var(--black-color);
+  display: inline-table !important;
 }
 
 .fa-github:hover {
