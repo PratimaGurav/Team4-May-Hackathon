@@ -60,15 +60,14 @@ Created for the Code Institute's May 2022 Hackathon, Getting Connected.
 
 #### First Time Visitor Goals
 
-*
+* As a user, I would like a platform where I can meet and chat to people virtually.
+* As a user, I would like to be able to sign into the platform and select specific hobbies and interests so that I can join groups with people who have similar hobbies and interests.
+* As a user, I would find it helpful if the chatroom could provide the group with topic relevant ice breaker questions, to help start a conversation.
 
-#### Returning Visitor Goals
+#### Returning/Frequent Visitor Goals
 
-* 
-
-#### Frequent Visitor Goals
-
-* 
+* As a regular user, I would like to have my hobbies and interests saved to a profile after I sign up, so that when I am returning to the platform I can just sign in and jump straight into my preferred chatroom.
+* As a user, I would like a section of the platform that provides information on mental health issues and online resources I can use if I need them.
 
 - - -
 

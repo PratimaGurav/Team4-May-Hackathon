@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Chat, ChatMessage
+from .models import Chat, ChatMessage, Reaction
 
 
 @admin.register(Chat)
@@ -15,3 +15,11 @@ class ChatMessageAdmin(admin.ModelAdmin):
     list_filter = ('chat', 'user', 'created_at')
     search_fields = ('content',)
     ordering = ['-created_at']
+    
+
+@admin.register(Reaction)
+class ReactionAdmin(admin.ModelAdmin):
+    list_display = ('chat_message', 'user', 'emoji')
+    list_filter = ('chat_message', 'user', 'emoji')
+    search_fields = ('chat_message', 'user', 'emoji')
+    ordering = ['chat_message']
