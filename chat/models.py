@@ -50,7 +50,8 @@ class ChatMessage(models.Model):
     class Meta:
         """ Order messages by creation date. """
         ordering = ['created_at']
-        
+
+    @property
     def get_reactions_with_users(self):
         reactions = self.reactions.all()
         # every reaction has a user and emoji url
@@ -61,9 +62,9 @@ class ChatMessage(models.Model):
         reactions_with_users = {}
         for reaction in reactions:
             if reaction.emoji in reactions_with_users:
-                reactions_with_users[reaction.emoji].append(reaction.user)
+                reactions_with_users[reaction.emoji].append(reaction.user.username)
             else:
-                reactions_with_users[reaction.emoji] = [reaction.user]
+                reactions_with_users[reaction.emoji] = [reaction.user.username]
         return reactions_with_users
         
         
