@@ -113,20 +113,15 @@ img {
 .navbar-dark .navbar-nav .nav-link {
   color: var(--black-color) !important;
   padding-left: 20px;
-}
-
-.navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link:hover {
-  color: var(--white-color) !important;
-  border-radius: 16px;
-  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.6) !important;
+  
 }
 
 .thin {
-  font-weight: 300;
+  font-weight: 500;
 }
 
 .logo {
-  height: 50px;
+  height: 60px;
 }
 /*---------- PAGE LAYOUT UTILITIES ----------*/
 
@@ -695,6 +690,7 @@ footer {
   border-radius: 16px;
   box-shadow: 0 5px 18px rgba(0, 0, 0, 0.6);
   margin-bottom: 20px;
+  width: 50vh;
 }
 
 .card-body {
