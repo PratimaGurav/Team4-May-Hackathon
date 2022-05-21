@@ -237,6 +237,8 @@ We would like to thank the following:
 * Our families, for their endless patience while we disappear for another long weekend of hackathon coding.
 
 
+ ------------------------------------
+
 
 Most common Mental Health issues that people face on a day to day basis in no particular order.
 
@@ -397,7 +399,43 @@ Postnatal depression can be lonely, distressing and frightening, but support and
 
  
 
- 
+ ------------------------------------
+
+
+
+Short description for each chat room.
+
+- 1st Chat room / Social Anxiety:
+
+If you are the type of person that avoids speaking to others and over analyze your social performance, feel free to open up with the people in this chat and it'll surprise you how many individuals go through similar experiences.
+
+- 2nd Chat room / Bipolar:
+
+You feel like nobody can meet you at your highest and lowest points because they don't understand. Sharing each eachother's experiences will give you a different perspective and hopefully a new way to deal with the matter in question. 
+
+- 3rd Chat room / Depression:
+
+We've all heard the clichés of go excercise, read a self-help book, just get out and find to distract yourself.. Sometimes all you need is someone to listen to what you have to say, empathy. Join us, you are not alone.
+
+- 4th Chat room / Gender Dysphoria (gender identity):
+
+Just like that lasting desire to live a life that "matches" your identity, join us for a chance to match & exchange ideas and experiences with like-minded individuals with zero judgement.
+
+- 5th Chat room / Eating Disorders:
+
+It's never easy to embark on a self-improving journey, taking that leap can be scary because it's not what we're used to. Ask questions, talk about it, give your opinion and don't be afraid to ask for advice.
+
+- 6th Chat room / PTSD:
+
+Sometimes talking to the people we know can add an extra layer of pressure on top of what you're already going through. Talk to a stranger, see what they have to say and you may find something useful in other people's stories.
+
+- 7th Chat room / Post-partum Depression:
+
+Feelings of detachment from your partner and your baby can be an incredibly daunting experience which in turn leads to loneliness. Allow yourself to be part of a community again, there's strength in numbers.
+
+
+
+
 
  
 
