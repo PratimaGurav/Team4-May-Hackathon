@@ -133,7 +133,7 @@ img {
   background: var(--grad-2) !important;
   border-radius: 16px;
   box-shadow: 0 5px 18px rgba(0, 0, 0, 0.6);
-  margin-bottom: 80px;
+  margin-bottom: 20px;
 }
 
 /* Main container */
@@ -631,4 +631,31 @@ footer {
 
 .reacted {
   border: 1px solid black;
+}
+
+.card {
+  background: var(--grad-2);
+  border-radius: 16px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.6);
+  margin-bottom: 20px;
+}
+
+.card-body {
+  height:20vh;
+}
+
+.card> img {
+  height: 40vh;
+  object-fit: cover;
+}
+
+.card> a {
+  text-decoration: none;
+  color:  var(--white-color);
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
