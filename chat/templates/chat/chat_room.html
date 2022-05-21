@@ -24,7 +24,8 @@
                     <img src="{{ message.user.user_profile.avatar }}" alt="Avatar of {{ message.user.username }}">
                   </div>
                   {% if message.user %}
-                    <a class="message__header--username message__header--link" href="{% url 'profile' username=message.user.username %}">
+                    <a class="message__header--username message__header--link" >
+                    {% comment %} href="{% url 'profile' username=message.user.pk %}" {% endcomment %}
                       {{ message.user.username }}
                     </a>
                   {% else %}
