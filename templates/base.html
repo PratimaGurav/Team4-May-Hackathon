@@ -41,8 +41,14 @@
 <body class="d-flex flex-column h-100">
 {% comment %} Navbar {% endcomment %}
   <nav class="navbar navbar-expand-sm bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="{% url 'home' %}">CONNECTEDSY</a>
+    <div class="container">
+      <a class="navbar-brand" href="{% url 'home' %}">
+        <!--Site logo-->
+        <img class="rounded float-start logo"
+        src="/media/logo.png"
+        alt="Site Logo">
+    </a>
+      <!-- <a class="navbar-brand" href="{% url 'home' %}">CONNECTEDSY</a> -->
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav">
           <li class="nav-item active">
@@ -58,6 +64,9 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="nav-profile navbar-nav mr-auto">
             {% if user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'chat_list' %}">Chat Rooms</a>
+            </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="{% url 'profile' username=request.user %}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <img class="profile-img profile-mini d-inline-block" src="{{ user.user_profile.avatar.url }}">
