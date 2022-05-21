@@ -1,4 +1,4 @@
-/* jshint esversion: 6 */
+/* jshint esversion: 6, jquery: true */
 document.addEventListener('DOMContentLoaded', function () {
   const roomName = window.location.pathname.split('/')[2];
   const chatContainer = document.getElementsByClassName('chat__container')[0];
@@ -9,6 +9,14 @@ document.addEventListener('DOMContentLoaded', function () {
   const socketProtocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
   const socketUrl = `${socketProtocol}//${window.location.host}/ws/chat/${roomName}/`;
   const chatSocket = new WebSocket(socketUrl);
+
+  const reactionsTogglers = $('.reactions__toggle');
+  const reactionsChoicesContainers = $('.reactions__choices');
+
+  $('.reactions__toggle').click(function (e) {
+    // find sibling with class reactions__choices and toggle class hidden
+    $(this).siblings('.reactions__choices').toggleClass('hidden');
+  });
 
   const chatId = document.getElementById('chat-id').value;
   const username = document.getElementById('username').value;
@@ -96,6 +104,7 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log(e.target.result);
         const fileUrl = e.target.result;
         const chatMessage = {
+          'type': 'chat_message',
           'chat_id': chatId,
           'message': chatInput.value,
           'username': sendAnonymously ? 'Anonymous' : username,
@@ -107,6 +116,7 @@ document.addEventListener('DOMContentLoaded', function () {
       };
     } else {
       const chatMessage = {
+        'type': 'chat_message',
         'chat_id': chatId,
         'message': chatInput.value,
         'username': sendAnonymously ? 'Anonymous' : username,
@@ -117,6 +127,18 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  document.getElementById('footer').style.display = 'none';
+  $('.reactions__emoji--choice').click(function (e) {
+    let messageId = $(this).data('message-id');
+    let emojiUrl = $(this).find('img').attr('src');
+    let data = {
+      'type': 'message_reaction',
+      'message_id': messageId,
+      'username': username,
+      'emoji_url': emojiUrl
+    };
+    chatSocket.send(JSON.stringify(data));
+  });
+
+  // document.getElementById('footer').style.display = 'none';
 
 });
