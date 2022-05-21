@@ -1,10 +1,11 @@
-from django.shortcuts import render, redirect
-from django.http import HttpResponseRedirect
+from django.shortcuts import render, reverse, redirect, get_object_or_404
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.views.generic.edit import DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.models import User
 from .models import Profile
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 
@@ -25,7 +26,10 @@ def register(request):
 
 # Create profile view to update profile
 @login_required
-def profile(request):
+def profile(request, *args, **kwargs):
+    user_profile = get_object_or_404(
+            User,  username=kwargs['username']
+        )
     if request.method == 'POST':
         user_form = UserUpdateForm(request.POST, instance=request.user)
         profile_form = ProfileUpdateForm(request.POST,
@@ -43,14 +47,15 @@ def profile(request):
 
     context = {
         'user_form': user_form,
-        'profile_form': profile_form
+        'profile_form': profile_form,
+        'user_profile': user_profile
     }
 
     return render(request, 'profiles/profile.html', context)
 
 
 @login_required
-def update_profile(request):
+def update_profile(request, *args, **kwargs):
     if request.method == 'POST':
         user_form = UserUpdateForm(request.POST, instance=request.user)
         profile_form = ProfileUpdateForm(request.POST,
@@ -60,7 +65,7 @@ def update_profile(request):
             user_form.save()
             profile_form.save()
             messages.success(request, f'Your account has been updated!')
-            return redirect('profile')
+            return HttpResponseRedirect(reverse('profile', kwargs={'username': request.user}))
 
     else:
         user_form = UserUpdateForm(instance=request.user)
@@ -74,6 +79,9 @@ def update_profile(request):
     return render(request, 'profiles/update_profile.html', context)
 
 
-class DeleteProfileView(LoginRequiredMixin, DeleteView):
-    model = Profile
-    success_url = reverse_lazy('account_signup')
+def delete_profile(request, pk, *args, **kwargs):
+    user = User.objects.get(pk=pk)
+    if request.method == "POST":
+        user.delete()
+        return redirect('home')
+    return render(request, "profiles/profile_confirm_delete.html")

@@ -47,17 +47,7 @@
 
   <title>Connectedsy {% block extra_title %}{% endblock %}</title>
 </head>
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-<body>
-  <header class="header">
-=======
 <body class="d-flex flex-column h-100">
->>>>>>> bc55e7bbd74de28e0ffa7b0eb197126fcce7b129
-=======
-<body class="d-flex flex-column h-100">
->>>>>>> f82bfa5e48322f492461f98786ff504926584583
     {% comment %} Navbar {% endcomment %}
       <nav class="navbar navbar-expand-sm bg-dark">
         <div class="container-fluid">
@@ -78,11 +68,11 @@
               <ul class="nav-profile navbar-nav mr-auto">
                 {% if user.is_authenticated %}
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="{% url 'profile' %}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <a class="nav-link dropdown-toggle" href="{% url 'profile' username=request.user %}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <img class="profile-img profile-mini d-inline-block" src="{{ user.user_profile.avatar.url }}">
                     {{user.user_profile.user}}</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item nav-link btn m-0" href="{% url 'profile' %}">Profile</a>
+                      <a class="dropdown-item nav-link btn m-0" href="{% url 'profile' username=request.user %}">Profile</a>
                       <a class="dropdown-item nav-link btn m-0" href="{% url 'account_logout' %}">Logout</a>
                     </div>
                 </li>
