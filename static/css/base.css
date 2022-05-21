@@ -128,7 +128,7 @@ img {
 }
 
 .index-card {
-  background: var(--grad-2)!important;
+  background: var(--grad-2) !important;
   border-radius: 16px;
   box-shadow: 0 5px 18px rgba(0, 0, 0, 0.6);
   margin-bottom: 80px;
@@ -339,6 +339,11 @@ img {
   flex-direction: row;
   align-items: center;
   font-weight: bold;
+  color: #1d1d1d;
+}
+
+.message__header--username.message__header--link:hover {
+  color: var(--base-color);
 }
 
 .message__header--time {
