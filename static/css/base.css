@@ -157,7 +157,7 @@ img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--grad-3)!important;
+  background-color: var(--grad-3) !important;
   flex: 1 0 auto;
 
 }
@@ -285,10 +285,11 @@ img {
   align-items: flex-start;
   justify-content: space-evenly;
 
-
+  background-color: rgba(81, 166, 20, 0.507);
 }
 
 .chats__navbar--item {
+  background-color: #acd68a;
   width: 100%;
   padding: 3em 0;
   text-decoration: none;
@@ -518,20 +519,20 @@ footer {
 
 /*---------- CONTACT US PAGE ----------*/
 
-.contact-form{
+.contact-form {
   width: 70%;
 }
 
-.contact-form .form-control{
-  border-radius:1rem;
+.contact-form .form-control {
+  border-radius: 1rem;
   margin-bottom: 10px;
 }
 
-.contact-form form{
+.contact-form form {
   padding-bottom: 15%;
 }
 
-.contact-form form .row{
+.contact-form form .row {
   margin-bottom: -7%;
 }
 
@@ -542,7 +543,7 @@ footer {
   text-align: center;
 }
 
-.contact-form h3{
+.contact-form h3 {
   color: var(--white-color);
   margin-bottom: 5%;
   margin-top: -5%;

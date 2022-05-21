@@ -1,3 +1,4 @@
+"""Chat app models"""
 from django.db import models
 from django.utils.text import slugify
 from cloudinary.models import CloudinaryField
@@ -15,7 +16,7 @@ class Chat(models.Model):
         null=True,
         blank=True
     )
-    members = models.ManyToManyField(User, related_name='chats')
+    members = models.ManyToManyField(User, related_name='chats',)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -32,8 +33,18 @@ class Chat(models.Model):
 
 class ChatMessage(models.Model):
     """Message model"""
-    chat = models.ForeignKey(Chat, on_delete=models.CASCADE, related_name='messages')
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='messages', null=True, blank=True)
+    chat = models.ForeignKey(
+        Chat,
+        on_delete=models.CASCADE,
+        related_name='messages'
+    )
+    user = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        related_name='messages',
+        null=True,
+        blank=True
+    )
     content = models.CharField(max_length=500, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     image = CloudinaryField(
@@ -43,7 +54,7 @@ class ChatMessage(models.Model):
         blank=True
     )
 
-    def __str__(self):
+    def __str__(self): 
         return self.content
 
     class Meta:
