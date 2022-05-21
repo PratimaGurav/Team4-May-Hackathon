@@ -66,7 +66,8 @@ class ChatConsumer(AsyncWebsocketConsumer):
                     'chat_id': message.chat.id,
                     'image': message.image if message.image else None,
                     # time format May 20, 2022, 7:55 a.m.
-                    'time': message.created_at.strftime("%b %d, %Y, %I:%M %p")
+                    'time': message.created_at.strftime("%b %d, %Y, %I:%M %p"),
+                    'message_id': message.id
                 }
             )
         elif message_type == 'message_reaction':
@@ -81,7 +82,8 @@ class ChatConsumer(AsyncWebsocketConsumer):
                 self.room_group_name,
                 {
                     'type': 'message_reaction',
-                    'reactions': reactions
+                    'reactions': reactions,
+                    'message_id': message_id
                 }
             )
 
@@ -91,22 +93,28 @@ class ChatConsumer(AsyncWebsocketConsumer):
         chat_id = event['chat_id']
         image = event['image']
         time = event['time']
+        message_id = event['message_id']
 
         # Send message to WebSocket
         await self.send(text_data=json.dumps({
+            'type': 'chat_message',
             'message': message,
             'username': username,
             'chat_id': chat_id,
             'image': image,
-            'time': time
+            'time': time,
+            'message_id': message_id
         }))
         
     async def message_reaction(self, event):
         reactions = event['reactions']
+        message_id = event['message_id']
 
         # Send message to WebSocket
         await self.send(text_data=json.dumps({
-            'reactions': reactions
+            'type': 'message_reaction',
+            'reactions': reactions,
+            'message_id': message_id
         }))
 
     @database_sync_to_async      # Save message to db by converting to async
@@ -145,5 +153,5 @@ class ChatConsumer(AsyncWebsocketConsumer):
     @database_sync_to_async
     def get_reactions(self, chat_message_id):
         chat_message = ChatMessage.objects.get(id=chat_message_id)
-        return chat_message.get_reactions_with_count()
+        return chat_message.get_reactions_with_users
         
