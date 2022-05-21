@@ -3,7 +3,7 @@ import random
 from channels.generic.websocket import AsyncWebsocketConsumer
 from channels.db import database_sync_to_async
 from django.contrib.auth.models import User
-from .models import Chat, ChatMessage
+from .models import Chat, ChatMessage, Reaction
 # need to import base64
 import base64
 from django.core.files.base import ContentFile
@@ -34,41 +34,56 @@ class ChatConsumer(AsyncWebsocketConsumer):
 
     # Receive message from WebSocket (json to dictionary)
     async def receive(self, text_data):
-        # print(text_data)
         text_data_json = json.loads(text_data)
-        # print(text_data_json)
-        message = text_data_json['message']
-        username = text_data_json['username']
-        chat_id = text_data_json['chat_id']
-        image = text_data_json['image']
-        # image is data:image/png;base64 or data:image/jpeg;base64 that needs to be read as a file and passed to the CloudinaryField of the ChatMessage model
         
-        if image:
-            image_data = image.split(',')[1]
-            image_extension = image.split(';')[0].split('/')[1]
-            image_name = f'{username}_{chat_id}_{random.randint(1, 100)}.{image_extension}'
-            image_file = ContentFile(base64.b64decode(image_data), name=image_name)
-            image_file = File(image_file)
-        else:
-            image_file = None
-        
-        
-        
-        message = await self.save_message(chat_id, username, message, image_file)
+        message_type = text_data_json['type']
+        if message_type == 'chat_message':
+            message = text_data_json['message']
+            username = text_data_json['username']
+            chat_id = text_data_json['chat_id']
+            image = text_data_json['image']
+            
+            if image:
+                image_data = image.split(',')[1]
+                image_extension = image.split(';')[0].split('/')[1]
+                image_name = f'{username}_{chat_id}_{random.randint(1, 100)}.{image_extension}'
+                image_file = ContentFile(base64.b64decode(image_data), name=image_name)
+                image_file = File(image_file)
+            else:
+                image_file = None
+            
+            
+            
+            message = await self.save_message(chat_id, username, message, image_file)
 
-        # Send message to room group
-        await self.channel_layer.group_send(
-            self.room_group_name,
-            {
-                'type': 'chat_message',
-                'message': message.content,
-                'username': message.user.username if message.user else None,
-                'chat_id': message.chat.id,
-                'image': message.image if message.image else None,
-                # time format May 20, 2022, 7:55 a.m.
-                'time': message.created_at.strftime("%b %d, %Y, %I:%M %p")
-            }
-        )
+            # Send message to room group
+            await self.channel_layer.group_send(
+                self.room_group_name,
+                {
+                    'type': 'chat_message',
+                    'message': message.content,
+                    'username': message.user.username if message.user else None,
+                    'chat_id': message.chat.id,
+                    'image': message.image if message.image else None,
+                    # time format May 20, 2022, 7:55 a.m.
+                    'time': message.created_at.strftime("%b %d, %Y, %I:%M %p")
+                }
+            )
+        elif message_type == 'message_reaction':
+            username = text_data_json['username']
+            message_id = text_data_json['message_id']
+            emoji_url = text_data_json['emoji_url']
+            
+            await self.add_remove_reaction(message_id, username, emoji_url)
+            reactions = await self.get_reactions(message_id)
+            
+            await self.channel_layer.group_send(
+                self.room_group_name,
+                {
+                    'type': 'message_reaction',
+                    'reactions': reactions
+                }
+            )
 
     async def chat_message(self, event):
         message = event['message']
@@ -84,6 +99,14 @@ class ChatConsumer(AsyncWebsocketConsumer):
             'chat_id': chat_id,
             'image': image,
             'time': time
+        }))
+        
+    async def message_reaction(self, event):
+        reactions = event['reactions']
+
+        # Send message to WebSocket
+        await self.send(text_data=json.dumps({
+            'reactions': reactions
         }))
 
     @database_sync_to_async      # Save message to db by converting to async
@@ -108,3 +131,19 @@ class ChatConsumer(AsyncWebsocketConsumer):
         
         return message
     
+    @database_sync_to_async
+    def add_remove_reaction(self, chat_message_id, username, emoji):
+        chat_message = ChatMessage.objects.get(id=chat_message_id)
+        user = User.objects.get(username=username)
+        reaction = Reaction.objects.filter(chat_message=chat_message, user=user, emoji=emoji)
+        if reaction:
+            reaction[0].delete()            
+        else:
+            reaction = Reaction.objects.create(chat_message=chat_message, user=user, emoji=emoji)
+            reaction.save()
+    
+    @database_sync_to_async
+    def get_reactions(self, chat_message_id):
+        chat_message = ChatMessage.objects.get(id=chat_message_id)
+        return chat_message.get_reactions_with_count()
+        
