@@ -568,3 +568,22 @@ footer {
 .contact {
   padding-bottom: 2%;
 }
+
+.contact img {
+  border-radius: 50%;
+  padding: 10%;
+  max-width: 100%;
+}
+
+.fa-github {
+  font-size: 50px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+  color: var(--black-color);
+}
+
+.fa-github:hover {
+  color: var(--grad1-color) !important;
+}
