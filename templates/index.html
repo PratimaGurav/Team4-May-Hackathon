@@ -45,11 +45,8 @@
       <p>
         Enter a Chat Room to connect instantly with others. Every chat room is designed to offer you immediate contact with people when you feel the desire to talk to someone right away. 
       </p>
-      <p>
-        All you need to do is join Chat's network, type in a nickname and begin chatting.
-      </p>
       <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <button type="button" class="btn btn-outline-dark me-md-2">Click to Enter!</button>
+        <a href="{% url 'chat_list' %}" class="btn btn-outline-dark me-md-2">Click to Enter!</a>
       </div>
 
     </div>
@@ -60,5 +57,16 @@
       <br>
     </div>
   </div>
+
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="media/profile_images/stay-connected.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Please Login!</h5>
+      <p class="card-text">To join Chat's network and begin chatting.</p>
+      <a href="{% url 'account_login' %}" class="btn btn-outline-dark me-md-2">Login</a>
+    </div>
+  </div> 
+
+
 
 {%endblock%}
