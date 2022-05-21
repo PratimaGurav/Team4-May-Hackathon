@@ -65,6 +65,10 @@ img {
   object-fit: contain;
 }
 
+.hidden {
+  display: none !important;
+}
+
 
 /* Profile */
 .profile-img {
@@ -394,4 +398,43 @@ footer {
 
 #footer-external-links>a:hover {
   color: var(--white-color);
+}
+
+/* REACTIONS */
+.message__reactions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: fit-content;
+  margin-top: .5em;
+}
+
+.message__reactions--container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.reaction-item {
+  width: 2.5em;
+  height: 2em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0.2em;
+}
+
+.reaction_emoji--img {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.reactions__toggle {
+  cursor: pointer;
 }
