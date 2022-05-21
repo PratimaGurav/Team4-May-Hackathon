@@ -491,7 +491,7 @@ img {
 
 .message__body--image {
   width: 20rem;
-  height: 20rem;
+  /* height: 20rem; */
   align-self: center;
   justify-self: center;
 }
@@ -592,6 +592,7 @@ footer {
   color: var(--grad1-color) !important;
 
 }
+
 /* REACTIONS */
 .message__reactions {
   display: flex;
