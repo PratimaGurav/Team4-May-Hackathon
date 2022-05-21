@@ -1,8 +1,16 @@
 # 
 
-![Logo]()
+![Logo](media/logo.png)
 
 Created for the Code Institute's May 2022 Hackathon, Getting Connected.
+
+# About 
+
+Connectedsy is an online communication platform aimed towards people experiencing loneliness and other mental health issues. The platform allows users to create their very own profile where they can include some of their personal hobbies and interests. This profile is then stored in a database, allowing users to return to the site at any time and have their preferences retained. 
+
+Once a user signs up for the site, they can jump straight into a chat room that is relevant to what they are experiencing, and connect with people who understand what they are going through. They can then speak openly about themselves, what they are experiencing, and about shared hobbies and interests. The primary goal is to ensure that users know that they are always welcome on Connectedsy and always have a space to talk and be supported.
+
+In creating this platform, our team has put great emphasis on creating Connectedsy as a safe space where people can speak freely, express themselves and be supported by each other. However, we ensure that users are aware from the outset that the platform is not intended to be a substitute for professional help and we encourage users to seek professional help should they need it.
 
 ![Site on a variety of device sizes]()
 
@@ -141,6 +149,8 @@ Google Dev Tools - To troubleshoot and test features, solve issues with responsi
 [Shields.io](https://shields.io/) To add badges to the README
 
 [Canva](https://www.canva.com/) To create Greyscale
+
+[Canva](https://www.canva.com/) To create the Connectedsy logo
 
 - - -
 
