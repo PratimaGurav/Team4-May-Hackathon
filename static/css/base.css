@@ -95,6 +95,10 @@ img {
   border-radius: 50%;
 }
 
+.profile-content {
+background: var(--grad-3) !important;
+}
+
 /*---------- HEADER ----------*/
 .navbar {
   font-size: 14px;
