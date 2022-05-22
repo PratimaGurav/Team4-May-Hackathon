@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   chatSocket.onmessage = function (e) {
     let data = JSON.parse(e.data);
-    if(data.type === 'chat_message') {
+    if (data.type === 'chat_message') {
 
       let message = document.createElement('div');
       message.classList.add('message');
@@ -87,16 +87,20 @@ document.addEventListener('DOMContentLoaded', function () {
       messageReactionsContainer.setAttribute('data-message-id', data.message_id);
       let messageReactionsChoices = document.createElement('div');
       messageReactionsChoices.classList.add('message__reactions--choices');
+      // add reaction button to messageReactionsChoices
       let reactionsToggle = document.createElement('span');
       reactionsToggle.classList.add('reactions__toggle');
-      reactionsToggle.innerHTML = 'React';
+      reactionsToggle.innerHTML = `
+      <i class="far fa-grin"></i>
+      <div class="reactions__toggle--plus">+</div>
+      `;
       reactionsToggle.addEventListener('click', function (e) {
         $(this).siblings('.reactions__choices').toggleClass('hidden');
       });
       let reactionsChoices = document.createElement('div');
       reactionsChoices.classList.add('reactions__choices');
       reactionsChoices.classList.add('hidden');
-      for(let emoji_url of emojiLinks) {
+      for (let emoji_url of emojiLinks) {
         let reaction = document.createElement('div');
         let reactionImg = document.createElement('img');
         reactionImg.setAttribute('src', emoji_url);
@@ -118,10 +122,10 @@ document.addEventListener('DOMContentLoaded', function () {
       console.log(data);
       let reactions = data.reactions;
       console.log(reactions);
-      let message_id = data.message_id;      
+      let message_id = data.message_id;
       let container = $(`.message__reactions--container[data-message-id=${message_id}]`);
       container.html('');
-      if (reactions){
+      if (reactions) {
         for (let reaction in reactions) {
           let reaction_emoji = document.createElement('img');
           reaction_emoji.classList.add('reaction_emoji--img');
@@ -215,7 +219,7 @@ document.addEventListener('DOMContentLoaded', function () {
   };
   $('.reaction_emoji--img').click(reactionHandler);
 
-  
+
 
   document.getElementsByTagName('footer')[0].style.display = 'none';
 
