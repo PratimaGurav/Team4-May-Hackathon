@@ -77,7 +77,7 @@
                 id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <img class="profile-img profile-mini d-inline-block mb-2" src="{{ user.user_profile.avatar_url }}">
                 {{user.user_profile.user.username|title}}</a>
-              <div class="dropdown-menu bg-success border-1 rounded m-0 p-0" aria-labelledby="navbarDropdown">
+              <div class="dropdown-menu bg-success border-1 profile-menu rounded m-0 p-0" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item nav-link text-center p-0 m-0"
                   href="{% url 'profile' username=request.user.username %}">Profile</a>
                 <a class="dropdown-item nav-link text-center p-0 m-0 {% if request.resolver_match.url_name == 'account_logout' %} active {% endif %}"
