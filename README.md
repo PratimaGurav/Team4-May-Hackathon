@@ -106,12 +106,19 @@ In addition to our target audience, our team aims to market Connectedsy towards 
 
 Google Fonts was used to import the chosen fonts for use in the site.
 
-* We are using: Montserrat, Raleway.
+Fonts used: Montserrat, Raleway.
+
+The Montserrat family is used in the header text and  with Raleway being used in the individual section content. Sans-serif is set as the fallback font in every case in case the other fonts cannot be imported correctly. Montserrat and Raleway are used as they are clean, sleek and easy to read.
 
   ![Font](documentation/design/montserrat%20font.JPG)
-  ![](documentation/design/raleway%20font.JPG)
+  ![Font](documentation/design/raleway%20font.JPG)
+
 
 ### Imagery
+
+Most of the imagery used was specifically chosen to evoke a sense of peace and personal calling to follow your own path & develop as an individual, even if it scares you.
+
+![Photo](media/profile_images/follow_your_path.jpg)
 
 ### Wireframes
 
@@ -246,7 +253,16 @@ We used Lighthouse within the Chrome Developer Tools to test the performance, ac
 
 ## Credits
 
-### Code Used
+We used [Pexels](https://www.pexels.com/) for the images.
+<br>
+
+Links used for researching Mental Health issues:
+- [Mind](https://www.mind.org.uk/information-support/types-of-mental-health-problems/)
+- [BetterHelp](https://www.betterhelp.com/advice/psychiatry/do-i-have-a-mental-illness-28-mental-disorders-and-their-symptoms/)
+- [Re-Think](https://www.rethink.org/advice-and-information/about-mental-illness/learn-more-about-conditions/bipolar-disorder/)
+- [MQ Mental Health](https://www.mqmentalhealth.org/conditions/eating-disorders/?gclid=Cj0KCQjw1ZeUBhDyARIsAOzAqQKxpq2q-o7YPWqz1bSAZKr-oT8Kc7AZ5pK3Bcl9DRIpwbtDriyE_HUaAj_8EALw_wcB)
+- [NHS](https://www.nhs.uk/mental-health/conditions/post-natal-depression/overview/#overview)
+
 
 ### Content
 
