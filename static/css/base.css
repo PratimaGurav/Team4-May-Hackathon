@@ -116,10 +116,9 @@ img {
   font-family: var(--content-text);
 }
 
-.navbar-dark .navbar-nav .nav-link {
-  color: var(--black-color) !important;
+.navbar-nav .nav-link.active, .navbar-nav .show>.nav-link {
+  color: rgb(28 45 6) !important;
   padding-left: 20px;
-
 }
 
 .thin {
@@ -156,7 +155,6 @@ img {
 
 .content__container {
   width: 100%;
-  /* height: 100%; */
   display: flex;
   flex-direction: column;
   justify-content: center;
