@@ -254,6 +254,13 @@ We used Lighthouse within the Chrome Developer Tools to test the performance, ac
 
 ### Acknowledgments
 
+* Thank you to the incredible team that worked on this project, not only for their skill but also their kindness and team work ethos.
+* Shoutout to Code Institute and Trust In SODA for hosting this month's Hackathon and for choosing such an important topic.
+* Thank you to Kasia Bogucka, our group's facilitator from Code Institute.
+* Our families, for their endless patience while we disappear for another long weekend of hackathon coding.
+
+
+
 Meet team :
 
 * [Pratima](https://github.com/PratimaGurav) 
@@ -263,10 +270,6 @@ Meet team :
 * [Stephen](https://github.com/StephenB92)
 * [David](https://github.com/pizzaHunt3r)
 
-
-We would like to thank the following:
-
-* Our families, for their endless patience while we disappear for another long weekend of hackathon coding.
 
 
 
