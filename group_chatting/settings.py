@@ -16,6 +16,8 @@ if os.path.isfile("env.py"):
     import env
 
 import dj_database_url
+import django_heroku
+
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
@@ -195,3 +197,5 @@ CHANNEL_LAYERS = {
         },
     },
 }
+
+django_heroku.settings(locals())
