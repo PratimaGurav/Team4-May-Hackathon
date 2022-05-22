@@ -1,3 +1,4 @@
+"""Views for the profile app"""
 from django.shortcuts import render, reverse, redirect, get_object_or_404
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
