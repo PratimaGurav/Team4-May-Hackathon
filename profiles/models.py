@@ -1,7 +1,8 @@
 """Models for profiles app."""
 from django.db import models
-from cloudinary.models import CloudinaryField
 from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
+
 
 class Profile(models.Model):
     """Profile model"""
@@ -15,12 +16,14 @@ class Profile(models.Model):
 
     def __str__(self):
         return self.user.username
-    
-    def save(self, *args, **kwargs): 
+
+    def save(self, *args, **kwargs):
+        """ Function to save profile data """
         super().save(*args, **kwargs)
-    
-    @property    
+
+    @property
     def avatar_url(self):
+        """ Function to save users avatar """
         if self.avatar:
             return self.avatar.url
         return '/media/profile_images/avatar.png'

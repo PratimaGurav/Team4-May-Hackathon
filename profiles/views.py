@@ -15,15 +15,16 @@ from django.http import JsonResponse
 
 # User registration
 def register(request):
+    """ Function for user registration """
     if request.method == 'POST':
-        form = UserRegisterForm(request.POST) 
+        form = UserRegisterForm(request.POST)
         if form.is_valid():
-            username = form.cleaned_data.get('username') 
+            username = form.cleaned_data.get('username')
             form.save()
             messages.success(
                 request,
                 f'Your account has been created! You are now able to log in'
-            ) 
+            )
             return redirect('')
     else:
         form = UserRegisterForm()
@@ -33,6 +34,7 @@ def register(request):
 # Create profile view to update profile
 @login_required
 def profile(request, *args, **kwargs):
+    """ Function to Create profile view to update profile """
     user = get_object_or_404(User, username=kwargs['username'])
     user_profile = get_object_or_404(
             Profile,  user=user
@@ -43,7 +45,7 @@ def profile(request, *args, **kwargs):
             request.POST,
             request.FILES,
             instance=request.user.user_profile
-        ) 
+        )
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
             profile_form.save()
@@ -65,13 +67,14 @@ def profile(request, *args, **kwargs):
 
 @login_required
 def update_profile(request, *args, **kwargs):
+    """ Function for updating user profiles """
     if request.method == 'POST':
         user_form = UserUpdateForm(request.POST, instance=request.user)
         profile_form = ProfileUpdateForm(
             request.POST,
             request.FILES,
             instance=request.user.user_profile
-        ) 
+        )
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
             profile_form.save()
@@ -96,6 +99,7 @@ def update_profile(request, *args, **kwargs):
 
 
 def delete_profile(request, pk, *args, **kwargs):
+    """ Function for deleting user profile """
     user = User.objects.get(pk=pk)
     if request.method == "POST":
         user.delete()
@@ -106,6 +110,7 @@ def delete_profile(request, pk, *args, **kwargs):
 class RewardAjaxView(View):
     """Ajax view to add reward to profile"""
     def post(self, request, *args, **kwargs):
+        """Function in Ajax view to add reward to profile"""
         user = get_object_or_404(User, username=request.POST.get('username'))
         user_profile = get_object_or_404(
             Profile,  user=user
@@ -115,4 +120,5 @@ class RewardAjaxView(View):
         else:
             user_profile.stewardship.add(request.user)
         stewardship_count = user_profile.stewardship.count()
-        return JsonResponse({'success': True, 'stewardship_count': stewardship_count})
+        return JsonResponse({'success': True,
+                             'stewardship_count': stewardship_count})

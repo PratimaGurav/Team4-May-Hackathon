@@ -12,15 +12,16 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
-if os.path.isfile("env.py"):
-    import env
-
 import dj_database_url
 import django_heroku
 
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
+if os.path.isfile("env.py"):
+    import env
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -34,7 +35,8 @@ DEBUG = 'TRUE'
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-ALLOWED_HOSTS = ['connectedsy.herokuapp.com','localhost', '127.0.0.1', 'https://127.0.0.1/']
+ALLOWED_HOSTS = ['connectedsy.herokuapp.com', 'localhost', '127.0.0.1',
+                 'https://127.0.0.1/']
 
 
 # Application definition
@@ -131,9 +133,9 @@ else:
     }
 
 cloudinary.config(
-    cloud_name = os.environ.get("CLOUDINARY_CLOUD_NAME"),
-    api_key = os.environ.get("CLOUDINARY_API_KEY"),
-    api_secret = os.environ.get("CLOUDINARY_API_SECRET"),
+    cloud_name=os.environ.get("CLOUDINARY_CLOUD_NAME"),
+    api_key=os.environ.get("CLOUDINARY_API_KEY"),
+    api_secret=os.environ.get("CLOUDINARY_API_SECRET"),
 )
 
 
