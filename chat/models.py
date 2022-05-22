@@ -25,8 +25,10 @@ class Chat(models.Model):
     )
     created_at = models.DateTimeField(auto_now_add=True)
 
+
     def __str__(self):
         return str(self.chat_name)
+
 
     class Meta:
         """Ordering chats by created_at"""
@@ -61,7 +63,8 @@ class ChatMessage(models.Model):
     )
 
     def __str__(self): 
-        return str(self.id)
+        return str(self.content)
+
 
     class Meta:
         """ Order messages by creation date. """
