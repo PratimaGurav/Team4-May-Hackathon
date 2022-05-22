@@ -55,6 +55,7 @@ class ChatConsumer(AsyncWebsocketConsumer):
             
             
             message = await self.save_message(chat_id, username, message, image_file)
+            avatar_url = await self.get_avatar_url(username)
 
             # Send message to room group
             await self.channel_layer.group_send(
@@ -67,7 +68,8 @@ class ChatConsumer(AsyncWebsocketConsumer):
                     'image': message.image if message.image else None,
                     # time format May 20, 2022, 7:55 a.m.
                     'time': message.created_at.strftime("%b %d, %Y, %I:%M %p"),
-                    'message_id': message.id
+                    'message_id': message.id,
+                    'avatar_url': avatar_url
                 }
             )
         elif message_type == 'message_reaction':
@@ -94,6 +96,7 @@ class ChatConsumer(AsyncWebsocketConsumer):
         image = event['image']
         time = event['time']
         message_id = event['message_id']
+        avatar_url = event['avatar_url']
 
         # Send message to WebSocket
         await self.send(text_data=json.dumps({
@@ -103,7 +106,8 @@ class ChatConsumer(AsyncWebsocketConsumer):
             'chat_id': chat_id,
             'image': image,
             'time': time,
-            'message_id': message_id
+            'message_id': message_id,
+            'avatar_url': avatar_url
         }))
         
     async def message_reaction(self, event):
@@ -154,4 +158,9 @@ class ChatConsumer(AsyncWebsocketConsumer):
     def get_reactions(self, chat_message_id):
         chat_message = ChatMessage.objects.get(id=chat_message_id)
         return chat_message.get_reactions_with_users
-        
+    
+    @database_sync_to_async
+    def get_avatar_url(self, username):
+        if username == 'Anonymous':
+            return '/media/profile_images/avatar.png'
+        return User.objects.get(username=username).user_profile.avatar_url
