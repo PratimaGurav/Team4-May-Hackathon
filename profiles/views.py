@@ -9,6 +9,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
 from .models import Profile
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
+from django.views import View
+from django.http import JsonResponse
 
 
 # User registration
@@ -99,3 +101,18 @@ def delete_profile(request, pk, *args, **kwargs):
         user.delete()
         return redirect('home')
     return render(request, "profiles/profile_confirm_delete.html")
+
+
+class RewardAjaxView(View):
+    """Ajax view to add reward to profile"""
+    def post(self, request, *args, **kwargs):
+        user = get_object_or_404(User, username=request.POST.get('username'))
+        user_profile = get_object_or_404(
+            Profile,  user=user
+        )
+        if request.user in user_profile.stewardship.all():
+            user_profile.stewardship.remove(request.user)
+        else:
+            user_profile.stewardship.add(request.user)
+        stewardship_count = user_profile.stewardship.count()
+        return JsonResponse({'success': True, 'stewardship_count': stewardship_count})

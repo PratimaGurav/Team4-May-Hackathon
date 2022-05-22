@@ -5,6 +5,7 @@ from . import views
 
 
 urlpatterns = [
+    path('say_thanks/', views.RewardAjaxView.as_view(), name='say-thanks'),
     path('<username>/', views.profile, name='profile'),
     path('signup/', views.register, name='signup'),
     path(
