@@ -890,3 +890,11 @@ footer {
   right: 40px !important;
   margin-top: -275px !important;
 }
+
+/* Media Queries for screens smaller than 680px */
+
+@media screen and (max-width: 680px) {
+  html {
+    font-size: 80%;
+  }
+}
