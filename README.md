@@ -97,11 +97,11 @@ Google Fonts was used to import the chosen fonts for use in the site.
 
 ### Wireframes
 
-Wireframes were created for mobile, tablet and desktop with [Balsamiq]()
+Wireframes were created for mobile, tablet and desktop with [Balsamiq](https://balsamiq.com/)
 
-[Desktop]() |
-[Tablet]() |
-[Mobile]() |
+[Desktop](/documentation/wireframes/desktop.pdf) |
+[Tablet](/documentation/wireframes/tab.pdf) |
+[Mobile](/documentation/wireframes/mobile.pdf) |
 
 ### Features
 
