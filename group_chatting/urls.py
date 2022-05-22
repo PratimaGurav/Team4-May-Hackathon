@@ -19,6 +19,8 @@ from django.urls import path, include
 # Import settings and static
 from django.conf import settings
 from django.conf.urls.static import static
+from .views import handler404, handler500
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,3 +29,6 @@ urlpatterns = [
     path('chats/', include('chat.urls')),
     path('profile/', include('profiles.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+handler404 = 'group_chatting.views.handler404'
+handler500 = 'group_chatting.views.handler500'
