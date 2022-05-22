@@ -255,16 +255,22 @@ img {
 }
 
 .navbar-nav .nav-link.active,
-.navbar-nav .show>.nav-link {
-  padding-left: 20px;
-  border-bottom: 2.5px solid rgb(28 45 6) !important;
+.navbar-nav .show>.nav-link:hover {
+  border-bottom: 2.5px solid #f0ad4e !important;
+  padding-bottom: 0 !important;
 }
 
 .thin {
   font-weight: 500;
 }
 
+.profile-menu {
+  background-color: var(--base-color) !important;
+}
 /*---------- PAGE LAYOUT UTILITIES ----------*/
+.text-logo {
+color: var(--base-color) !important;
+}
 
 .index-container {
   margin: 1vh 5vw;
