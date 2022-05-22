@@ -1,3 +1,4 @@
+"""Views for the chat app."""
 from django.shortcuts import render
 from django.views import View
 from django.http import JsonResponse
@@ -12,27 +13,32 @@ EMOJI_LIST = [
 ]
 
 class ChatRoomView(View):
+    """ChatRoomView"""
     def get(self, request, *args, **kwargs):
-        chat = Chat.objects.get(slug=kwargs['slug'])
+        # if user is authenticated
+        if request.user.is_authenticated:
+            chat = Chat.objects.get(slug=kwargs['slug'])
 
-        chats = Chat.objects.all()
+            chats = Chat.objects.all()
 
-        return render(
-            request,
-            'chat/chat_room.html',
-            {
-                'chat': chat,
-                'chats': chats,
-                'emojis': EMOJI_LIST
-            }
-        )
+            return render(
+                request,
+                'chat/chat_room.html',
+                {
+                    'chat': chat,
+                    'chats': chats,
+                    'emojis': EMOJI_LIST
+                }
+            )
 
 
 class ChatListView(View):
+    """ChatListView"""
     def get(self, request, *args, **kwargs):
-        chats = Chat.objects.all()
-        return render(
-            request,
-            'chat/chat_list.html',
-            {'chats': chats}
-        )
+        if request.user.is_authenticated:
+            chats = Chat.objects.all()
+            return render(
+                request,
+                'chat/chat_list.html',
+                {'chats': chats}
+            )

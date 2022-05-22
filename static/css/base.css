@@ -35,8 +35,11 @@ html {
 }
 
 body {
-  
-  background: url("/media/sprinkle.svg") center center;
+  background-image: url("/media/sprinkle.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
   margin: 0;
   padding: 0;
 }
@@ -116,7 +119,8 @@ img {
   font-family: var(--content-text);
 }
 
-.navbar-nav .nav-link.active, .navbar-nav .show>.nav-link {
+.navbar-nav .nav-link.active,
+.navbar-nav .show>.nav-link {
   padding-left: 20px;
   border-bottom: 2.5px solid rgb(28 45 6) !important;
 }
@@ -193,6 +197,7 @@ img {
   padding: 1em;
   box-shadow: 0 5px 18px rgba(0, 0, 0, 0.2);
   margin-bottom: 1em;
+  background-color: var(--grad-3);
 }
 
 .chats {
