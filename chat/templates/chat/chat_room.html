@@ -21,7 +21,7 @@
             <div class="message__header">
               <div class="message__header--data">
                 <div class="message__avatar--avatar">
-                  <img src="{{ message.user.user_profile.avatar }}" alt="Avatar of {{ message.user.username }}">
+                  {% comment %} <img src="{{ message.user.user_profile.avatar }}" alt="Avatar of {{ message.user.username }}"> {% endcomment %}
                 </div>
                 {% if message.user %}
                   <a class="message__header--username message__header--link">
