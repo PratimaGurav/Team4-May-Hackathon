@@ -225,7 +225,9 @@ img {
   border-radius: 50%;
 }
 
-
+.profile-content {
+background: var(--grad-3) !important;
+}
 
 /*---------- HEADER ----------*/
 .navbar {
@@ -871,4 +873,10 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+
+.emojionearea-picker {
+  right: 40px !important;
+  margin-top: -275px !important;
 }

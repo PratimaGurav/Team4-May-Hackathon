@@ -20,11 +20,50 @@ document.addEventListener('DOMContentLoaded', function () {
   const reactionsTogglers = $('.reactions__toggle');
   const reactionsChoicesContainers = $('.reactions__choices');
   const emojiLinks = [
-    'https://res.cloudinary.com/lexach91/image/upload/v1653110066/emojis/giphy-thumbs-up_rtp2ny.gif',
-    'https://res.cloudinary.com/lexach91/image/upload/v1653110066/emojis/party-scream_xkjxg7.gif',
-    'https://res.cloudinary.com/lexach91/image/upload/v1653110066/emojis/party-cry_sgfigm.gif',
-    'https://res.cloudinary.com/lexach91/image/upload/v1653110066/emojis/giphy-joy_oxskf3.gif'
+    'https://res.cloudinary.com/lexach91/image/upload/v1653219641/emojis/party-scream_r5mkrv.gif',
+    'https://res.cloudinary.com/lexach91/image/upload/v1653219640/emojis/giphy-strong_xhwx9e.gif',
+    'https://res.cloudinary.com/lexach91/image/upload/v1653219640/emojis/giphy-rofl_em7zvl.gif',
+    'https://res.cloudinary.com/lexach91/image/upload/v1653219641/emojis/party-heart-slow_dnjbzs.gif',
+    'https://res.cloudinary.com/lexach91/image/upload/v1653219641/emojis/giphy-tired_r5fdgh.gif',
+    'https://res.cloudinary.com/lexach91/image/upload/v1653219641/emojis/party-cry_mdly2m.gif',
+    'https://res.cloudinary.com/lexach91/image/upload/v1653219640/emojis/giphy-smirk_n7hkjq.gif',
+    'https://res.cloudinary.com/lexach91/image/upload/v1653219640/emojis/giphy-thumbs-up_bioc3a.gif',
+    'https://res.cloudinary.com/lexach91/image/upload/v1653219639/emojis/giphy-pray_okjluh.gif',
+    'https://res.cloudinary.com/lexach91/image/upload/v1653219640/emojis/giphy-scream_or8ait.gif',
+    'https://res.cloudinary.com/lexach91/image/upload/v1653219639/emojis/giphy-raised-hands_xcm879.gif',
+    'https://res.cloudinary.com/lexach91/image/upload/v1653219639/emojis/giphy-poop_dim7xj.gif',
+    'https://res.cloudinary.com/lexach91/image/upload/v1653219637/emojis/giphy-grin_k88yg4.gif',
+    'https://res.cloudinary.com/lexach91/image/upload/v1653219639/emojis/giphy-peace_pz3lr8.gif',
+    'https://res.cloudinary.com/lexach91/image/upload/v1653219639/emojis/giphy-pensive_kmwtjc.gif',
+    'https://res.cloudinary.com/lexach91/image/upload/v1653219639/emojis/giphy-okay_jzcptr.gif',
+    'https://res.cloudinary.com/lexach91/image/upload/v1653219638/emojis/giphy-laughing_fm6ooa.gif',
+    'https://res.cloudinary.com/lexach91/image/upload/v1653219638/emojis/giphy-kiss_wq6eyk.gif',
+    'https://res.cloudinary.com/lexach91/image/upload/v1653219638/emojis/giphy-joy_btlfsy.gif',
+    'https://res.cloudinary.com/lexach91/image/upload/v1653219638/emojis/giphy-hug_pfzrk9.gif',
+    'https://res.cloudinary.com/lexach91/image/upload/v1653219637/emojis/giphy-hearts_n3vwba.gif',
+    'https://res.cloudinary.com/lexach91/image/upload/v1653219637/emojis/giphy-deflate_tfqjhj.gif',
+    'https://res.cloudinary.com/lexach91/image/upload/v1653219637/emojis/giphy-eye-roll_no35gn.gif',
+    'https://res.cloudinary.com/lexach91/image/upload/v1653219636/emojis/giphy-exploding_j0a7v2.gif',
+    'https://res.cloudinary.com/lexach91/image/upload/v1653219636/emojis/giphy-cool_yczev2.gif',
+    'https://res.cloudinary.com/lexach91/image/upload/v1653219636/emojis/giphy-confused_yzohyu.gif',
+    'https://res.cloudinary.com/lexach91/image/upload/v1653219636/emojis/giphy-confetti_hjsolp.gif',
+    'https://res.cloudinary.com/lexach91/image/upload/v1653219636/emojis/giphy-cry_qf3dy0.gif',
+    'https://res.cloudinary.com/lexach91/image/upload/v1653219636/emojis/giphy-chefs-kiss_idzzns.gif',
+    'https://res.cloudinary.com/lexach91/image/upload/v1653219635/emojis/could-you-not_cgagli.gif',
+    'https://res.cloudinary.com/lexach91/image/upload/v1653219634/emojis/giphy-100_jtljgu.gif',
+    'https://res.cloudinary.com/lexach91/image/upload/v1653219634/emojis/deal-with-it-parrot_rg3h7p.gif',
+    'https://res.cloudinary.com/lexach91/image/upload/v1653219634/emojis/blob-happy_hgjd8m.gif',
+    'https://res.cloudinary.com/lexach91/image/upload/v1653219634/emojis/dance-banana_cxfkvr.gif',
+    'https://res.cloudinary.com/lexach91/image/upload/v1653219633/emojis/cat-confused_ayscim.gif',
+    'https://res.cloudinary.com/lexach91/image/upload/v1653110064/emojis/giphy-blush-masked_er8ibb.gif',
+    'https://res.cloudinary.com/lexach91/image/upload/v1653110063/emojis/giphy-beers_hbow7k.gif',
   ];
+
+  // initialize emojiOneArea on chatInput
+  $('#chat-input').emojioneArea({
+    useSprite: true,
+  });
+
 
   const hideReactions = () => {
     $('.reactions__choices').addClass('hidden');
@@ -32,6 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   $('.reactions__toggle').click(function (e) {
     e.stopPropagation();
+    $('.reactions__choices').addClass('hidden');
     // find sibling with class reactions__choices and toggle class hidden
     // then add class hidden if clicked outside of it
     const reactionsChoicesContainer = $(this).siblings('.reactions__choices');
@@ -89,7 +129,7 @@ document.addEventListener('DOMContentLoaded', function () {
       let messageBodyImage = document.createElement('div');
       messageBodyImage.classList.add('message__body--image');
       // messageHeaderUsername.innerHTML = data.username || 'Anonymous';
-      messageHeaderUsername.innerHTML = `<a class="message__header--username message__header--link" href="/profile/${data.username}/">${data.username}</a>` || 'Anonymous';
+      messageHeaderUsername.innerHTML = data.username ? `<a class="message__header--username message__header--link" href="/profile/${data.username}/">${data.username}</a>` : 'Anonymous';
       messageHeaderTime.innerHTML = data.time;
       messageBodyText.innerHTML = data.message;
       if (data.image) {
@@ -217,6 +257,7 @@ document.addEventListener('DOMContentLoaded', function () {
         chatSocket.send(JSON.stringify(chatMessage));
         fileInput.value = '';
         chatInput.value = '';
+        $('.emojionearea-editor').html('');
       };
     } else if (chatInput.value) {
       const chatMessage = {
@@ -228,12 +269,11 @@ document.addEventListener('DOMContentLoaded', function () {
       };
       chatSocket.send(JSON.stringify(chatMessage));
       chatInput.value = '';
+      $('.emojionearea-editor').html('');
     } else {
       console.log('No message to send');
       // show some tooltip or something
-      $(chatInput).effect('highlight', {
-        color: '#7272ccba'
-      }, 1000);
+      $('.emojionearea-editor').effect('highlight', {color: '#7272ccba'}, 1000);
     }
   });
 
