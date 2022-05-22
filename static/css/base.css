@@ -226,7 +226,11 @@ img {
 }
 
 .profile-content {
-background: var(--grad-3) !important;
+  background: var(--grad-3) !important;
+}
+
+.fa-spin {
+  margin-left: 0.4em;
 }
 
 /*---------- HEADER ----------*/

@@ -106,9 +106,13 @@ def delete_profile(request, pk, *args, **kwargs):
 class RewardAjaxView(View):
     """Ajax view to add reward to profile"""
     def post(self, request, *args, **kwargs):
-        user = get_object_or_404(User, username=kwargs['username'])
+        user = get_object_or_404(User, username=request.POST.get('username'))
         user_profile = get_object_or_404(
             Profile,  user=user
         )
-        user_profile.stewardship.add(request.user)
-        return JsonResponse({'success': True})
+        if request.user in user_profile.stewardship.all():
+            user_profile.stewardship.remove(request.user)
+        else:
+            user_profile.stewardship.add(request.user)
+        stewardship_count = user_profile.stewardship.count()
+        return JsonResponse({'success': True, 'stewardship_count': stewardship_count})

@@ -17,10 +17,11 @@
         </div>
         <div class="profile__header--reward">
           <i class="fas fa-hand-holding-heart"></i>
+
           {{user_profile.stewardship.count}}
         </div>
         {% if not user == user_profile.user %}
-          <a href="" class="profile__header--reward--btn">
+          <a href="javascript:void(0);" class="profile__header--reward--btn" id="add-thanks">
             Thank you for your help!
           </a>
         {% endif %}
@@ -52,3 +53,37 @@
     </div>
   {% endif %}
 {% endblock content %}
+{% block extra_postloadjs %}
+  {% comment %}  import jquery {% endcomment %}
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function() {
+      const sayThanks = function(e) {
+        e.preventDefault();
+        $('#add-thanks').off('click', sayThanks);
+        $('#add-thanks').append(' <i class="fas fa-spinner fa-spin"></i>');
+        let url = "{% url 'say-thanks' %}";
+        let userName = '{{ user_profile.user.username }}';
+        let data = {
+          'username': userName,
+          'csrfmiddlewaretoken': '{{ csrf_token }}'
+        };
+        $.ajax({
+          url: url,
+          type: 'POST',
+          data: data,
+          success: function(data) {
+            $('.profile__header--reward').html('<i class="fas fa-hand-holding-heart"></i>' + data.stewardship_count);
+            $('#add-thanks').find('i').remove();
+            $('#add-thanks').on('click', sayThanks);
+          },
+          error: function(data) {
+            console.log(data);
+            $('#add-thanks').on('click', sayThanks);
+          }
+        });
+      }
+      $('#add-thanks').on('click', sayThanks);
+    });
+  </script>
+{% endblock extra_postloadjs %}
