@@ -206,30 +206,30 @@ We would like to thank the following:
 * Our families, for their endless patience while we disappear for another long weekend of hackathon coding.
 
 
- ------------------------------------
+ ---
 
 
-Most common Mental Health issues that people face on a day to day basis in no particular order.
+# Most common Mental Health issues that people face on a day to day basis, in no particular order.
 
-1 - Anxiety: 
+# Anxiety: 
 
-Anxiety is a feeling of worry or unease. Everyone feels anxious at some point, though these feelings are usually short-lived and don't affect day-to-day life. Anxiety becomes a problem when it starts to affect your health and your enjoyment of life. 
+ Anxiety is a feeling of worry or unease. Everyone feels anxious at some point, though these feelings are usually short-lived and don't affect day-to-day life. Anxiety becomes a problem when it starts to affect your health and your enjoyment of life. 
  
-Within this section we've selected the more common form of anxiety, Social Anxiety:
+  Within this section we've selected the more common form of anxiety, Social Anxiety:
 
 Social anxiety is a frustrating mental health problem for anyone who would like to or needs to interact with people socially. 
 
-Symptoms include: 
+## Symptoms include: 
 
-Fears – of being judged, embarrassed, or humiliated, that others will notice you look anxious.
++ Fears – of being judged, embarrassed, or humiliated, that others will notice you look anxious.
 
-Behaviors – avoiding speaking to others or being the center of attention, analyzing your social performance after the fact 
++ Behaviors – avoiding speaking to others or being the center of attention, analyzing your social performance after the fact 
 
-Physical – blushing, trembling, sweating, fast heartbeat, nausea, lack of breath, dizziness, blank mind, muscle tension. 
++ Physical – blushing, trembling, sweating, fast heartbeat, nausea, lack of breath, dizziness, blank mind, muscle tension. 
 
 Managing anxiety involves learning how to recognize feelings and finding ways to cope with them. You may find you can do this on your own or you may want to look for professional help. 
 
-Ideas that may help include: 
+**Ideas that may help include:**
 
 - Thinking about what concerns you 
 - Learn to live in the now 
@@ -237,27 +237,31 @@ Ideas that may help include:
 - Stay active 
 - Stay social 
 
+<br>
 
-2 - Bipolar Disorder: 
+# 2 - Bipolar Disorder: 
 
-Several mental disorders come under the umbrella of bipolar disorder. If you have one of these mental health conditions, you will have depressive episodes with any of the depression signs. You will also have manic or hypomanic symptoms. Manic symptoms include: 
+Several mental disorders come under the umbrella of bipolar disorder. If you have one of these mental health conditions, you will have depressive episodes with any of the depression signs. You will also have manic or hypomanic symptoms. 
 
-Emotions – upbeat, wired, euphoric.
+### Manic symptoms include: 
 
-Thoughts – racing thoughts, distractibility, excessive self-confidence, lack of judgment, extreme risk-taking.
++ Emotions – upbeat, wired, euphoric.
 
-Physical – increased energy or agitation, needing less sleep or food. 
++ Thoughts – racing thoughts, distractibility, excessive self-confidence, lack of judgment, extreme risk-taking.
+
++ Physical – increased energy or agitation, needing less sleep or food. 
 
  
-Self-help strategies for bipolar disorder 
+### Self-help strategies for bipolar disorder 
 
-- Monitor your mood. 
-- Develop a schedule/routine to keep your mood as stable as possible. 
-- Take your time in making decisions. 
-- Build/join a good support group.
++ Monitor your mood. 
++ Develop a schedule/routine to keep your mood as stable as possible. 
++ Take your time in making decisions. 
++ Build/join a good support group.
 
+<br>
 
-3 - Depression:  
+# 3 - Depression:  
 
 Depression is a low mood that can last for weeks, months or could be persistent and affect your daily life. 
 Symptoms may range from lasting feelings of unhappiness and hopelessness, to losing interest in the things you used to enjoy and feeling very tearful.
@@ -266,14 +270,15 @@ There can be physical symptoms too, such as feeling constantly tired, sleeping b
 
 The symptoms of depression range from mild to severe. At its mildest, you may simply feel persistently low in spirit, while severe depression can make you feel suicidal, that life is no longer worth living. 
 
-Self-care treatment.
+### Self-care treatment.
 
 Many people with depression benefit by making lifestyle changes, such as getting more exercise, cutting down on alcohol, giving up smoking and eating healthily. 
 
 Reading a self-help book or joining a support group are also worthwhile. They can help you gain a better understanding about what causes you to feel depressed. Sharing your experiences with others in a similar situation can also be very supportive.
 
+<br>
 
-4 - Eating Disorders:  
+# 4 - Eating Disorders:  
 
 This is when a person has an unhealthy relationship with food, which can take over their life and make them ill. It commonly starts in young people aged 13 to 17 years old. A diagnosis is based on eating patterns, which include tests on weight, blood factors, and BMI.
 
@@ -281,41 +286,44 @@ Someone with an eating disorder may find their behaviour towards eating ever-cha
 
 There are different types of eating disorders, which are explained below: 
 
-- Anorexia Nervosa 
++ Anorexia Nervosa 
 By not eating enough food or exercising too much, people with this condition keep their weight down. This could cause them to starve their body of essential nutrients, which can make them very ill. 
 
-- Bulimia Nervosa 
++ Bulimia Nervosa 
 People with this condition binge-eat and then try to rid of the calories in unhealthy ways, such as making themselves sick, use laxatives, exercise too much, or take medication and/or use diet supplements in excess.
 
-- Binge-eating disorder: 
++ Binge-eating disorder: 
 This is where some people regularly eat large portions of food all at once until they feel uncomfortably full, and then often feel guilty or upset. 
 
-- OSFED: 
++ OSFED: 
 This refers to ‘other specified feeding or eating disorder’ and means they don’t have all the typical symptoms of one of the types above. 
 
-Psychological therapy 
+### **Psychological therapy**
+
 Psychological interventions offer opportunities to replace negative eating behaviours with positive ones, thus resulting in regular and positive eating habits.
 It can normalize a person’s eating patterns and help them to achieve a healthy weight, exchange unhealthy habits for healthy ones, develop skills to monitor their eating and their moods, and explore healthy ways to cope with stressful situations. 
-Examples of different types of therapy include: 
 
-CBT - Cognitive behavioural therapy 
+### Examples of different types of therapy include: 
+
++ CBT - Cognitive behavioural therapy 
 This psychotherapy focuses on behaviours, thoughts, and feelings that relate to their eating disorder. This can help explore healthy behaviours as well as improving a person’s mood. 
 
-FBT - Family-based therapy 
++ FBT - Family-based therapy 
 Having family around the process can help those with an eating disorder get back to healthy eating patterns. 
 
-GCBT - Group cognitive behavioural therapy 
++ GCBT - Group cognitive behavioural therapy 
 This therapy requires meeting those who are experiencing an eating disorder and going through therapy together with a psychologist. 
 
-Nutrition Education 
++ Nutrition Education 
 Nutritional education teaches how nutrition affects the body, explores meal plans, establishes regular eating patterns and takes steps to avoid dieting or binge-eating. 
 
+<br>
 
-5 - Chronic loneliness: 
+# 5 - Chronic loneliness: 
 
 It means that you feel like you are entirely alone and have no one to support you; sometimes this is more a perception than a reality. You could be constantly surrounded by people and still feel like you are alone. 
 
-Some of the symptoms you may experience:
+### Some of the symptoms you may experience:
 
 - Inability to connect with others 
 - No close friends 
@@ -323,36 +331,38 @@ Some of the symptoms you may experience:
 - Feelings of self-doubt and low self-worth 
 - Exhaustion and burnout 
 
-Negative Mental Impressions 
+**Negative Mental Impressions**
 
 First, there are detrimental impressions left on the brain. The human brain processes loneliness in the same manner as physical pain. In layman's terms, although human beings may be able to consciously tell the difference between physical and emotuionemotional distress, the brain cannot make the distinction. 
 
-People suffering with this condition may be susceptible to: 
+### People suffering with this condition may be susceptible to: 
 
 - Alzheimer's Disease/Dementia 
 - Heart Disease 
 - Insomnia And Other Sleep Disorders 
 
+<br>
 
-6 - (PTSD) Post-traumatic Stress Disorder: 
+# 6 - (PTSD) Post-traumatic Stress Disorder: 
 
 PTSD is a condition that some people may develop after experiencing or witnessing a traumatic life-threatening event or serious injury. 
 
 Traumatic events can make us feel that our lives are unpredictable, that we are out of control and therefore find it difficult to feel safe and trust other people, ourselves and our judgements.
  
-PTSD typically causes four different groups of symptoms:  
+### PTSD typically causes four different groups of symptoms:  
 
 - Reliving the traumatic event perhaps in the form of flashback, nightmares or intrusive memories (also called re-experiencing or intrusion). 
 - Avoiding situations that are reminders of the event.
 - Negative changes in beliefs and feelings.
 - And feeling hypervigilant and fearful to people and the world around you (also called hyperarousal).
 
+<br>
 
-7 - Postpartum depression: 
+# 7 - Postpartum depression: 
 
 Postnatal depression is a type of depression that parents can have after having a baby and it can start any time in the first year after giving birth. 
 
-Symptoms that may display are:
+### Symptoms that may display are:
 
 - A persistent feeling of sadness and low mood.
 - Lack of enjoyment and loss of interest in the wider world.
@@ -368,11 +378,11 @@ Postnatal depression can be lonely, distressing and frightening, but support and
 
  
 
- ------------------------------------
+ ---
 
 
 
-Short description for each chat room.
+# Short description for each chat room.
 
 - 1st Chat room / Social Anxiety:
 
