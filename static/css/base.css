@@ -452,6 +452,10 @@ img {
   background-color: #51A614;
 }
 
+.message__avatar--avatar img {
+  border-radius: 50%;
+}
+
 .message__header--username {
   display: flex;
   flex-direction: row;

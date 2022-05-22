@@ -1,3 +1,4 @@
+"""Views for the profile app"""
 from django.shortcuts import render, reverse, redirect, get_object_or_404
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
@@ -17,7 +18,10 @@ def register(request):
         if form.is_valid():
             username = form.cleaned_data.get('username') 
             form.save()
-            messages.success(request, f'Your account has been created! You are now able to log in') 
+            messages.success(
+                request,
+                f'Your account has been created! You are now able to log in'
+            ) 
             return redirect('')
     else:
         form = UserRegisterForm()
@@ -33,9 +37,11 @@ def profile(request, *args, **kwargs):
         )
     if request.method == 'POST':
         user_form = UserUpdateForm(request.POST, instance=request.user)
-        profile_form = ProfileUpdateForm(request.POST,
-                                   request.FILES,
-                                   instance=request.user.user_profile) 
+        profile_form = ProfileUpdateForm(
+            request.POST,
+            request.FILES,
+            instance=request.user.user_profile
+        ) 
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
             profile_form.save()
@@ -59,14 +65,21 @@ def profile(request, *args, **kwargs):
 def update_profile(request, *args, **kwargs):
     if request.method == 'POST':
         user_form = UserUpdateForm(request.POST, instance=request.user)
-        profile_form = ProfileUpdateForm(request.POST,
-                                   request.FILES,
-                                   instance=request.user.user_profile) 
+        profile_form = ProfileUpdateForm(
+            request.POST,
+            request.FILES,
+            instance=request.user.user_profile
+        ) 
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
             profile_form.save()
-            messages.success(request, f'Your profile has been updated successfully!')
-            return HttpResponseRedirect(reverse('profile', kwargs={'username': request.user}))
+            messages.success(
+                request,
+                f'Your profile has been updated successfully!'
+            )
+            return HttpResponseRedirect(
+                reverse('profile', kwargs={'username': request.user})
+            )
 
     else:
         user_form = UserUpdateForm(instance=request.user)
