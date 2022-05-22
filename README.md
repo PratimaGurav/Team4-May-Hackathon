@@ -144,15 +144,15 @@ The website is comprised of:
 
 ### Frameworks, Libraries & Programs Used
 
-Balsamiq - Used to create wireframes.
+[Balsamiq](https://balsamiq.com/) - Used to create wireframes.
 
-Git - For version control.
+[Git](https://git-scm.com/) - For version control.
 
-Github - To save and store the files for the website.
+[Github](https://github.com/) - To save and store the files for the website.
 
-Google Fonts - To import the fonts used on the website.
+[Google](https://fonts.google.com/) Fonts - To import the fonts used on the website.
 
-Font Awesome - For the iconography on the website.
+[Font Awesome](https://fontawesome.com/) - For the iconography on the website.
 
 Google Dev Tools - To troubleshoot and test features, solve issues with responsiveness and styling.
 
@@ -254,6 +254,13 @@ We used Lighthouse within the Chrome Developer Tools to test the performance, ac
 
 ### Acknowledgments
 
+* Thank you to the incredible team that worked on this project, not only for their skill but also their kindness and team work ethos.
+* Shoutout to Code Institute and Trust In SODA for hosting this month's Hackathon and for choosing such an important topic.
+* Thank you to Kasia Bogucka, our group's facilitator from Code Institute.
+* Our families, for their endless patience while we disappear for another long weekend of hackathon coding.
+
+
+
 Meet team :
 
 * [Pratima](https://github.com/PratimaGurav) 
@@ -263,10 +270,6 @@ Meet team :
 * [Stephen](https://github.com/StephenB92)
 * [David](https://github.com/pizzaHunt3r)
 
-
-We would like to thank the following:
-
-* Our families, for their endless patience while we disappear for another long weekend of hackathon coding.
 
 
 
