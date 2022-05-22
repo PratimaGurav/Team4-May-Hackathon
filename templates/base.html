@@ -38,43 +38,48 @@
 
   <title>Connectedsy {% block extra_title %}{% endblock %}</title>
 </head>
-
 <body class="d-flex flex-column h-100">
-  {% comment %} Navbar {% endcomment %}
+{% comment %} Navbar {% endcomment %}
   <nav class="navbar navbar-expand-sm bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="{% url 'home' %}">CONNECTEDSY</a>
+    <div class="container">
+      <a class="navbar-brand" href="{% url 'home' %}">
+        <!--Site logo-->
+        <img class="rounded float-start logo"
+        src="/media/logo.png"
+        alt="Site Logo">
+    </a>
+      <!-- <a class="navbar-brand" href="{% url 'home' %}">CONNECTEDSY</a> -->
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only"></span></a>
+          <li class="nav-item">
+            <a class="nav-link {% if request.resolver_match.url_name == 'home' %} active {% endif %}" href="{% url 'home' %}">Home <span class="sr-only"></span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'chat_list' %}">Chat Rooms</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="">Contact us</a>
+            <a class="nav-link {% if request.resolver_match.url_name == 'contact' %} active {% endif %}" href="{% url 'contact' %}">Contact us</a>
           </li>
         </ul>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="nav-profile navbar-nav mr-auto">
+        <div class="collapse navbar-collapse nav justify-content-end" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
             {% if user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link {% if request.resolver_match.url_name == 'chat_list' %} active {% endif %}" href="{% url 'chat_list' %}">Chat Rooms</a>
+            </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="{% url 'profile' %}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="{% url 'profile' username=request.user %}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <img class="profile-img profile-mini d-inline-block" src="{{ user.user_profile.avatar.url }}">
-                {{user.user_profile.user}}</a>
+                {{user.user_profile.user|title}}</a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item nav-link btn m-0" href="{% url 'profile' %}">Profile</a>
-                <a class="dropdown-item nav-link btn m-0" href="{% url 'account_logout' %}">Logout</a>
+                <a class="dropdown-item nav-link btn m-0" href="{% url 'profile' username=request.user %}">Profile</a>
+                <a class="dropdown-item nav-link btn m-0 {% if request.resolver_match.url_name == 'account_logout' %} active {% endif %}" href="{% url 'account_logout' %}">Logout</a>
               </div>
             </li>
             {% else %}
             <li class="nav-item">
-              <a class="nav-link btn btn-sm m-0" href="{% url 'account_login' %}"><i class="fa fa-user"></i>
+              <a class="nav-link {% if request.resolver_match.url_name == 'account_login' %} active {% endif %}" href="{% url 'account_login' %}"><i class="fa fa-user"></i>
                 Login</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link btn m-0" href="{% url 'account_signup' %}">Sign up</a>
+              <a class="nav-link {% if request.resolver_match.url_name == 'account_signup' %} active {% endif %}" href="{% url 'account_signup' %}">Sign up</a>
             </li>
             {% endif %}
           </ul>
@@ -82,7 +87,6 @@
       </div>
     </div>
   </nav>
-
 
   {% comment %} Main content container {% endcomment %}
   <main class="main">
@@ -121,6 +125,16 @@
   {% block postloadjs %}
   <script src="{% static 'js/base.js' %}"></script>
   {% endblock %}
+
+  <script>
+    // Function to display and hide alert messages.
+    setTimeout(function () {
+        let messages = document.getElementById('messages-notes');
+        let alert = new bootstrap.Alert(messages);
+        alert.close();
+    }, 2500);
+  </script>    
+
 </body>
 
 </html>

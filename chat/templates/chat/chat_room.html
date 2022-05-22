@@ -65,10 +65,13 @@
                 {% endfor %}
               </div>
               <div class="message__reactions--choices">
-                <span class="reactions__toggle">React</span>
+                <span class="reactions__toggle">
+                  <i class="far fa-grin"></i>
+                  <div class="reactions__toggle--plus">+</div>
+                </span>
                 <div class="reactions__choices hidden">
                   {% for emoji in emojis %}
-                  <div>
+                  <div class="reaction__emoji--container">
                     <img src="{{ emoji }}" alt="" class="reaction_emoji--img" data-message-id="{{ message.id }}">
                   </div>
                   {% endfor %}

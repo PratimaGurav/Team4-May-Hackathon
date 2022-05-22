@@ -15,7 +15,7 @@ import os
 if os.path.isfile("env.py"):
     import env
 
-
+import dj_database_url
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
@@ -114,27 +114,19 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# DATABASES
-# if "DATABASE_URL" in os.environ:
-#     print("database = PostgreSQL via Heroku")
-#     DATABASES = {
-# "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
-#     }
-# else:
-#     print("database = db.sqlite3")
-#     DATABASES = {
-#         "default": {
-#             "ENGINE": "django.db.backends.sqlite3",
-#             "NAME": BASE_DIR / "db.sqlite3",
-#         }
-#     }
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    },
-    # 'default': dj_database_url.parse(os.environ.get("DATABASE_URL")),
-}
+if "DATABASE_URL" in os.environ:
+    print("database = PostgreSQL via Heroku")
+    DATABASES = {
+        "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    }
+else:
+    print("database = db.sqlite3")
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": BASE_DIR / "db.sqlite3",
+        }
+    }
 
 cloudinary.config(
     cloud_name = os.environ.get("CLOUDINARY_CLOUD_NAME"),
