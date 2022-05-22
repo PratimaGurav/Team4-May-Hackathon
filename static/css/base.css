@@ -117,8 +117,8 @@ img {
 }
 
 .navbar-nav .nav-link.active, .navbar-nav .show>.nav-link {
-  color: rgb(28 45 6) !important;
   padding-left: 20px;
+  border-bottom: 2.5px solid rgb(28 45 6) !important;
 }
 
 .thin {
