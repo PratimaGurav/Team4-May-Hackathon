@@ -25,8 +25,10 @@ class Chat(models.Model):
     )
     created_at = models.DateTimeField(auto_now_add=True)
 
-    def __repr__(self):
-        return self.chat_name
+
+    def __str__(self):
+        return str(self.chat_name)
+
 
     class Meta:
         """Ordering chats by created_at"""
@@ -63,6 +65,7 @@ class ChatMessage(models.Model):
     def __str__(self): 
         return str(self.content)
 
+
     class Meta:
         """ Order messages by creation date. """
         ordering = ['created_at']
@@ -92,4 +95,4 @@ class Reaction(models.Model):
     emoji = models.URLField()    
         
     def __str__(self):
-        return f'{self.user} reacted with {self.emoji}'
+        return f'{self.user.username} reacted with {self.emoji}'

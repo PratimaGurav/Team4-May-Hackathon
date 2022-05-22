@@ -8,7 +8,7 @@
     <div class="chat__room">
       <div class="chats__navbar">
         {% for chat_tab in chats %}
-          <a href="{% url 'chat_room' slug=chat_tab.slug %}" class="chats__navbar--item">{{ chat_tab }}</a>
+          <a href="{% url 'chat_room' slug=chat_tab.slug %}" class="chats__navbar--item">{{ chat_tab.chat_name }}</a>
         {% endfor %}
       </div>
       <div class="chat__main">
