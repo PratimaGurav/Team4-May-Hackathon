@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
       let messageReactionsContainer = document.createElement('div');
       messageReactionsContainer.classList.add('message__reactions--container');
       // add data-message-id to messageReactionsContainer
-      messageReactionsContainer.setAttribute('data-message-id', data.id);
+      messageReactionsContainer.setAttribute('data-message-id', data.message_id);
       let messageReactionsChoices = document.createElement('div');
       messageReactionsChoices.classList.add('message__reactions--choices');
       let reactionsToggle = document.createElement('span');
