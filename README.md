@@ -144,15 +144,15 @@ The website is comprised of:
 
 ### Frameworks, Libraries & Programs Used
 
-Balsamiq - Used to create wireframes.
+[Balsamiq](https://balsamiq.com/) - Used to create wireframes.
 
-Git - For version control.
+[Git](https://git-scm.com/) - For version control.
 
-Github - To save and store the files for the website.
+[Github](https://github.com/) - To save and store the files for the website.
 
-Google Fonts - To import the fonts used on the website.
+[Google](https://fonts.google.com/) Fonts - To import the fonts used on the website.
 
-Font Awesome - For the iconography on the website.
+[Font Awesome](https://fontawesome.com/) - For the iconography on the website.
 
 Google Dev Tools - To troubleshoot and test features, solve issues with responsiveness and styling.
 
