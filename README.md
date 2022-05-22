@@ -109,9 +109,9 @@ Most of the imagery used was specifically chosen to evoke a sense of peace and p
 
 Wireframes were created for mobile, tablet and desktop with [Balsamiq]()
 
-[Desktop]() |
-[Tablet]() |
-[Mobile]() |
+[Desktop](/documentation/wireframes/desktop.pdf) |
+[Tablet](/documentation/wireframes/tab.pdf) |
+[Mobile](/documentation/wireframes/mobile.pdf) |
 
 ### Features
 
@@ -171,7 +171,31 @@ Google Dev Tools - To troubleshoot and test features, solve issues with responsi
 
 ### Deployment
 
-The site is deployed using GitHub Pages.
+### Using Heroku
+- Development Enviroment
+  1.  Create env.py : It needs to contain these 3 variables.
+    - [Cloudinary](https://cloudinary.com/)
+    - Secret key is the password of your choice.
+    - [Heroku](https://id.heroku.com/) postgreSQL.
+    ![env file](/documentation/deployment/env.jpg)
+  2. Create requirements.txt file.
+  3. Create Procfile containing application name to ensure proper formatting to avoid the deployment to fail.
+  4. Commit and push deployment changes to Github.
+  5. Create an account and login to Heroku
+    - Create a new app, with an appropriate app name and choose a region.
+    ![Create App](/documentation/deployment/heroku-create-app.jpg)
+    - In Resources add Heroku Postgres.
+    ![Resources](/documentation/deployment/heroku-resources.jpg)
+    - Within your newly created app go to settings go to Config Vars use the DATABASE_URL Value and add it to your env.py file also you need to connect it via settings.py.
+    ![Config Vars](/documentation/deployment/heroku-configvars.jpg)
+    - Create a SECRET_KEY Key and the Value as the desired key.
+    - Download and install [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
+    - And pass following commands in your github terminal:
+      - $ heroku login -i
+      - Then enter your login credentials
+      - $ git add .
+      - $ git commit -am "make it better"
+      - $ git push heroku main
 
 ### Local Development
 
@@ -180,7 +204,7 @@ The site is deployed using GitHub Pages.
 To fork the repository:
 
 1. Log in (or sign up) to Github.
-2. Go to the repository for this project, []().
+2. Go to the repository for this project, [Connectedsy](https://github.com/PratimaGurav/Team4-May-Hackathon).
 3. Click the Fork button in the top right corner.
 
 #### How to Clone
@@ -188,7 +212,7 @@ To fork the repository:
 To clone the repository:
 
 1. Log in (or sign up) to GitHub.
-2. Go to the repository for this project, []().
+2. Go to the repository for this project, [Connectedsy](https://github.com/PratimaGurav/Team4-May-Hackathon).
 3. Click on the code button, select whether you would like to clone with HTTPS, SSH or GitHub CLI and copy the link shown.
 4. Open the terminal in your code editor and change the current working directory to the location you want to use for the cloned directory.
 5. Type 'git clone' into the terminal and then paste the link you copied in step 3. Press enter.
