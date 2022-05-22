@@ -4,10 +4,9 @@
 
 <!-- Page Title-->
 <div class="container">
-    <h2 class="text-center mt-3">Connectedsy</h2>
-    <p class="text-center mt-1"><em>(Meet, greet, share, support)</em></p>
-</div>
-
+  <h2 class="text-center mt-3"><span class="text-success rounded border-bottom border-success">CON</span><span class="text-success">N</span><span class="text-success rounded border-top border-success">ECTED</span><span class="text-warning">SY</span></h2>
+  <p class="text-center mt-1 text-primary"><em>Meet Greet <i class="fas fa-link"></i> Share Support </em></p>
+  
 <div class="row justify-content-around me-md-2 mb-2">
   <div class="col-4 index-card bg-transparent">
     <h2 class="text-center">Stay Connected!</h2>
@@ -48,15 +47,17 @@
     </div>
   </div>
   {% else %}
-  <div class="card">
-    <h3 class="text-center">Please Login!</h3>
-    <img class="card-img-top" src="media/profile_images/stay-connected.jpg" alt="Card image cap">
-    <div class="card-body">
-      <p class="card-text">To join Chat's network and begin chatting.</p>
-      <br>
-      <a href="{% url 'account_login' %}" class="btn btn-outline-dark me-md-2 ">Login</a>
-    </div>
+  <div class="row justify-content-around">
+    <div class="col-4 index-card bg-transparent">
+      <h2 class="text-center">Please Login!</h2>
+    <img class="card-img-top" src="/media/miracle.jpg" alt="Card image">
+    <!-- <div class="card-body"> -->
+      <p class="mt-1 text-center">To join Chat's network and begin chatting.</p>
+      <a href="{% url 'account_login' %}" class="btn btn-outline-dark me-md-2 mb-2">Login</a>
+    <!-- </div> -->
   </div>
+  </div>
+</div>
   {% endif %} 
 
 
