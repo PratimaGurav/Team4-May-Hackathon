@@ -10,6 +10,13 @@ document.addEventListener('DOMContentLoaded', function () {
   const socketUrl = `${socketProtocol}//${window.location.host}/ws/chat/${roomName}/`;
   const chatSocket = new WebSocket(socketUrl);
 
+  const navbarItems = document.getElementsByClassName('chats__navbar--item');
+  for (let i = 0; i < navbarItems.length; i++) {
+    if (navbarItems[i].href === window.location.href) {
+      navbarItems[i].classList.add('chats__navbar--item--active');
+    }
+  }
+
   const reactionsTogglers = $('.reactions__toggle');
   const reactionsChoicesContainers = $('.reactions__choices');
   const emojiLinks = [
@@ -17,11 +24,30 @@ document.addEventListener('DOMContentLoaded', function () {
     'https://res.cloudinary.com/lexach91/image/upload/v1653110066/emojis/party-scream_xkjxg7.gif',
     'https://res.cloudinary.com/lexach91/image/upload/v1653110066/emojis/party-cry_sgfigm.gif',
     'https://res.cloudinary.com/lexach91/image/upload/v1653110066/emojis/giphy-joy_oxskf3.gif'
-  ]
+  ];
+
+  const hideReactions = () => {
+    $('.reactions__choices').addClass('hidden');
+  };
 
   $('.reactions__toggle').click(function (e) {
+    e.stopPropagation();
     // find sibling with class reactions__choices and toggle class hidden
-    $(this).siblings('.reactions__choices').toggleClass('hidden');
+    // then add class hidden if clicked outside of it
+    const reactionsChoicesContainer = $(this).siblings('.reactions__choices');
+    if (reactionsChoicesContainer.hasClass('hidden')) {
+      reactionsChoicesContainer.removeClass('hidden');
+    } else {
+      reactionsChoicesContainer.addClass('hidden');
+    }
+    $(document).click(function (e) {
+      // if clicked outside of reactions__choices and not on reactions__toggle then hide reactions
+      if(!$('.reactions__toggle').is(e.target) && reactionsChoicesContainer.has(e.target).length === 0) {
+        hideReactions();
+        // remove event listener
+        $(document).off('click');
+      }
+    });
   });
 
   const chatId = document.getElementById('chat-id').value;
@@ -62,13 +88,14 @@ document.addEventListener('DOMContentLoaded', function () {
       messageBodyText.classList.add('message__body--text');
       let messageBodyImage = document.createElement('div');
       messageBodyImage.classList.add('message__body--image');
-      messageHeaderUsername.innerHTML = data.username || 'Anonymous';
+      // messageHeaderUsername.innerHTML = data.username || 'Anonymous';
+      messageHeaderUsername.innerHTML = `<a class="message__header--username message__header--link" href="/profile/${data.username}/">${data.username}</a>` || 'Anonymous';
       messageHeaderTime.innerHTML = data.time;
       messageBodyText.innerHTML = data.message;
       if (data.image) {
         messageBodyImage.innerHTML = `<img src="${data.image}" />`;
       }
-      // messageHeaderAvatar.innerHTML = `<img src="${data.avatar}" />`;
+      messageHeaderAvatar.innerHTML = `<img src="${data.avatar_url}" alt="Avatar of ${data.username ? data.username : 'Anonymous'}" />`;
       messageHeader.appendChild(messageHeaderData);
       messageHeaderData.appendChild(messageHeaderAvatar);
       messageHeaderData.appendChild(messageHeaderUsername);
@@ -183,7 +210,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const chatMessage = {
           'type': 'chat_message',
           'chat_id': chatId,
-          'message': chatInput.value,
+          'message': linkifyHtml(chatInput.value),
           'username': sendAnonymously ? 'Anonymous' : username,
           'image': fileUrl
         };
@@ -191,22 +218,27 @@ document.addEventListener('DOMContentLoaded', function () {
         fileInput.value = '';
         chatInput.value = '';
       };
-    } else {
+    } else if (chatInput.value){
       const chatMessage = {
         'type': 'chat_message',
         'chat_id': chatId,
-        'message': chatInput.value,
+        'message': linkifyHtml(chatInput.value),
         'username': sendAnonymously ? 'Anonymous' : username,
         'image': null
       };
       chatSocket.send(JSON.stringify(chatMessage));
       chatInput.value = '';
+    } else {
+      console.log('No message to send');
+      // show some tooltip or something
+      $(chatInput).effect('highlight', {color: '#ff0000'}, 1000);
     }
   });
 
 
   const reactionHandler = (e) => {
     console.log('Reaction clicked');
+    $('.reactions__choices').addClass('hidden');
     let messageId = $(e.target).data('message-id');
     let emojiUrl = $(e.target).attr('src');
     let data = {
