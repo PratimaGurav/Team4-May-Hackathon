@@ -42,7 +42,7 @@
 
 <body class="d-flex flex-column h-100">
   {% comment %} Navbar {% endcomment %}
-  <nav class="navbar navbar-expand-lg bg-dark">
+  <nav class="navbar navbar-expand-lg bg-dark py-2">
     <a class="navbar-brand" href="{% url 'home' %}">
       <!--Site logo-->
       <span class="text-white rounded border-bottom shadow-sm">CON</span><span class="text-white">N</span><span
@@ -108,8 +108,8 @@
       {% if messages %}
       <div class="message-container" id="messages-notes">
         {% for message in messages %}
-        <div class="message-container__message">
-          <p class="message-container__message--text">{{ message }}</p>
+        <div class="message-container__message px-4 bg-primary">
+          <p class="message-container__message--text text-white">{{ message }}</p>
         </div>
         {% endfor %}
       </div>
