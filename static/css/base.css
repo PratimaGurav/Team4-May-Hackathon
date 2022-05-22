@@ -597,7 +597,6 @@ background: var(--grad-3) !important;
   height: 2em;
   border-radius: 50%;
   margin-right: .5em;
-  background-color: #51A614;
 }
 
 .message__avatar--avatar img {
