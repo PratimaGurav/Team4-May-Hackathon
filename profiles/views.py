@@ -27,8 +27,9 @@ def register(request):
 # Create profile view to update profile
 @login_required
 def profile(request, *args, **kwargs):
+    user = get_object_or_404(User, username=kwargs['username'])
     user_profile = get_object_or_404(
-            User,  username=kwargs['username']
+            Profile,  user=user
         )
     if request.method == 'POST':
         user_form = UserUpdateForm(request.POST, instance=request.user)
