@@ -10,6 +10,13 @@ document.addEventListener('DOMContentLoaded', function () {
   const socketUrl = `${socketProtocol}//${window.location.host}/ws/chat/${roomName}/`;
   const chatSocket = new WebSocket(socketUrl);
 
+  const navbarItems = document.getElementsByClassName('chats__navbar--item');
+  for (let i = 0; i < navbarItems.length; i++) {
+    if (navbarItems[i].href === window.location.href) {
+      navbarItems[i].classList.add('chats__navbar--item--active');
+    }
+  }
+
   const reactionsTogglers = $('.reactions__toggle');
   const reactionsChoicesContainers = $('.reactions__choices');
   const emojiLinks = [
