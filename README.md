@@ -16,14 +16,6 @@ In creating this platform, our team has put great emphasis on creating Connected
 
 Connectedsy is an online communication platform aimed towards people experiencing mental health issues. There are a variety of chat rooms that are separated by different mental health issues that include depression, social anxiety, PTSD and more. In creating Connectedsy, our team aims to create a space for people to connect with others who are suffering from similar issues. The platform also includes a chat room for people who may not be suffering from any severe mental health issues, but still may be experiencing loneliness and would like to connect with others.
 
-# Future Implementations
-
-- In a future update of Connectedsy, we will implement special profiles on the platform for mental health professionals. The aim here would be for mental health professionals to join chat rooms based on their particular areas of expertise and provide advice to users where appropriate and on a pro-bono basis.
-
-- In a future update of Connectedsy, we will include a blog page that provides users with information on mental health issues, along with online resources they can use.
-
-- There is a known bug on the platform which allows users to send empty chat messages. Our team is aiming to fix this in a future update of Connectedsy. More information can be found in the Known Bugs section of the testing.md file.
-
 # Marketing
 
 In addition to our target audience, our team aims to market Connectedsy towards mental health professionals. The goal is to encourage such professionals to join our chat rooms and provide advice to users. This would be a great opportunity for mental health professionals to provide valuable support and advice on a charitable basis.
@@ -62,13 +54,6 @@ In addition to our target audience, our team aims to market Connectedsy towards 
     * [How to Clone]()
 
 * [Testing]()
-  * [W3C Validator]()
-  * [JavaScript Validator]()
-  * [Solved Bugs]()
-  * [Known Bugs]()
-  * [Testing User Stories]()
-  * [Lighthouse]()
-  * [Full Testing]()
   
 * [Credits]()
   * [Code Used]()
@@ -128,7 +113,11 @@ The website is comprised of:
 
 * Future Implementations.
 
-  * 
+  * In a future update of Connectedsy, we will implement special profiles on the platform for mental health professionals. The aim here would be for mental health professionals to join chat rooms based on their particular areas of expertise and provide advice to users where appropriate and on a pro-bono basis.
+
+  * In a future update of Connectedsy, we will include a blog page that provides users with information on mental health issues, along with online resources they can use.
+
+  * There is a known bug on the platform which allows users to send empty chat messages. Our team is aiming to fix this in a future update of Connectedsy. More information can be found in the Known Bugs section of the testing.md file.
 
 ### Accessibility
 
@@ -200,45 +189,7 @@ To clone the repository:
 
 ## Testing
 
-Testing was ongoing throughout the entire build. We utilised Chrome developer tools while building to pinpoint and troubleshoot any issues as we went along.
-
-### W3C Validator
-
-![W3C validator pass]()
-
-The CSS on the site was tested using the [Jigsaw W3C CSS Validator]() The CSS passed.
-
-![CSS validation]()
-
-### JavaScript Validator
-
-![JSHint]()
-
-### Solved Bugs
-
-* 
-
-
-### Known Bugs
-
-* 
-
-### Testing User Stories
-
-* First Time Visitors
-
-
-* Returning Visitors
-
-
-* Frequent Visitors
-
-
-### Lighthouse
-
-We used Lighthouse within the Chrome Developer Tools to test the performance, accessibility, best practices and SEO of the website.
-
-### Full Testing
+Please find our separate .md file for testing [here](TESTING.md).
 
 - - -
 
