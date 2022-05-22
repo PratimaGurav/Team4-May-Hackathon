@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     $(document).click(function (e) {
       // if clicked outside of reactions__choices and not on reactions__toggle then hide reactions
-      if(!$('.reactions__toggle').is(e.target) && reactionsChoicesContainer.has(e.target).length === 0) {
+      if (!$('.reactions__toggle').is(e.target) && reactionsChoicesContainer.has(e.target).length === 0) {
         hideReactions();
         // remove event listener
         $(document).off('click');
@@ -218,7 +218,7 @@ document.addEventListener('DOMContentLoaded', function () {
         fileInput.value = '';
         chatInput.value = '';
       };
-    } else if (chatInput.value){
+    } else if (chatInput.value) {
       const chatMessage = {
         'type': 'chat_message',
         'chat_id': chatId,
@@ -231,7 +231,9 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
       console.log('No message to send');
       // show some tooltip or something
-      $(chatInput).effect('highlight', {color: '#ff0000'}, 1000);
+      $(chatInput).effect('highlight', {
+        color: '#7272ccba'
+      }, 1000);
     }
   });
 
