@@ -313,6 +313,19 @@ img {
   color: var(--grad-1);
 }
 
+.chats__navbar--item:hover {
+  color: var(--grad-1);
+  background-color: #96d463;
+}
+
+.chats__navbar--item.chats__navbar--item--active {
+  background-color: #79b846;
+  -webkit-box-shadow: inset 0px 0px 63px -20px rgb(62, 142, 6);
+  -moz-box-shadow: inset 0px 0px 63px -20px rgb(62, 142, 6);
+  box-shadow: inset 0px 0px 63px -20px rgb(62, 142, 6);
+
+}
+
 .chat__main {
   display: flex;
   flex-direction: column;
@@ -325,8 +338,8 @@ img {
 .chat__container {
   width: 100%;
   margin: 0 auto;
-  /* height: calc(100% - 175px) !important; */
-  height: inherit;
+  height: calc(100% - 175px) !important;
+  /* height: inherit; */
   width: 100% !important;
   background-color: var(--grad-4);
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
