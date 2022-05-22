@@ -113,7 +113,7 @@ img {
 .navbar-dark .navbar-nav .nav-link {
   color: var(--black-color) !important;
   padding-left: 20px;
-  
+
 }
 
 .thin {
@@ -123,6 +123,7 @@ img {
 .logo {
   height: 60px;
 }
+
 /*---------- PAGE LAYOUT UTILITIES ----------*/
 
 .index-container {
@@ -508,12 +509,12 @@ footer {
 
 #footer-external-links>a {
   text-decoration: none;
-  color: #383d41!important;
+  color: #383d41 !important;
   font-size: 1.5rem;
 }
 
-#footer-external-links> a:hover {
-  color: var(--black-color)!important;
+#footer-external-links>a:hover {
+  color: var(--black-color) !important;
 }
 
 /*---------- CONTACT US PAGE ----------*/
@@ -673,7 +674,8 @@ footer {
   background-color: var(--grad-2);
   background-color: var(--grad-4);
   border: 1px solid var(--grad-2);
-  top: -10.1rem;
+  /* top: -10.1rem; */
+  top: 2.1rem;
   right: 0;
   width: 20rem;
   height: 10rem;
@@ -682,6 +684,7 @@ footer {
   display: flex;
   overflow-y: scroll;
   flex-wrap: wrap;
+  /* z-index: 999999999; */
 }
 
 .card {
@@ -696,14 +699,14 @@ footer {
   height: 20vh;
 }
 
-.card> img {
+.card>img {
   height: 40vh;
   object-fit: cover;
 }
 
-.card> a {
+.card>a {
   text-decoration: none;
-  color:  var(--white-color);
+  color: var(--white-color);
 }
 
 .btn {

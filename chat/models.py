@@ -23,10 +23,9 @@ class Chat(models.Model):
         null=True,
         blank=True
     )
-    members = models.ManyToManyField(User, related_name='chats',)
     created_at = models.DateTimeField(auto_now_add=True)
 
-    def __str__(self):
+    def __repr__(self):
         return self.chat_name
 
     class Meta:
@@ -62,7 +61,7 @@ class ChatMessage(models.Model):
     )
 
     def __str__(self): 
-        return self.content
+        return str(self.content)
 
     class Meta:
         """ Order messages by creation date. """
