@@ -21,7 +21,11 @@
             <div class="message__header">
               <div class="message__header--data">
                 <div class="message__avatar--avatar">
-                  <img src="{{ message.user.user_profile.avatar_url }}" alt="Avatar of {{ message.user.username }}">
+                  {% if message.user %}
+                    <img src="{{ message.user.user_profile.avatar_url }}" alt="Avatar of {{ message.user.username }}">
+                  {% else %}
+                    <img src="/media/profile_images/avatar.png" alt="Default avatar">
+                  {% endif %}
                 </div>
                 {% if message.user %}
                   <a class="message__header--username message__header--link" href="{% url 'profile' username=message.user.username %}">
@@ -40,7 +44,7 @@
             </div>
             <div class="message__body">
               <div class="message__body--text">
-                {{ message.content }}
+                {{ message.content|safe }}
               </div>
               {% if message.image %}
                 <div class="message__body--image">
@@ -98,8 +102,15 @@
       </div>
     </div>
 
+    <!-- jquery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- jquery ui -->
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js" integrity="sha256-hlKLmzaRlE8SCJC1Kw8zoUbU8BxA+8kR3gseuKfMjxA=" crossorigin="anonymous"></script>
+    <!-- linkify js-->
+    <script src="https://cdn.jsdelivr.net/npm/linkifyjs@3.0.5/dist/linkify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/linkify-html@3.0.5/dist/linkify-html.min.js"></script>
+    <!-- chat room js -->
     <script src="{% static 'js/chat_room.js' %}"></script>
   {% endif %}
 {% endblock %}
