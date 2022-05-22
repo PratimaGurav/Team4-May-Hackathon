@@ -121,7 +121,8 @@ img {
 }
 
 .logo {
-  height: 60px;
+  height: 48px;
+  /* Approximately!!!!!!!!!!!!!!! */
 }
 
 /*---------- PAGE LAYOUT UTILITIES ----------*/
@@ -321,12 +322,13 @@ img {
 .chat__container {
   width: 100%;
   margin: 0 auto;
-  height: calc(100% - 175px) !important;
+  /* height: calc(100% - 175px) !important; */
+  width: 100% !important;
   background-color: var(--grad-4);
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
   position: relative;
   overflow-y: scroll;
-
+  padding-bottom: 7rem;
   /* margin-top: 2.8rem; */
 }
 
@@ -411,7 +413,7 @@ img {
   padding: .5em;
   margin: .5em;
   border: 1px solid var(--base-color);
-  background-color: rgb(211, 255, 231);
+  background-color: rgb(234 255 244);
   border-radius: 0.2em;
 }
 
@@ -674,17 +676,17 @@ footer {
   background-color: var(--grad-2);
   background-color: var(--grad-4);
   border: 1px solid var(--grad-2);
-  /* top: -10.1rem; */
+  /* top: -6.05rem; */
   top: 2.1rem;
   right: 0;
   width: 20rem;
-  height: 10rem;
+  height: 7rem;
   border-radius: 0.4em;
   padding: 0.5em;
   display: flex;
   overflow-y: scroll;
   flex-wrap: wrap;
-  /* z-index: 999999999; */
+  z-index: 999999999;
 }
 
 .card {
