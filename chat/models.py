@@ -23,11 +23,10 @@ class Chat(models.Model):
         null=True,
         blank=True
     )
-    members = models.ManyToManyField(User, related_name='chats',)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.chat_name
+        return str(self.chat_name)
 
     class Meta:
         """Ordering chats by created_at"""
@@ -62,7 +61,7 @@ class ChatMessage(models.Model):
     )
 
     def __str__(self): 
-        return self.content
+        return str(self.id)
 
     class Meta:
         """ Order messages by creation date. """
@@ -93,4 +92,4 @@ class Reaction(models.Model):
     emoji = models.URLField()    
         
     def __str__(self):
-        return f'{self.user} reacted with {self.emoji}'
+        return f'{self.user.username} reacted with {self.emoji}'
