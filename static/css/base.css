@@ -725,3 +725,9 @@ footer {
   justify-content: center;
   align-items: center;
 }
+
+
+.emojionearea-picker {
+  right: 40px !important;
+  margin-top: -275px !important;
+}
