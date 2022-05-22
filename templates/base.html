@@ -45,7 +45,7 @@
     <div class="container">
       <a class="navbar-brand" href="{% url 'home' %}">
         <!--Site logo-->
-        <img class="rounded float-start logo" src="/media/logo.png" alt="Site Logo">
+        <span class="text-white rounded border-bottom shadow-sm">CON</span><span class="text-white">N</span><span class="text-white rounded border-top">ECTED</span><span class="text-warning">SY</span>
       </a>
 {% comment %} <a class="navbar-brand" href="{% url 'home' %}">CONNECTEDSY</a> {% endcomment %}
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -132,14 +132,14 @@
   <script src="{% static 'js/base.js' %}"></script>
   {% endblock %}
 
-  <script>
+  <!-- <script>
     // Function to display and hide alert messages.
-    // setTimeout(function () {
-    //     let messages = document.getElementById('messages-notes');
-    //     let alert = new bootstrap.Alert(messages);
-    //     alert.close();
-    // }, 2500);
-  </script>
+    setTimeout(function () {
+        let messages = document.getElementById('messages-notes');
+        let alert = new bootstrap.Alert(messages);
+        alert.close();
+    }, 2500);
+  </script> -->
 
 </body>
 
