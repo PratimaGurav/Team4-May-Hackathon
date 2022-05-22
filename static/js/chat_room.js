@@ -59,12 +59,19 @@ document.addEventListener('DOMContentLoaded', function () {
     'https://res.cloudinary.com/lexach91/image/upload/v1653110063/emojis/giphy-beers_hbow7k.gif',
   ];
 
+  // initialize emojiOneArea on chatInput
+  $('#chat-input').emojioneArea({
+    useSprite: true,
+  });
+
+
   const hideReactions = () => {
     $('.reactions__choices').addClass('hidden');
   };
 
   $('.reactions__toggle').click(function (e) {
     e.stopPropagation();
+    $('.reactions__choices').addClass('hidden');
     // find sibling with class reactions__choices and toggle class hidden
     // then add class hidden if clicked outside of it
     const reactionsChoicesContainer = $(this).siblings('.reactions__choices');
@@ -122,7 +129,7 @@ document.addEventListener('DOMContentLoaded', function () {
       let messageBodyImage = document.createElement('div');
       messageBodyImage.classList.add('message__body--image');
       // messageHeaderUsername.innerHTML = data.username || 'Anonymous';
-      messageHeaderUsername.innerHTML = `<a class="message__header--username message__header--link" href="/profile/${data.username}/">${data.username}</a>` || 'Anonymous';
+      messageHeaderUsername.innerHTML = data.username ? `<a class="message__header--username message__header--link" href="/profile/${data.username}/">${data.username}</a>` : 'Anonymous';
       messageHeaderTime.innerHTML = data.time;
       messageBodyText.innerHTML = data.message;
       if (data.image) {
@@ -250,6 +257,7 @@ document.addEventListener('DOMContentLoaded', function () {
         chatSocket.send(JSON.stringify(chatMessage));
         fileInput.value = '';
         chatInput.value = '';
+        $('.emojionearea-editor').html('');
       };
     } else if (chatInput.value){
       const chatMessage = {
@@ -261,10 +269,11 @@ document.addEventListener('DOMContentLoaded', function () {
       };
       chatSocket.send(JSON.stringify(chatMessage));
       chatInput.value = '';
+      $('.emojionearea-editor').html('');
     } else {
       console.log('No message to send');
       // show some tooltip or something
-      $(chatInput).effect('highlight', {color: '#ff0000'}, 1000);
+      $('.emojionearea-editor').effect('highlight', {color: '#7272ccba'}, 1000);
     }
   });
 
