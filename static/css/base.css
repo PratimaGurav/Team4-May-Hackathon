@@ -421,7 +421,7 @@ img {
 
 /* ----- Styling chat page ----- */
 .chat__room {
-  height: calc(100vh - 98.5px) !important;
+  height: calc(100vh - 74.5px) !important;
   background-color: #acd68a;
 }
 
@@ -438,18 +438,17 @@ img {
 .chats__navbar--item {
   background-color: #acd68a;
   width: 100%;
-  padding: 3em 0;
+  padding: 3vh 1vw;
   text-decoration: none;
   -webkit-box-shadow: inset 0px 0px 63px -20px rgba(81, 166, 20, 1);
   -moz-box-shadow: inset 0px 0px 63px -20px rgba(81, 166, 20, 1);
   box-shadow: inset 0px 0px 63px -20px rgba(81, 166, 20, 1);
   border-radius: 0.4em;
-  padding: 1em;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  font-size: 1.5rem;
+  font-size: 2vh;
   font-weight: 500;
   color: var(--grad-1);
 }
@@ -555,10 +554,20 @@ img {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
+  margin-bottom: 0.2rem;
 }
 
 .send-anonymously--container label {
   margin-right: 0.5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.send-anonymously--container label i {
+  margin-right: 0.5em;
+  color: #5b5bbd;
 }
 
 /* Messages */
@@ -608,7 +617,6 @@ img {
   height: 2em;
   border-radius: 50%;
   margin-right: .5em;
-  background-color: #51A614;
 }
 
 .message__avatar--avatar img {
@@ -905,16 +913,51 @@ footer {
   margin-top: -275px !important;
 }
 
+
+@media all and (max-width: 976px) {
+  .send-anonymously--container {
+    margin-bottom: 0.45rem;
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
+  }
+
+  .send-anonymously--container label i {
+    margin-right: 0.1em;
+    color: #5b5bbd;
+  }
+
+  .send-anonymously--text {
+    display: none;
+  }
+
+  #chat-file {
+    margin-right: auto !important;
+  }
+}
+
 /* Media Queries for screens smaller than 680px */
 
 @media screen and (max-width: 680px) {
   html {
-    font-size: 80%;
+    /* font-size: 80%; */
   }
 }
 
-@media all and (max-width: 369px) {
+@media all and (max-width: 480px) {
   .navbar-brand {
     font-size: 1rem;
+  }
+
+  .chats__navbar {
+    width: 5rem;
+  }
+
+  .chat__room {
+    height: calc(100vh - 56.9px) !important;
+    background-color: #acd68a;
+  }
+
+  .message {
+    max-width: 100%;
   }
 }
