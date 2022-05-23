@@ -29,9 +29,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Secret key set in the env.py
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
-# Debu set in the env.py
-# DEBUG = "DEVELOPMENT" in os.environ
-DEBUG = 'TRUE'
+# Debug set in the env.py
+DEBUG = "DEVELOPMENT" in os.environ
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
