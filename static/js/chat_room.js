@@ -186,9 +186,7 @@ document.addEventListener('DOMContentLoaded', function () {
       chatContainer.appendChild(message);
       chatContainer.scrollTop = chatContainer.scrollHeight + 100;
     } else if (data.type === 'message_reaction') {
-      console.log(data);
       let reactions = data.reactions;
-      console.log(reactions);
       let message_id = data.message_id;
       let container = $(`.message__reactions--container[data-message-id=${message_id}]`);
       container.html('');
@@ -218,34 +216,14 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   };
 
-  // document.addEventListener('keydown', function (e) {
-  //   if(e.key == 'Enter') {
-  //     console.log('Enter pressed');
-  //     const chatMessage = {
-  //       'chat_id': chatId,
-  //       'message': chatInput.value,
-  //       'username': username
-  //     };
-  //     chatSocket.send(JSON.stringify(chatMessage));
-  //     chatInput.value = '';
-  //   }
-  // });
-
+  
   sendButton.addEventListener('click', function (e) {
-    // need to check if send anonymously is checked
     let sendAnonymously = sendAnonymouslyCheckbox.checked;
-    // need to check if file is selected
-    console.log('Send button clicked');
     if (fileInput.files.length > 0) {
-      console.log('File selected');
-      // we need to temporarily store the file in the local storage
-      // so that we can send its url to the consumer over the socket
-      // and then we can remove it from the local storage
       const file = fileInput.files[0];
       const fileReader = new FileReader(file);
       fileReader.readAsDataURL(file);
       fileReader.onload = function (e) {
-        console.log(e.target.result);
         const fileUrl = e.target.result;
         const chatMessage = {
           'type': 'chat_message',
@@ -279,7 +257,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   const reactionHandler = (e) => {
-    console.log('Reaction clicked');
     $('.reactions__choices').addClass('hidden');
     let messageId = $(e.target).data('message-id');
     let emojiUrl = $(e.target).attr('src');
