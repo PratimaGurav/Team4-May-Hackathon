@@ -267,9 +267,10 @@ img {
 .profile-menu {
   background-color: var(--base-color) !important;
 }
+
 /*---------- PAGE LAYOUT UTILITIES ----------*/
 .text-logo {
-color: var(--base-color) !important;
+  color: var(--base-color) !important;
 }
 
 .index-container {
@@ -735,10 +736,23 @@ footer {
   padding-bottom: 2%;
 }
 
+.profile-card--image {
+  width: 12rem;
+}
+
 .contact img {
   border-radius: 50%;
   padding: 10%;
   max-width: 100%;
+}
+
+.profile-card {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .fa-github {
@@ -896,5 +910,11 @@ footer {
 @media screen and (max-width: 680px) {
   html {
     font-size: 80%;
+  }
+}
+
+@media all and (max-width: 369px) {
+  .navbar-brand {
+    font-size: 1rem;
   }
 }
