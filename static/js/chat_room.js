@@ -172,6 +172,7 @@ document.addEventListener('DOMContentLoaded', function () {
         let reactionImg = document.createElement('img');
         reactionImg.setAttribute('src', emoji_url);
         reactionImg.setAttribute('data-message-id', data.message_id);
+        reactionImg.setAttribute('alt', 'emoji');
         reactionImg.classList.add('reaction_emoji--img');
         reaction.appendChild(reactionImg);
         reactionsChoices.appendChild(reaction);
@@ -196,6 +197,7 @@ document.addEventListener('DOMContentLoaded', function () {
           reaction_emoji.classList.add('reaction_emoji--img');
           reaction_emoji.src = reaction;
           reaction_emoji.setAttribute('data-message-id', message_id);
+          reaction_emoji.setAttribute('alt', 'emoji');
           let reaction_count = document.createElement('span');
           reaction_count.classList.add('reactions__count');
           reaction_count.innerHTML = reactions[reaction].length;
