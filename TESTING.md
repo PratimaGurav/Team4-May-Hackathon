@@ -17,13 +17,15 @@ Testing was ongoing throughout the entire build. We utilised Chrome developer to
 
 ### PEP8 Validator
 
-### W3C Validator
 
-![W3C validator pass]()
 
-The CSS on the site was tested using the [Jigsaw W3C CSS Validator]() The CSS passed.
+### CSS Validator
 
-![CSS validation]()
+
+
+The CSS on the site was tested using the [Jigsaw W3C CSS Validator](https://jigsaw.w3.org/css-validator/). No errors were found. There were 9 warnings regarding css variables and webkit prefixes. However, the site was perfectly functional.
+
+![W3C validator pass](documentation/validation/css_validation.png)
 
 ### JavaScript Validator
 
