@@ -2,6 +2,7 @@
 {% load static %}
 {% load crispy_forms_tags %}
 {% block content %}
+{% if user.is_authenticated %}
 <div class="profile">
 <div class="container account-container">
   <div class="row mt-4 pt-4">
@@ -26,4 +27,5 @@
   </div>
 </div>
 </div>
+{% endif %}
 {% endblock content %}
