@@ -869,6 +869,15 @@ footer {
   object-fit: cover;
 }
 
+.reaction-item {
+  width: 4rem;
+  height: 2.7rem;
+}
+
+.reaction-item.reacted {
+  border: 1px solid var(--base-color);
+}
+
 .message__reactions--choices {
   position: relative;
 }

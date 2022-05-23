@@ -162,5 +162,5 @@ class ChatConsumer(AsyncWebsocketConsumer):
     @database_sync_to_async
     def get_avatar_url(self, username):
         if username == 'Anonymous':
-            return '/media/profile_images/avatar.png'
+            return 'https://res.cloudinary.com/lexach91/image/upload/v1653289991/avatar_uytoij.png'
         return User.objects.get(username=username).user_profile.avatar_url
