@@ -237,11 +237,11 @@ document.addEventListener('DOMContentLoaded', function () {
         chatInput.value = '';
         $('.emojionearea-editor').html('');
       };
-    } else if (chatInput.value) {
+    } else if (chatInput.value || $('.emojionearea-editor').html()) {
       const chatMessage = {
         'type': 'chat_message',
         'chat_id': chatId,
-        'message': linkifyHtml(chatInput.value),
+        'message': linkifyHtml(chatInput.value) || $('.emojionearea-editor').html(),
         'username': sendAnonymously ? 'Anonymous' : username,
         'image': null
       };
