@@ -47,6 +47,5 @@ uvicorn==0.17.5
 uvloop==0.16.0
 watchgod==0.8.2
 websockets==10.2
-whitenoise==6.1.0
 wsproto==1.0.0
 zope.interface==5.4.0
