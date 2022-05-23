@@ -1,6 +1,6 @@
 # 
 
-![Logo](media/logo.png)
+![Logo](/static/images/logo.png)
 
 # Testing
 
