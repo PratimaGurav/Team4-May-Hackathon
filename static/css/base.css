@@ -260,6 +260,10 @@ img {
   padding-bottom: 0 !important;
 }
 
+.navbar-nav .dropdown-menu {
+  width: fit-content;
+}
+
 .thin {
   font-weight: 500;
 }
@@ -269,6 +273,15 @@ img {
 }
 
 /*---------- PAGE LAYOUT UTILITIES ----------*/
+.home-logo {
+  font-size: 3.5rem;
+  padding: 0;
+}
+
+.home-tagline {
+  font-size: 2rem;
+}
+
 .text-logo {
   color: var(--base-color) !important;
 }
