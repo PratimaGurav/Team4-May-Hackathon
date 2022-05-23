@@ -132,7 +132,7 @@ We have been mindful during coding to ensure that the website is as accessible f
 
 ### Languages Used
 
-HTML, CSS, Javascript, Bootstrap5, Django, Channels
+HTML, CSS, Javascript, Bootstrap5, Django, Channels, JQuery, JQuery UI, Redis
 
 
 ### Frameworks, Libraries & Programs Used
