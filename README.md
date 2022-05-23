@@ -386,6 +386,7 @@ Please find our separate .md file for testing [here](TESTING.md).
 
 - In the chats users can send empty messages if they put spaces or empty lines in chat input.
     + This can be fixed by trimming the message before checking if it is empty, but due to time constraints, we have not done that.
+- There is a known bug where users can click Enter and send blank messages. Due to time constraints on this project, we were unable to fix this before final deployment but intend on doing so in a future update.    
 
 ### Solved Bugs
 
@@ -420,8 +421,8 @@ Links used for researching Mental Health issues:
 
 ### Media
 
-We used [Pexels](https://www.pexels.com/) for the images.
-[Miracle Happens](https://www.pexels.com/photo/green-text-based-tiles-on-black-background-5981929/)
+- [Pexels](https://www.pexels.com/) for the images.
+- [Favicon converter](https://favicon.io/favicon-converter/) to generate favicons from an image we borrowed from [this page](https://www.pinclipart.com/maxpin/oRmTTb/).
 
 ### Acknowledgments
 
