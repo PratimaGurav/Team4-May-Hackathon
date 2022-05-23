@@ -65,50 +65,53 @@
             href="{% url 'contact' %}" aria-label="Go to contact page">Contact us</a>
         </li>
       </ul>
-        <div class="navbar-collapse justify-content-end">
-          <ul class="navbar-nav mr-auto">
-            {% if user.is_authenticated %}
-            <li class="nav-item">
-              <a class="nav-link {% if request.resolver_match.url_name == 'chat_list' %} active {% endif %}" aria-label="Go to chat list page"
-                href="{% url 'chat_list' %}">Chat Rooms</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="{% url 'profile' username=request.user.username %}"
-                id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <img class="profile-img profile-mini d-inline-block mb-2" src="{{ user.user_profile.avatar_url }}" alt="Profile image">
-                {{user.user_profile.user.username|title}}</a>
-              <div class="dropdown-menu bg-success border-1 profile-menu rounded m-0 p-0" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item nav-link text-center p-0 m-0"
-                  href="{% url 'profile' username=request.user.username %}" aria-label="Go to profile page">Profile</a>
-                <a class="dropdown-item nav-link text-center p-0 m-0 {% if request.resolver_match.url_name == 'account_logout' %} active {% endif %}"
-                  href="{% url 'account_logout' %}" aria-label="Logout">Logout</a>
-              </div>
-            </li>
-            {% else %}
-            <li class="nav-item">
-              <a class="nav-link {% if request.resolver_match.url_name == 'account_login' %} active {% endif %}" aria-label="Go to login page"
-                href="{% url 'account_login' %}"><i class="fa fa-user"></i>
-                Login</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link {% if request.resolver_match.url_name == 'account_signup' %} active {% endif %}" aria-label="Go to signup page"
-                href="{% url 'account_signup' %}">Sign up</a>
-            </li>
-            {% endif %}
-          </ul>
-        </div>
+      <div class="navbar-collapse justify-content-end">
+        <ul class="navbar-nav mr-auto">
+          {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link {% if request.resolver_match.url_name == 'chat_list' %} active {% endif %}"
+              aria-label="Go to chat list page" href="{% url 'chat_list' %}">Chat Rooms</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="{% url 'profile' username=request.user.username %}"
+              id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img class="profile-img profile-mini d-inline-block mb-2" src="{{ user.user_profile.avatar_url }}"
+                alt="Profile image">
+              {{user.user_profile.user.username|title}}</a>
+            <div class="dropdown-menu bg-success border-1 profile-menu rounded m-0 p-0"
+              aria-labelledby="navbarDropdown">
+              <a class="dropdown-item nav-link text-center p-0 m-0"
+                href="{% url 'profile' username=request.user.username %}" aria-label="Go to profile page">Profile</a>
+              <a class="dropdown-item nav-link text-center p-0 m-0 {% if request.resolver_match.url_name == 'account_logout' %} active {% endif %}"
+                href="{% url 'account_logout' %}" aria-label="Logout">Logout</a>
+            </div>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link {% if request.resolver_match.url_name == 'account_login' %} active {% endif %}"
+              aria-label="Go to login page" href="{% url 'account_login' %}"><i class="fa fa-user"></i>
+              Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if request.resolver_match.url_name == 'account_signup' %} active {% endif %}"
+              aria-label="Go to signup page" href="{% url 'account_signup' %}">Sign up</a>
+          </li>
+          {% endif %}
+        </ul>
       </div>
-    
+
+    </div>
+
   </nav>
 
   {% comment %} Main content container {% endcomment %}
   <main class="main">
     <div class="content__container">
       {% if messages %}
-      <div class="message-container" id="messages-notes">
+      <div class=" col-5 message-container p-2 bg-primary rounded" id="messages-notes">
         {% for message in messages %}
-        <div class="message-container__message px-4 bg-primary">
-          <p class="message-container__message--text text-white">{{ message }}</p>
+        <div class="message-container__message ">
+          <p class="message-container__message--text text-center text-white">{{ message }}</p>
         </div>
         {% endfor %}
       </div>
