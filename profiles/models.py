@@ -10,7 +10,7 @@ class Profile(models.Model):
         User, on_delete=models.CASCADE,
         related_name='user_profile'
     )
-    avatar = CloudinaryField(folder='profile_images')
+    avatar = CloudinaryField(folder='profile_images', null=True, blank=True)
     stewardship = models.ManyToManyField(User, blank=True)
     bio = models.TextField()
 

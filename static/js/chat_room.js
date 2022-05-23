@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', function () {
       let messageBodyImage = document.createElement('div');
       messageBodyImage.classList.add('message__body--image');
       // messageHeaderUsername.innerHTML = data.username || 'Anonymous';
-      messageHeaderUsername.innerHTML = data.username ? `<a class="message__header--username message__header--link" href="/profile/${data.username}/">${data.username}</a>` : 'Anonymous';
+      messageHeaderUsername.innerHTML = data.username ? `<a class="message__header--username message__header--link" href="/profile/${data.username}/" aria-label="Open profile of ${data.username}">${data.username}</a>` : 'Anonymous';
       messageHeaderTime.innerHTML = data.time;
       messageBodyText.innerHTML = data.message;
       if (data.image) {

@@ -18,12 +18,12 @@
         </p>
         <div class="d-grid gap-2 mt-4 d-md-flex justify-content-md-center home__card__login--buttons">
           {% if user.is_authenticated %}
-            <a href="{% url 'chat_list' %}" class="btn btn-lg btn-success">Click to Enter </a>
+            <a href="{% url 'chat_list' %}" class="btn btn-lg btn-success" aria-label="Go to chat list page">Click to Enter </a>
           {% else %}
-            <a href="{% url 'account_signup' %}" class="btn btn-lg btn-primary button__signup">
+            <a href="{% url 'account_signup' %}" class="btn btn-lg btn-primary button__signup" aria-label="Go to sign up page">
               <i class="fas fa-user-plus"></i> Sign Up
             </a>
-            <a href="{% url 'account_login' %}" class="btn btn-lg btn-success button__login">
+            <a href="{% url 'account_login' %}" class="btn btn-lg btn-success button__login" aria-label="Go to login page">
               <i class="fas fa-sign-in-alt px-1"></i> Login
             </a>
           {% endif %}

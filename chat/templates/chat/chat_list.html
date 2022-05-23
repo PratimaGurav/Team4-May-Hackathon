@@ -19,7 +19,7 @@
             <div class="chats__single--description">
               {{ chat.chat_description }}
             </div>
-            <a href="{% url 'chat_room' slug=chat.slug %}" class="chats__single--link">
+            <a href="{% url 'chat_room' slug=chat.slug %}" class="chats__single--link" aria-label="Go to {{ chat.chat_name }} chat room">
               Enter Chat Room
             </a>
           </li>

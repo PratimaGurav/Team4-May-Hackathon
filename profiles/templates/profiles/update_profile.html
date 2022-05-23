@@ -8,7 +8,7 @@
   <div class="row mt-4 pt-4">
     <div class="col-md-8 mt-3 offset-md-2">
         <div class="profile__header--main--avatar">
-          <img class="" src="{{ user.user_profile.avatar_url }}" /> 
+          <img class="" src="{{ user.user_profile.avatar_url }}" alt="Avatar for {{ user.username }}"> 
         </div>
           <h2 class="account-heading">{{ user.username | title }} <i class="fas fa-hand-holding-heart"></i> {{user.user_profile.stewardship.count}}</h2>
         <form method="POST" enctype="multipart/form-data">
@@ -19,8 +19,8 @@
             {{ profile_form|crispy }}
           </fieldset>
           <div class="form-group">
-            <a class="btn btn-secondary mt-3 mb-md-4 mb-sm-1 mx-2 d-inline-block" href="{% url 'profile' username=request.user %}">Cancel</a>
-            <button class="btn btn-success mt-3 mb-md-4 mb-sm-1 mx-2 d-inline-block" type="submit">Save</button>
+            <a class="btn btn-secondary mt-3 mb-md-4 mb-sm-1 mx-2 d-inline-block" href="{% url 'profile' username=request.user %}" aria-label="Cancel changes to the profile">Cancel</a>
+            <button class="btn btn-success mt-3 mb-md-4 mb-sm-1 mx-2 d-inline-block" type="submit" aria-label="Accept changes">Save</button>
           </div>
         </form>
     </div>
