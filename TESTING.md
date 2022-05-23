@@ -13,7 +13,25 @@ All python files were run through PEP validator, no errors were found except:
   - [Error](/documentation/readme/images/pp8-error.png)
   - [Fix](/documentation/readme/images/pp8-fix.png)
 
+### HTML Validator
 
+The official [HTML validator](https://validator.w3.org/) was used to validate the HTML files. No errors were found.
+
+  - Homepage ("/"): ![Valid](/documentation/validation/home_page.png)
+
+  - Contact page ("/contact"): ![Valid](/documentation/validation/contact_page.png)
+
+  - Chats list page ("/chats"): ![Valid](/documentation/validation/chats_list_page.png)
+
+  - Chat room page ("/chats/name-of-chat"): ![Valid](/documentation/validation/chat_room_page.png)
+
+  - Profile page ("/profile/username"): ![Valid](/documentation/validation/profile_page.png)
+
+  - Profile edit page ("/profile/username/update"): ![Valid](/documentation/validation/profile_edit_page.png)
+
+  - Profile delete page ("/profile/username/delete"): ![Valid](/documentation/validation/profile_delete_page.png)
+
+  
 
 ### CSS Validator
 
