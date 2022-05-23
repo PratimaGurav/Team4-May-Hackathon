@@ -16,7 +16,7 @@
     <div class="chat__room">
       <div class="chats__navbar">
         {% for chat_tab in chats %}
-        <a href="{% url 'chat_room' slug=chat_tab.slug %}" class="chats__navbar--item">{{ chat_tab.chat_name }}</a>
+        <a href="{% url 'chat_room' slug=chat_tab.slug %}" class="chats__navbar--item" aria-label="Go to {{ chat_tab.chat_name}} chat room">{{ chat_tab.chat_name }}</a>
         {% endfor %}
       </div>
       <div class="chat__main">
@@ -37,8 +37,8 @@
                 </div>
                 {% if message.user %}
                   <a class="message__header--username message__header--link"
-                    href="{% url 'profile' username=message.user.username %}">
-                    {% comment %} href="{% url 'profile' username=message.user.pk %}" {% endcomment %}
+                    href="{% url 'profile' username=message.user.username %}"
+                    aria-label="Go to {{ message.user.username }} profile">
                     {{ message.user.username }}
                   </a>
                 {% else %}
