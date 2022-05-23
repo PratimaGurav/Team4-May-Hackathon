@@ -66,26 +66,26 @@
                 {% for reaction in message.get_reactions_with_users.items %}
                   {% if request.user.username in reaction.1 %}
                     <div class="reaction-item reacted" title="Users reacted like this: {{ reaction.1|join:', ' }}">
-                      <img src="{{ reaction.0 }}" class="reaction_emoji--img" data-message-id="{{ message.id }}">
+                      <img src="{{ reaction.0 }}" class="reaction_emoji--img" data-message-id="{{ message.id }}" alt="emoji">
                       <span class="reactions__count">{{ reaction.1|length }}</span>
                     </div>
                   {% else %}
                     <div class="reaction-item" title="Users reacted like this: {{ reaction.1|join:', ' }}">
-                      <img src="{{ reaction.0 }}" class="reaction_emoji--img" data-message-id="{{ message.id }}">
+                      <img src="{{ reaction.0 }}" class="reaction_emoji--img" data-message-id="{{ message.id }}" alt="emoji">
                       <span class="reactions__count">{{ reaction.1|length }}</span>
                     </div>
                   {% endif %}
                 {% endfor %}
               </div>
               <div class="message__reactions--choices">
-                <span class="reactions__toggle">
+                <div class="reactions__toggle">
                   <i class="far fa-grin"></i>
                   <div class="reactions__toggle--plus">+</div>
-                </span>
+                </div>
                 <div class="reactions__choices hidden">
                   {% for emoji in emojis %}
                     <div class="reaction__emoji--container">
-                      <img src="{{ emoji }}" alt="" class="reaction_emoji--img" data-message-id="{{ message.id }}">
+                      <img src="{{ emoji }}" class="reaction_emoji--img" data-message-id="{{ message.id }}" alt="emoji">
                     </div>
                   {% endfor %}
                 </div>
@@ -99,13 +99,13 @@
 
         {% comment %} Input box {% endcomment %}
         <div class="input__container">
-          <textarea type="text" id="chat-input" class="input__container--textarea"></textarea>
+          <textarea id="chat-input" class="input__container--textarea"></textarea>
           <div class="input__container--buttons">
             <button id="chat-send">Send</button>
             <div class="send-anonymously--container" title="Send anonymously">
               <label for="send-anonymously">
                 <i class="fas fa-user-secret" ></i>
-                <div class="send-anonymously--text">Send anonymously</div>
+                <span class="send-anonymously--text">Send anonymously</span>
               </label>
 
               <input type="checkbox" id="send-anonymously">
