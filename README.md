@@ -202,7 +202,7 @@ HTML, CSS, Javascript, Bootstrap5, Django, Channels, JQuery, JQuery UI, Redis
       worker: python manage.py runworker -v2 channel_layer
       ```
 
-    - First command shows what server to use, what application to run and what port to use.
+    - Daphne was used instead of Gunicorn because it is able to run asgi applications.
     - Second command starts the worker for the channel layer.
 
   4. Commit and push deployment changes to Github.
@@ -211,9 +211,20 @@ HTML, CSS, Javascript, Bootstrap5, Django, Channels, JQuery, JQuery UI, Redis
     ![Create App](/documentation/deployment/heroku-create-app.jpg)
     - In Resources add Heroku Postgres and Heroku Redis.
     ![Resources](/documentation/deployment/heroku-resources.jpg)
-    - Within your newly created app go to settings go to Config Vars use the DATABASE_URL Value and add it to your env.py file also you need to connect it via settings.py.
+    
     ![Config Vars](/documentation/deployment/heroku-configvars.jpg)
-    - Create a SECRET_KEY Key and the Value as the desired key.
+    - At the settings tab click on Reveal Config Vars.
+    - Add the following config vars or check if they are already added.
+      - `DATABASE_URL` : The URL of the database provided by Heroku Postgres.
+      - `SECRET_KEY` : The secret key for your Django project.
+      - `REDIS_URL` : The URL of the Redis channel layer provided by Heroku Redis.
+      - `REDIS_TLS_URL` : The secure URL of the Redis channel layer provided by Heroku Redis.
+      - `CLOUDINARY_CLOUD_NAME` : Your Cloudinary Cloud Name.
+      - `CLOUDINARY_API_KEY` : Your Cloudinary API Key.
+      - `CLOUDINARY_API_SECRET` : Your Cloudinary API Secret.
+      - `DISABLE_COLLECTSTATIC` : Set to `1` to disable collectstatic during the development.
+    
+    - To work on the same database and same Redis channel layer, you need to copy these config vars to your env.py file.
     - Download and install [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
     - And pass following commands in your github terminal:
       - $ heroku login -i
@@ -221,8 +232,21 @@ HTML, CSS, Javascript, Bootstrap5, Django, Channels, JQuery, JQuery UI, Redis
       - $ git add .
       - $ git commit -am "make it better"
       - $ git push heroku main
+    
 
-### Local Development
+  6. Open the Heroku dashboard and check the status of your app.
+      - Copy the URL of your app and add it into `ALLOWED_HOSTS` in your settings.py file.
+  7. When the development stage is complete:
+    - make sure that you have these settings in your settings.py file:
+      - `STATIC_ROOT` : The path to the static files.
+      - `DEFUALT_FILE_STORAGE` : The default file storage system, in this case, `cloudinary_storage.storage.MediaCloudinaryStorage`
+      - `cloudinary` and `cloudinary_storage` are added to `INSTALLED_APPS`, and `cloudinary.config(...)` receives cloud name, api key, and api secret.
+    - Remove the `DISABLE_COLLECTSTATIC` variable from your app's config vars on Heroku.
+    - Set the `DEBUG` variable to `False` in your your app's config vars on Heroku.
+    - Deploy the latest version of your app to Heroku.
+    - Open the Heroku dashboard and check the status of your app.
+    - If something is wrong, you can find an error message in the logs and fix it.
+
 
 #### How to Fork
 
@@ -249,6 +273,33 @@ To clone the repository:
 Please find our separate .md file for testing [here](TESTING.md).
 
 - - -
+
+## Bugs
+
+### Known Bugs
+
+- In the chats users can send empty messages if they put spaces or empty lines in chat input.
+    + This can be fixed by trimming the message before checking if it is empty, but due to time constraints, we have not done that.
+
+### Solved Bugs
+
+- After the user has sent a message, the chat input field was not cleared.
+    + Has been fixed by clearing the chat input field after the user has sent a message.
+
+- After receiving a message, the sender's avatar url was broken and image was not displayed.
+    + Has been fixed by adding the sender's avatar url to the message.
+
+- After receiving a message, the emoji reaction button on the message was not clickable.
+    + Has been fixed by adding an event listener to the emoji reaction button after the message has been received and html was created by javascript.
+
+- After clicking on other user's profile url, the active user's profile was opened instead of the other user's profile.
+    + Has been fixed by modifying the view function to get the requested user's url from the url and then pass it to the template.
+
+- After registering, the profile was not created for the user.
+    + Has been fixed by adding signals to the profiles app to create the profile for each user right after the user has been created.
+
+- After deploying the app, the static files were not being served by cloudinary.
+    + Has been fixed by changing the order of the `INSTALLED_APPS` in the settings.py file. `cloudinary_storage` and `cloudinary`  should be added after `django.contrib.staticfiles`.
 
 ## Credits
 
