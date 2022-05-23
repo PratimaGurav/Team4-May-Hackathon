@@ -101,10 +101,6 @@ The Montserrat family is used in the header text and  with Raleway being used in
 
 ### Imagery
 
-Most of the imagery used was specifically chosen to evoke a sense of peace and personal calling to follow your own path & develop as an individual, even if it scares you.
-
-![Photo](media/profile_images/follow_your_path.jpg)
-
 ### Wireframes
 
 Wireframes were created for mobile, tablet and desktop with [Balsamiq]()
@@ -130,12 +126,13 @@ The website is comprised of:
 
 ### Accessibility
 
-- - -
+We have been mindful during coding to ensure that the website is as accessible friendly as possible.
 
 ## Technologies Used
 
 ### Languages Used
 
+HTML, CSS, Javascript, Bootstrap5, Django, Channels, JQuery, JQuery UI, Redis
 
 
 ### Frameworks, Libraries & Programs Used
