@@ -963,6 +963,11 @@ footer {
 
 
 @media all and (max-width: 976px) {
+
+  .profile {
+    max-width: 90%;
+  }
+
   .send-anonymously--container {
     margin-bottom: 0.45rem;
     margin-right: 1.5rem;
@@ -1044,6 +1049,26 @@ footer {
   .chats__single {
     grid-template-rows: 0.1fr 1fr 0.5fr 0.2fr;
     gap: 0.3rem;
+  }
+
+  .profile__header--main {
+    font-size: 1.5rem;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .profile__body--buttons a {
+    padding: 0.3em 1.5em 0.4em 1.5em;
+  }
+
+  .profile__body--buttons a i {
+    margin-right: 0;
+  }
+
+  .profile__body--link div {
+    display: none;
   }
 }
 

@@ -29,15 +29,15 @@
       <div class="profile__body">
         {% if user == user_profile.user %}
           <div class="profile__body--buttons">
-            <a class="" href="{% url 'profile-update' username=request.user %}">
+            <a class="profile__body--link" href="{% url 'profile-update' username=request.user %}">
               <i class="far fa-edit"></i>
-              <div class="">
+              <div>
                 Edit Profile
               </div>
             </a>
-            <a class="" href="{% url 'profile-delete' user.pk %}">
+            <a class="profile__body--link" href="{% url 'profile-delete' user.pk %}">
               <i class="fas fa-trash"></i>
-              <div class="">
+              <div>
                 Delete Profile
               </div>
             </a>
