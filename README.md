@@ -178,13 +178,34 @@ Google Dev Tools - To troubleshoot and test features, solve issues with responsi
     - Secret key is the password of your choice.
     - [Heroku](https://id.heroku.com/) postgreSQL.
     ![env file](/documentation/deployment/env.jpg)
-  2. Create requirements.txt file.
-  3. Create Procfile containing application name to ensure proper formatting to avoid the deployment to fail.
+  2. Create requirements.txt file that includes all dependencies needed for the project.
+    
+    - You can do this by executing the following command in the terminal:
+      ```
+      pip freeze > requirements.txt
+      ```
+    
+    - Or using the package pipreqs.
+      ```
+      pipreqs requirements.txt
+      ```
+
+  3. Create Procfile containing the commands to run the app.
+
+    - In our case, we are using the following commands:
+      ```
+      web: daphne group_chatting.asgi:application --port $PORT --bind 0.0.0.0 -v2
+      worker: python manage.py runworker -v2 channel_layer
+      ```
+
+    - First command shows what server to use, what application to run and what port to use.
+    - Second command starts the worker for the channel layer.
+
   4. Commit and push deployment changes to Github.
   5. Create an account and login to Heroku
     - Create a new app, with an appropriate app name and choose a region.
     ![Create App](/documentation/deployment/heroku-create-app.jpg)
-    - In Resources add Heroku Postgres.
+    - In Resources add Heroku Postgres and Heroku Redis.
     ![Resources](/documentation/deployment/heroku-resources.jpg)
     - Within your newly created app go to settings go to Config Vars use the DATABASE_URL Value and add it to your env.py file also you need to connect it via settings.py.
     ![Config Vars](/documentation/deployment/heroku-configvars.jpg)
