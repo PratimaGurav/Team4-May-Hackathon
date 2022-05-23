@@ -141,7 +141,9 @@ The website is comprised of:
 12. Contact us page.
 ![contact screenshot](/documentation/readme/images/contact.jpg)
 13. 404 error page.
-![404 screenshot]()
+![404 screenshot](/documentation/readme/images/404.jpg)
+14. 500 error page.
+![500 screenshot](/documentation/readme/images/500.jpg)
 
 All Pages on the website have:
 
