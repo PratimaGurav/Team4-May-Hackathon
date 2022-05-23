@@ -8,10 +8,12 @@
     <div class="col-md-8 col-12 offset-md-2">
         <form method="POST">
                 {% csrf_token %}
+
                 <h5 class="m-md-4 p-md-4 mb-md-5 mb-sm-1 m-sm-1 p-sm-1">Are you sure you want to delete your profile?</h5> 
           <div class="form-group d-inline-block mt-4">
-            <a class="btn btn-secondary mt-3 mx-2 mt-sm-1 mb-md-4 d-inline-block" href="{% url 'profile' username=request.user %}">Cancel</a>
-            <button class="btn btn-danger mt-3 mx-2 mt-sm-1 mb-md-4 d-inline-block" type="submit">Delete Profile</button>
+            <a class="btn btn-secondary mt-3 mx-2 mt-sm-1 mb-md-4 d-inline-block" href="{% url 'profile' username=request.user %}" aria-label="Cancel deletion of the account">Cancel</a>
+            <button class="btn btn-danger mt-3 mx-2 mt-sm-1 mb-md-4 d-inline-block" type="submit" aria-label="Confirm deletion of the account">Delete Profile</button>
+
           </div>
         </form>
     </div>

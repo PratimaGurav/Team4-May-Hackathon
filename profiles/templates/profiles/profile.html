@@ -9,9 +9,9 @@
       <div class="profile__header">
         <div class="profile__header--main">
           <div class="profile__header--main--avatar">
-            <img class="" src="{{ user_profile.avatar_url }}" />
+            <img src="{{ user_profile.avatar_url }}" alt="Avatar for {{ user_profile.user.username }}">
           </div>
-          <h2 class="">
+          <h2 >
             {{ user_profile.user.username | title }}
           </h2>
         </div>
@@ -21,7 +21,7 @@
           {{user_profile.stewardship.count}}
         </div>
         {% if not user == user_profile.user %}
-          <a href="javascript:void(0);" class="profile__header--reward--btn" id="add-thanks">
+          <a href="javascript:void(0);" class="profile__header--reward--btn" id="add-thanks" aria-label="Add reward to {{ user_profile.user.username }}">
             Thank you for your help!
           </a>
         {% endif %}
@@ -29,13 +29,13 @@
       <div class="profile__body">
         {% if user == user_profile.user %}
           <div class="profile__body--buttons">
-            <a class="profile__body--link" href="{% url 'profile-update' username=request.user %}">
+            <a class="profile__body--link" href="{% url 'profile-update' username=request.user %}" aria-label="Update profile information">
               <i class="far fa-edit"></i>
               <div>
                 Edit Profile
               </div>
             </a>
-            <a class="profile__body--link" href="{% url 'profile-delete' user.pk %}">
+            <a class="profile__body--link" href="{% url 'profile-delete' user.pk %}" aria-label="Delete profile">
               <i class="fas fa-trash"></i>
               <div>
                 Delete Profile
