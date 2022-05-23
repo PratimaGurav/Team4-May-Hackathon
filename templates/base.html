@@ -106,10 +106,10 @@
   <main class="main">
     <div class="content__container">
       {% if messages %}
-      <div class="message-container" id="messages-notes">
+      <div class=" col-5 message-container p-2 bg-primary rounded" id="messages-notes">
         {% for message in messages %}
-        <div class="message-container__message px-4 bg-primary">
-          <p class="message-container__message--text text-white">{{ message }}</p>
+        <div class="message-container__message ">
+          <p class="message-container__message--text text-center text-white">{{ message }}</p>
         </div>
         {% endfor %}
       </div>
