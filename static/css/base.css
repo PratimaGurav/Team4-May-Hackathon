@@ -792,24 +792,40 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: var(--black-color);
+  font-size: 1.5rem;
+}
+
+.profile-cardhover {
+  color: var(--grad1-color) !important;
+}
+
+.coder__name {
+  background-color: #b8d89d;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.3);
+  border-radius: 0.25em;
+  padding: 0.9rem 1rem;
+}
+
+.coder__name,
+.profile-card-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0 !important;
 }
 
 .fa-github {
-  font-size: 50px;
-  width: 30px;
   text-align: center;
   text-decoration: none;
   border-radius: 50%;
-  color: var(--black-color);
   display: inline-table !important;
+  margin-left: 0.3em;
 }
 
-.fa-github:hover {
-  color: var(--grad1-color) !important;
-
-}
-
-/* REACTIONS */
+/* ----- REACTIONS ----- */
 .message__reactions {
   display: flex;
   flex-direction: row;
@@ -856,7 +872,6 @@ footer {
 .reactions__toggle {
   cursor: pointer;
   display: flex;
-  /* background-color: #51a61442; */
   align-items: center;
   justify-content: center;
   width: 3em;
@@ -869,7 +884,6 @@ footer {
 }
 
 .reactions__toggle i {
-  /* color: var(--grad-1); */
   color: white;
   font-weight: 500;
 }
@@ -878,7 +892,6 @@ footer {
   position: absolute;
   top: -0.3rem;
   right: 0.4rem;
-  /* color: var(--grad-1); */
   color: white;
   font-weight: 500;
 }
@@ -897,7 +910,6 @@ footer {
   background-color: var(--grad-4);
   background-color: #7272ccba;
   border: 1px solid var(--grad-2);
-  /* top: -6.05rem; */
   top: 2.1rem;
   right: 0;
   width: 20rem;
@@ -944,6 +956,7 @@ footer {
   margin-top: -275px !important;
 }
 
+/* ---------- MEDIA ------------  */
 @media all and (max-width: 1287px) {
   .contact__main--container {
     width: 100%;
@@ -961,9 +974,7 @@ footer {
   }
 }
 
-
 @media all and (max-width: 976px) {
-
   .profile {
     max-width: 90%;
   }
