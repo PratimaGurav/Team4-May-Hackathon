@@ -20,7 +20,7 @@ Connectedsy is an online communication platform aimed towards people experiencin
 
 In addition to our target audience, our team aims to market Connectedsy towards mental health professionals. The goal is to encourage such professionals to join our chat rooms and provide advice to users. This would be a great opportunity for mental health professionals to provide valuable support and advice on a charitable basis.
 
-![Site on a variety of device sizes]()
+![Site on a variety of device sizes](/documentation/readme/images/responsive.jpg)
 
 [Visit the site here](https://connectedsy.herokuapp.com/)
 
@@ -381,6 +381,7 @@ Links used for researching Mental Health issues:
 ### Media
 
 We used [Pexels](https://www.pexels.com/) for the images.
+[Miracle Happens](https://www.pexels.com/photo/green-text-based-tiles-on-black-background-5981929/)
 
 ### Acknowledgments
 
@@ -393,11 +394,12 @@ We used [Pexels](https://www.pexels.com/) for the images.
 
 #### Meet team Connectedsy!:
 
-* [Aleksei](https://github.com/lexach91)
-* [Amare](https://github.com/Amareteklay)
-* [David](https://github.com/pizzaHunt3r)
-* [Julia](https://github.com/IuliiaKonovalova)
-* [Pratima](https://github.com/PratimaGurav) 
-* [Stephen](https://github.com/StephenB92)
+* [Aleksei Konovalov](https://github.com/lexach91)
+* [Amare Teklay Hailu](https://github.com/Amareteklay)
+* [David Campo](https://github.com/pizzaHunt3r)
+* [Iuliia Konovalova](https://github.com/IuliiaKonovalova)
+* [Pratima Gurav](https://github.com/PratimaGurav)
+* [Stephen Brereton](https://github.com/StephenB92)
+
 
 ## [BACK TO TOP](https://github.com/PratimaGurav/Team4-May-Hackathon#readme)
