@@ -1,6 +1,6 @@
 # 
 
-![Logo](media/logo.png)
+![Logo](static/images/logo.png)
 
 Created for the Code Institute's May 2022 Hackathon, Getting Connected.
 
