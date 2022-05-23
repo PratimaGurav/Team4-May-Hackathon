@@ -644,8 +644,12 @@ img {
   margin-right: .5em;
 }
 
-.message__avatar--avatar img {
+.message__avatar--avatar>img {
   border-radius: 50%;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
 }
 
 .message__header--username {
