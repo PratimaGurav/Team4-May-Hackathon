@@ -39,6 +39,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  background-color: var(--grad-4);
 
   margin: 0;
   padding: 0;
@@ -111,6 +112,10 @@ img {
   position: relative;
 }
 
+.profile__header {
+  padding-bottom: 0;
+}
+
 .profile__body {
   flex-direction: column;
   align-items: flex-start;
@@ -120,6 +125,7 @@ img {
 .profile__header--main {
   font-size: 2rem;
   padding: 1rem;
+  padding-left: 0;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -138,7 +144,7 @@ img {
 
 .profile__header--reward {
   font-size: 2rem;
-  padding: 1rem;
+  margin-left: 1rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -1022,12 +1028,7 @@ footer {
   }
 }
 
-/* Media Queries for screens smaller than 680px */
-
 @media screen and (max-width: 679px) {
-  html {
-    /* font-size: 80%; */
-  }
 
   .chats {
     grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
@@ -1054,6 +1055,11 @@ footer {
     font-weight: 500;
     border-radius: 0.2rem;
   }
+
+  .profile__header--reward--btn {
+    top: 7.4rem;
+    left: -0.9rem;
+  }
 }
 
 @media screen and (max-width: 519px) {
@@ -1064,7 +1070,7 @@ footer {
 
   .profile__header--main {
     font-size: 1.5rem;
-    padding: 0;
+    /* padding: 0; */
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -1099,5 +1105,13 @@ footer {
 
   .message {
     max-width: 100%;
+  }
+}
+
+@media all and (max-width: 480px) {
+  .profile__header--reward {
+    position: absolute;
+    top: -1.2rem;
+    right: -1.2rem;
   }
 }
