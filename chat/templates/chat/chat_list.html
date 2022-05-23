@@ -5,7 +5,7 @@
   {% if user.is_authenticated %}
     {% comment %} Chat list main content {% endcomment %}
     <div class="chat__list">
-      <h2 class="chat__list--title text-center d-inline-block"><i class="far fa-comment-alt text-logo"></i> Chat Rooms</h2>
+      <h2 class="chat__list--title text-center"><i class="far fa-comment-alt"></i> Chat Rooms</h2>
       <ul class="chats">
         {% comment %} All chat rooms {% endcomment %}
         {% for chat in chats %}
