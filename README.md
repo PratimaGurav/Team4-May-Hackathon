@@ -20,7 +20,7 @@ Connectedsy is an online communication platform aimed towards people experiencin
 
 In addition to our target audience, our team aims to market Connectedsy towards mental health professionals. The goal is to encourage such professionals to join our chat rooms and provide advice to users. This would be a great opportunity for mental health professionals to provide valuable support and advice on a charitable basis.
 
-![Site on a variety of device sizes]()
+![Site on a variety of device sizes](/documentation/readme/images/responsive.jpg)
 
 [Visit the site here](https://connectedsy.herokuapp.com/)
 
@@ -171,6 +171,72 @@ HTML, CSS, Javascript, Bootstrap5, Django, Channels, JQuery, JQuery UI, Redis
 
 - - -
 
+
+
+## Flowcharts
+
+The flowcharts were created using [Draw.io](https://www.lucidchart.com/).
+
+- [Flowchart](documentation/flowchart/flowchart.pdf)
+
+---
+
+## Information Architecture
+
+### Database
+
+* During the earliest stages of the project, the database was created using SQLite.
+* The database was then migrated to PostgreSQL.
+
+### Entity-Relationship Diagram
+
+* The ERD was created using [Draw.io](https://www.lucidchart.com/).
+
+- [Database Scheme](documentation/db/db.pdf)
+
+### Data Modeling
+
+1. **Allauth User Model**
+    - The user model was created using [Django-allauth](https://django-allauth.readthedocs.io/en/latest/).
+    - The user model was then migrated to PostgreSQL.
+
+2. **Profile Model**
+
+| Name          | Database Key  | Field Type    | Validation |
+| ------------- | ------------- | ------------- | ---------- |
+| User          | user          | OneToOneField | User, on_delete=models.CASCADE,related_name='user_profile' |
+| Avatar      | avatar        | CloudinaryField    | folder='profile_images'       |
+| Stewardship   | stewardship   | ManyToManyField | User, related_name='stewards', blank=True |
+| Bio          | bio           | TextField | |
+
+3. **Chat Model**
+
+| Name          | Database Key  | Field Type    | Validation |
+| ------------- | ------------- | ------------- | ---------- |
+| Chat Name     | chat_name     | CharField     | max_length=100, unique=True |
+| Slug          | slug          | SlugField     | unique=True, null=True |
+| Description   | chat_description | CharField     | max_length=250 |
+| Logo          | chat_logo      | CloudinaryField    | folder='chat_logo', null=True, blank=True |
+| Created At    | created_at     | DateTimeField | auto_now_add=True |
+
+4. **ChatMessage Model**
+
+| Name          | Database Key  | Field Type    | Validation |
+| ------------- | ------------- | ------------- | ---------- |
+| Chat          | chat          | ForeignKey    | Chat, on_delete=models.CASCADE, related_name='messages' |
+| User          | user          | ForeignKey    | User, on_delete=models.CASCADE, related_name='messages' |
+| Content      | content       | CharField     | max_length=500, blank=True |
+| Created At    | created_at     | DateTimeField | auto_now_add=True |
+| Image         | image         | CloudinaryField    | folder='chat_messages', null=True, blank=True |
+
+5. **Reaction Model**
+
+| Name          | Database Key  | Field Type    | Validation |
+| ------------- | ------------- | ------------- | ---------- |
+| ChatMessage   | chat_message  | ForeignKey    | ChatMessage, on_delete=models.CASCADE, related_name='reactions' |
+| User          | user          | ForeignKey    | User, on_delete=models.CASCADE, related_name='reactions' |
+| Emoji         | emoji         | URLField     |  |
+
 ## Deployment & Local Development
 
 ### Deployment
@@ -315,6 +381,7 @@ Links used for researching Mental Health issues:
 ### Media
 
 We used [Pexels](https://www.pexels.com/) for the images.
+[Miracle Happens](https://www.pexels.com/photo/green-text-based-tiles-on-black-background-5981929/)
 
 ### Acknowledgments
 
@@ -325,13 +392,14 @@ We used [Pexels](https://www.pexels.com/) for the images.
 
 
 
-Meet team :
+#### Meet team Connectedsy!:
 
-* [Aleksei](https://github.com/lexach91)
-* [Amare](https://github.com/Amareteklay)
-* [Stephen](https://github.com/StephenB92)
-* [David](https://github.com/pizzaHunt3r)
-* [Julia](https://github.com/IuliiaKonovalova)
-* [Pratima](https://github.com/PratimaGurav) 
+* [Aleksei Konovalov](https://github.com/lexach91)
+* [Amare Teklay Hailu](https://github.com/Amareteklay)
+* [David Campo](https://github.com/pizzaHunt3r)
+* [Iuliia Konovalova](https://github.com/IuliiaKonovalova)
+* [Pratima Gurav](https://github.com/PratimaGurav)
+* [Stephen Brereton](https://github.com/StephenB92)
+
 
 ## [BACK TO TOP](https://github.com/PratimaGurav/Team4-May-Hackathon#readme)
