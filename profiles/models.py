@@ -26,4 +26,4 @@ class Profile(models.Model):
         """ Function to save users avatar """
         if self.avatar:
             return self.avatar.url
-        return '/media/profile_images/avatar.png'
+        return 'https://res.cloudinary.com/lexach91/image/upload/v1653289991/avatar_uytoij.png'

@@ -32,7 +32,7 @@
                   {% if message.user %}
                     <img src="{{ message.user.user_profile.avatar_url }}" alt="Avatar of {{ message.user.username }}">
                   {% else %}
-                    <img src="/media/profile_images/avatar.png" alt="Default avatar">
+                    <img src="{% static 'images/profile_images/avatar.png' %}" alt="Default avatar">
                   {% endif %}
                 </div>
                 {% if message.user %}
