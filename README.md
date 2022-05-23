@@ -22,7 +22,7 @@ In addition to our target audience, our team aims to market Connectedsy towards 
 
 ![Site on a variety of device sizes]()
 
-[Visit the site here]()
+[Visit the site here](https://connectedsy.herokuapp.com/)
 
 ![GitHub last commit]())
 ![GitHub contributors]()
@@ -32,34 +32,34 @@ In addition to our target audience, our team aims to market Connectedsy towards 
 
 ## CONTENTS
 
-* [User Experience (UX)]()
-  * [User Stories]()
+* [User Experience (UX)](https://github.com/PratimaGurav/Team4-May-Hackathon#user-experience-ux)
+  * [User Stories](https://github.com/PratimaGurav/Team4-May-Hackathon#user-stories)
 
-* [Design]()
-  * [Colour Scheme]()
-  * [Typography]()
-  * [Imagery]()
-  * [Wireframes]()
-  * [Features]()
-  * [Accessibility]()
+* [Design](https://github.com/PratimaGurav/Team4-May-Hackathon#design)
+  * [Colour Scheme](https://github.com/PratimaGurav/Team4-May-Hackathon#colour-scheme)
+  * [Typography](https://github.com/PratimaGurav/Team4-May-Hackathon#typography)
+  * [Imagery](https://github.com/PratimaGurav/Team4-May-Hackathon#imagery)
+  * [Wireframes](https://github.com/PratimaGurav/Team4-May-Hackathon#wireframes)
+  * [Features](https://github.com/PratimaGurav/Team4-May-Hackathon#features)
+  * [Accessibility](https://github.com/PratimaGurav/Team4-May-Hackathon#accessibility)
 
-* [Technologies Used]()
-  * [Languages Used]()
-  * [Frameworks, Libraries & Programs Used]()
+* [Technologies Used](https://github.com/PratimaGurav/Team4-May-Hackathon#technologies-used)
+  * [Languages Used](https://github.com/PratimaGurav/Team4-May-Hackathon#languages-used)
+  * [Frameworks, Libraries & Programs Used](https://github.com/PratimaGurav/Team4-May-Hackathon#frameworks-libraries--programs-used)
 
-* [Deployment & Local Development]()
-  * [Deployment]()
-  * [Local Development]()
-    * [How to Fork]()
-    * [How to Clone]()
+* [Deployment & Local Development](https://github.com/PratimaGurav/Team4-May-Hackathon#deployment--local-development)
+  * [Deployment](https://github.com/PratimaGurav/Team4-May-Hackathon#deployment)
+  * [Using Heroku](https://github.com/PratimaGurav/Team4-May-Hackathon#using-heroku)
+  * [Local Development](https://github.com/PratimaGurav/Team4-May-Hackathon#local-development)
+    * [How to Fork](https://github.com/PratimaGurav/Team4-May-Hackathon#how-to-fork)
+    * [How to Clone](https://github.com/PratimaGurav/Team4-May-Hackathon#how-to-clone)
 
-* [Testing]()
+* [Testing](https://github.com/PratimaGurav/Team4-May-Hackathon#testing)
   
-* [Credits]()
-  * [Code Used]()
-  * [Content]()
-  * [Media]()
-  * [Acknowledgments]()
+* [Credits](https://github.com/PratimaGurav/Team4-May-Hackathon#credits)
+  * [Content](https://github.com/PratimaGurav/Team4-May-Hackathon#content)
+  * [Media](https://github.com/PratimaGurav/Team4-May-Hackathon#media)
+  * [Acknowledgments](https://github.com/PratimaGurav/Team4-May-Hackathon#acknowledgments)
 
 - - -
 
