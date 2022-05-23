@@ -984,6 +984,53 @@ footer {
   margin-top: -275px !important;
 }
 
+.home__card__login--container {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.home__card__login--main {
+  margin-top: 1em;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--grad-3) !important;
+  border-radius: 16px;
+  box-shadow: 0 5px 18px rgb(0 0 0 / 60%);
+  padding: 1.5em 2em 1.5em 2em;
+  font-size: 1.5rem;
+  margin-bottom: 5vh;
+  max-width: 50rem;
+}
+
+.home__card__login--buttons {
+  /* margin-top: 0.2em !important; */
+}
+
+.button__login,
+.button__signup {
+  min-width: 10rem;
+}
+
+.button__login i,
+.button__signup i {
+  margin-right: 0.3em;
+}
+
+.home__card__login--info {
+  max-width: 100%;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+.home__card__login--info div {
+  padding: 2em 1.5em !important;
+  text-align: center;
+}
+
 /* ---------- MEDIA ------------  */
 @media all and (max-width: 1287px) {
   .contact__main--container {
@@ -1081,6 +1128,36 @@ footer {
   .profile__header--reward--btn {
     top: 7.4rem;
     left: -0.9rem;
+  }
+}
+
+@media screen and (max-width: 587px) {
+
+  .home__card__login--main {
+    max-width: 95%;
+  }
+
+  .home__card__login--main h1 {
+    font-size: 1.5rem;
+  }
+
+  .home__card__login--main p {
+    font-size: 1rem;
+  }
+
+  .button__login,
+  .button__signup {
+    min-width: 10rem;
+    font-size: 0.8rem !important;
+  }
+
+  .home__card__login--info {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
 

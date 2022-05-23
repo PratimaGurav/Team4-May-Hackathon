@@ -3,85 +3,64 @@
 
 {% block content %}
 
-<!-- Page Title-->
-<div class="container">
-  
-
-  <div class="row justify-content-around">
-    <div class="col-12 col-md-10 col-lg-6 index-card bg-transparent mt-4 px-1 py-4">
-      <h1 class="home-logo text-center mt-1"><span class="text-logo rounded border-bottom border-4 border-success">CON</span><span
-        class="text-logo">N</span><span class="text-logo rounded border-top border-4 border-success py-0">ECTED</span><span
-        class="text-warning">SY</span></h1>
-    <p class="home-tagline text-center mt-1 mb-3 text-primary"><em>Meet Greet <i class="fas fa-link"></i> Share Support </em>
-    </p>
-      {% if user.is_authenticated %}
-      <!-- <h2 class="text-center mb-3"><i class="far fa-comment-alt text-logo"></i> Chat Rooms</h2> -->
-      <!-- <h6 class="text-center">Enter a Chat Room and connect with others instantly!</h6> -->
-      <!-- <p class="mt-1">
-        Enter a Chat Room to connect instantly with others. Every chat room is designed to offer you immediate contact
-        with people when you feel the desire to talk to someone right away.
-      </p> -->
-      <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-        <a href="{% url 'chat_list' %}" class="btn btn-lg btn-success me-md-2 my-4">Click to Enter </a>
-      </div>
-      {% else %}
-      <!-- <h4 class="text-center mb-3">How are you today?</h4>
-      <h5 class="text-center mb-3">Our Chat Rooms are waiting for you!</h5> -->
-      <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-      <a href="{% url 'account_signup' %}" class="btn btn-lg btn-primary me-md-2 my-4 mb-2">Register Here</a>
-    
-      <!-- <h6 class="text-center">Already a member?</h6> -->
-      <!-- <img class="card-img-top" src="/media/miracle.jpg" alt="Card image"> -->
-      <!-- <div class="card-body"> -->
-          <a href="{% url 'account_login' %}" class="btn btn-lg btn-success me-md-2 my-4 mb-2"><i class="fas fa-sign-in-alt px-1"></i> Login</a>
+  <!-- Page Title-->
+  <div class="container">
+    <div class="row justify-content-around home__card__login--container">
+      <div class="home__card__login--main">
+        <h1 class="home-logo text-center mt-1"><span
+            class="text-logo rounded border-bottom border-4 border-success">CON</span><span
+            class="text-logo">N</span><span
+            class="text-logo rounded border-top border-4 border-success py-0">ECTED</span><span
+            class="text-warning">SY</span>
+        </h1>
+        <p class="home-tagline text-center mt-1 mb-3 text-primary">
+          <em>Meet Greet <i class="fas fa-link"></i> Share Support </em>
+        </p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-center home__card__login--buttons">
+          {% if user.is_authenticated %}
+            <a href="{% url 'chat_list' %}" class="btn btn-lg btn-success">Click to Enter </a>
+          {% else %}
+            <a href="{% url 'account_signup' %}" class="btn btn-lg btn-primary button__signup">
+              <i class="fas fa-user-plus"></i> Sign Up
+            </a>
+            <a href="{% url 'account_login' %}" class="btn btn-lg btn-success button__login">
+              <i class="fas fa-sign-in-alt px-1"></i> Login
+            </a>
+          {% endif %}
         </div>
-      <!-- </div> -->
       </div>
-      {% endif %}
     </div>
 
-  <div class="row justify-content-around me-md-2 mb-2">
-    <div class="col-12 col-md-10 col-lg-5 index-card bg-transparent p-2">
-      <h2 class="text-center mb-3"><i class="fas fa-link text-logo"></i> Stay Connected</h2>
-      <p class="mt-2">
-        These chat rooms can help you if you are feeling low and need to talk to someone who understands just what it is
-        that you are going through.
-        You can find a safe place to express yourself and get support from others who are also experiencing the same.
-        These rooms are not a substitute for professional treatment for mental health, but you may find the community to
-        be supportive.
-      </p>
+    <div class="row justify-content-around home__card__login--info">
+      <div class="col-12 col-md-10 col-lg-5 index-card bg-transparent p-2">
+        <h2 class="text-center mb-3"><i class="fas fa-link text-logo"></i> Stay Connected</h2>
+        <p class="mt-2">
+          These chat rooms can help you if you are feeling low and need to talk to someone who understands just what it is
+          that you are going through.
+          You can find a safe place to express yourself and get support from others who are also experiencing the same.
+          These rooms are not a substitute for professional treatment for mental health, but you may find the community to
+          be supportive.
+        </p>
+      </div>
+
+      <div class="col-12 col-md-10 col-lg-5 index-card bg-transparent p-2">
+        <h2 class="text-center mb-3">
+          <i class="fas fa-quote-left text-logo"></i> Quotes
+        </h2>
+        <p class="fst-italic mt-2 py-1">
+          “The problem with having problems is that someone always has it worse.”― Tiffany Madison, Black and White
+        </p>
+        <p class="fst-italic py-1">
+          “We love being mentally strong, but we hate situations that allow us to put our mental strength to good use.”―
+          Mokokoma Mokhonoana
+        </p>
+        <p class="fst-italic py-1">
+          “Change what you can, manage what you can't.”― Raymond McCauley
+        </p>
+        <br>
+      </div>
     </div>
 
-    <div class="col-12 col-md-10 col-lg-5 index-card bg-transparent p-2">
-      <h2 class="text-center mb-3">
-        <i class="fas fa-quote-left text-logo"></i> Quotes
-      </h2>
-      <p class="fst-italic mt-2 py-1">
-        “The problem with having problems is that someone always has it worse.”― Tiffany Madison, Black and White
-      </p>
-      <p class="fst-italic py-1">
-        “We love being mentally strong, but we hate situations that allow us to put our mental strength to good use.”―
-        Mokokoma Mokhonoana
-      </p>
-      <p class="fst-italic py-1">
-        “Change what you can, manage what you can't.”― Raymond McCauley
-      </p>
-      <br>
-    </div>
+
   </div>
-<<<<<<< HEAD
-=======
-  {% else %}
-  <div class="row justify-content-around">
-    <div class="col-4 index-card bg-transparent">
-      <h2 class="text-center"><i class="fas fa-sign-in-alt text-logo"></i> Login</h2>
-    <img class="card-img-top" src="{% static 'images/miracle.jpg' %}" alt="Card image">
-    <!-- <div class="card-body"> -->
-      <p class="mt-1 text-center">To join Chat's network and begin chatting.</p>
-      <a href="{% url 'account_login' %}" class="btn btn-outline-dark me-md-2 mb-2">Login</a>
-    <!-- </div> -->
-  </div>
-  </div>
->>>>>>> 15ba7c28ec5eb542bcd3e74d2e0f54e0adb59569
-</div>
 {%endblock%}
