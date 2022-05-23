@@ -274,6 +274,33 @@ Please find our separate .md file for testing [here](TESTING.md).
 
 - - -
 
+## Bugs
+
+### Known Bugs
+
+- In the chats users can send empty messages if they put spaces or empty lines in chat input.
+    + This can be fixed by trimming the message before checking if it is empty, but due to time constraints, we have not done that.
+
+### Solved Bugs
+
+- After the user has sent a message, the chat input field was not cleared.
+    + Has been fixed by clearing the chat input field after the user has sent a message.
+
+- After receiving a message, the sender's avatar url was broken and image was not displayed.
+    + Has been fixed by adding the sender's avatar url to the message.
+
+- After receiving a message, the emoji reaction button on the message was not clickable.
+    + Has been fixed by adding an event listener to the emoji reaction button after the message has been received and html was created by javascript.
+
+- After clicking on other user's profile url, the active user's profile was opened instead of the other user's profile.
+    + Has been fixed by modifying the view function to get the requested user's url from the url and then pass it to the template.
+
+- After registering, the profile was not created for the user.
+    + Has been fixed by adding signals to the profiles app to create the profile for each user right after the user has been created.
+
+- After deploying the app, the static files were not being served by cloudinary.
+    + Has been fixed by changing the order of the `INSTALLED_APPS` in the settings.py file. `cloudinary_storage` and `cloudinary`  should be added after `django.contrib.staticfiles`.
+
 ## Credits
 
 ### Content
