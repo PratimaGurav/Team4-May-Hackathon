@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
 
@@ -50,7 +51,7 @@
   <div class="row justify-content-around">
     <div class="col-4 index-card bg-transparent">
       <h2 class="text-center"><i class="fas fa-sign-in-alt text-logo"></i> Login</h2>
-    <img class="card-img-top" src="/media/miracle.jpg" alt="Card image">
+    <img class="card-img-top" src="{% static 'images/miracle.jpg' %}" alt="Card image">
     <!-- <div class="card-body"> -->
       <p class="mt-1 text-center">To join Chat's network and begin chatting.</p>
       <a href="{% url 'account_login' %}" class="btn btn-outline-dark me-md-2 mb-2">Login</a>
