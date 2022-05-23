@@ -113,7 +113,45 @@ Wireframes were created for mobile, tablet and desktop with [Balsamiq]()
 
 The website is comprised of:
 
-1.
+The website is comprised of:
+
+1. Home page.
+![Home screenshot](/documentation/readme/images/homescreen.jpg)
+![Logged-in Home screenshot](/documentation/readme/images/homescreen-2.jpg)
+2. Chat Rooms List.
+![Chat Rooms List screenshot](/documentation/readme/images/chat-list.jpg)
+3. Chat Room.
+![Chat Rooms screenshot](/documentation/readme/images/chat-room.jpg)
+4. Sign-up.
+![Sign-up screenshot](/documentation/readme/images/sign-up.jpg)
+5. Sign-in.
+![Sign-in screenshot](/documentation/readme/images/sign-in.jpg)
+6. Sign-out.
+![Sign-out screenshot](/documentation/readme/images/sign-out.jpg)
+7. User Profile.
+![User-Profile screenshot](/documentation/readme/images/user-profile.jpg)
+8. Edit Profile.
+![Edit-Profile screenshot](/documentation/readme/images/edit-profile.jpg)
+9. Delete Profile.
+![Delete-Profile screenshot](/documentation/readme/images/delete-profile.jpg)
+10. Rewards.
+![Rewards screenshot](/documentation/readme/images/rewards.jpg)
+11. Messages.
+![Messages screenshot](/documentation/readme/images/messages.jpg)
+12. Contact us page.
+![contact screenshot](/documentation/readme/images/contact.jpg)
+13. 404 error page.
+![404 screenshot]()
+
+All Pages on the website have:
+
+* A favicon icon.
+    ![Favicon Icon](/documentation/readme/images/favicon.jpg)
+* A responsive navbar.
+    ![Navbar](/documentation/readme/images/header-2.jpg)
+    ![Logged-in Navbar](/documentation/readme/images/header.jpg)
+* A responsive footer.
+    ![Footer](/documentation/readme/images/footer.jpg)
 
 
 * Future Implementations.
