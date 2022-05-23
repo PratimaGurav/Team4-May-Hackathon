@@ -24,12 +24,6 @@ In addition to our target audience, our team aims to market Connectedsy towards 
 
 [Visit the site here](https://connectedsy.herokuapp.com/)
 
-![GitHub last commit]())
-![GitHub contributors]()
-![GitHub language count]()
-![GitHub top language]()
-![GitHub forks]()
-
 ## CONTENTS
 
 * [User Experience (UX)](https://github.com/PratimaGurav/Team4-May-Hackathon#user-experience-ux)
@@ -135,7 +129,7 @@ The website is comprised of:
 9. Delete Profile.
 ![Delete-Profile screenshot](/documentation/readme/images/delete-profile.jpg)
 10. Rewards.
-![Rewards screenshot](/documentation/readme/images/rewards.jpg)
+![Rewards screenshot](/documentation/readme/images/rewards.png)
 11. Messages.
 ![Messages screenshot](/documentation/readme/images/messages.jpg)
 12. Contact us page.
