@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
 <div class="contact__main--container">
@@ -45,17 +46,19 @@
   </div>
 </div>
 <div class="container contact text-center">
+
   <h2 class="font-weight-bold pb1">Meet the Squad</h2>
   <div class="row mt-3">
     <div class="col-lg">
       <div class="profile-card">
         <div class="profile-card--image">
-          <img src="/media/profile_images/aleksei_pic.png" class="profile-card-img-top" alt="Aleksei's avatar">
+          <img src="{% static 'images/profile_images/aleksei_pic.png' %}" class="profile-card-img-top" alt="Aleksei's avatar">
         </div>
         <div class="profile-card-body">
           <h5 class="profile-card-title">Aleksei</h5>
           <a href="http://github.com/lexach91/" aria-label="Visit the github page" class="fa fa-github"
             target="_blank"></a>
+
         </div>
       </div>
     </div>
