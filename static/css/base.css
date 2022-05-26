@@ -984,7 +984,7 @@ footer {
   box-shadow: 0 5px 18px rgb(0 0 0 / 60%);
   padding: 1.5em 2em 1.5em 2em;
   font-size: 1.5rem;
-  margin-bottom: 15vh;
+  margin-bottom: 12vh;
   max-width: 50rem;
 }
 
@@ -1006,6 +1006,7 @@ footer {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 5vh;
 }
 
 .home__card__login--info {
@@ -1051,6 +1052,35 @@ footer {
     width: 100%;
     max-width: 90%;
     margin: 2em;
+  }
+
+  .home__card__login--main {
+    font-size: 1.5rem;
+    margin-bottom: 2vh;
+    max-width: 50rem;
+  }
+
+  .home__card__login--main h1 {
+    font-size: 2.5rem;
+  }
+
+  .home__card__login--main p {
+    font-size: 1.5rem;
+  }
+
+  .home__cards__login--info {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .home__card__login--info {
+    width: 100%;
+    max-width: 50rem;
+    margin: 0 auto;
+  }
+
+  .home__card__login--info:first-child {
+    margin-bottom: 2vh;
   }
 }
 
@@ -1138,16 +1168,16 @@ footer {
 
 @media screen and (max-width: 587px) {
 
-  .home__card__login--main {
-    max-width: 95%;
-  }
-
   .home__card__login--main h1 {
     font-size: 1.5rem;
   }
 
   .home__card__login--main p {
     font-size: 1rem;
+  }
+
+  .home__card__login--info {
+    height: unset;
   }
 
   .button__login,
