@@ -1,11 +1,17 @@
+from .models import Contact
 from django import forms
 
-class ContactForm(forms.Form):
-    name = forms.CharField(max_length=150)
-    email = forms.EmailField()
-    subject = forms.CharField(max_length=150)
-    message = forms.CharField(widget=forms.Textarea)
+class ContactForm(forms.ModelForm):
+    """Form for the contact"""
+    class Meta:
+        """Meta class"""
+        model = Contact
+        fields = [
+            'name',
+            'email',
+            'subject',
+            'message',
+            ]
+        widgets = {
 
-    def send_email(self):
-        # send email using the self.cleaned_data dictionary
-        pass
+        }

@@ -12,3 +12,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from django.contrib import admin
 # Register your models here.
+from .models import Contact
+
+admin.site.register(Contact)
