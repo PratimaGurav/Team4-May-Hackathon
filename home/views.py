@@ -9,11 +9,12 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.contrib import messages
 from django.views import View
 from chat.models import Chat
+from .models import Contact
 from .forms import ContactForm
 from django.views.generic.edit import FormView
 
@@ -38,11 +39,16 @@ class HomeView(View):
 class ContactView(FormView):
     template_name = 'contact-us.html'
     form_class = ContactForm
-    # success_url = '/contact/'
+    initial = {'key': 'value'}
 
-    def form_valid(self, form):
-        # This method is called when valid form data has been POSTed.
-        # It should return an HttpResponse.
-        form.send_email()
-        return super().form_valid(form)
-    
+    def get(self, request, *args, **kwargs):
+        form = self.form_class(initial=self.initial)
+        return render(request, self.template_name, {'form': form})
+
+    def post(self, request, *args, **kwargs):
+        form = self.form_class(request.POST)
+        if form.is_valid():
+            messages.success(self.request, 'Thank You, your form submission has been successful!!')
+          
+        return HttpResponseRedirect(self.request.path_info)
+        
