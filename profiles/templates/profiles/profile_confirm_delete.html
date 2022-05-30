@@ -2,22 +2,23 @@
 {% load static %}
 {% load crispy_forms_tags %}
 {% block content %}
-{% if user.is_authenticated %}
-<div class="profile">
-  <form method="POST" class="profile__delete">
-    {% csrf_token %}
-    <div class="profile__delete--title">
-      Are you sure you want to delete
-      <a href="{% url 'profile' username=request.user.username %}" aria-label="Go to profile page">your profile</a>?
+  {% if user.is_authenticated %}
+    <div class="profile">
+      <form method="POST" class="profile__delete">
+        {% csrf_token %}
+        <div class="profile__delete--title">
+          Are you sure you want to delete
+          <a href="{% url 'profile' username=request.user.username %}" aria-label="Go to profile page">your profile</a>?
+        </div>
+        <div class="profile__body--buttons">
+          <a class="profile__body--buttons--cancel" href="{% url 'profile' username=request.user %}" aria-label="Cancel deletion of the account">
+            Cancel
+          </a>
+          <button class="profile__body--buttons--delete" type="submit" aria-label="Confirm deletion of the account">
+            Delete
+          </button>
+        </div>
+      </form>
     </div>
-    <div class="profile__body--buttons">
-      <a class="profile__body--buttons--cancel" href="{% url 'profile' username=request.user %}"
-        aria-label="Cancel deletion of the account">Cancel</a>
-      <button class="profile__body--buttons--delete" type="submit" aria-label="Confirm deletion of the account">
-        Delete
-      </button>
-    </div>
-  </form>
-</div>
-{% endif %}
+  {% endif %}
 {% endblock content %}
