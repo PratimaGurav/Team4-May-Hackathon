@@ -180,7 +180,8 @@ img {
   align-items: center;
 }
 
-.profile__body--buttons a {
+.profile__body--buttons a,
+.profile__body--buttons button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -259,6 +260,23 @@ img {
 
 .profile__delete--title a:hover {
   color: var(--grad-1);
+}
+
+.profile__body--buttons .profile__body--buttons--cancel {
+  font-weight: 500;
+  font-size: calc(60% + 0.8vmin);
+}
+
+.profile__body--buttons .profile__body--buttons--delete {
+  background-color: #dc3545;
+  border: 1px solid #dc3545;
+  font-weight: 500;
+  font-size: calc(60% + 0.8vmin);
+}
+
+.profile__body--buttons .profile__body--buttons--delete:hover {
+  background-color: #c82333;
+  border: 1px solid #c82333;
 }
 
 /*---------- HEADER ----------*/
@@ -1239,6 +1257,14 @@ footer {
 
   .profile__body--buttons a {
     padding: 0.3em 1.5em 0.4em 1.5em;
+  }
+
+  .profile__delete {
+    padding: 0.5em 1em;
+  }
+
+  .profile__body--buttons .profile__body--buttons--cancel {
+    padding: 0.2em 1em;
   }
 
   .profile__body--buttons a i {
