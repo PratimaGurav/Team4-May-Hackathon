@@ -5,27 +5,23 @@
 {% block head_title %}{% trans "Sign Out" %}{% endblock %}
 
 {% block content %}
-<div class="profile">
-<div class="container account-container">
-  <div class="row mt-4 pt-4">
-    <div class="col-md-8 mt-3 offset-md-2">
-      <div class="content-section">
-        <h1 class="m-3">{% trans "Sign Out" %}</h1>
+  <div class="account">
+    <form method="post" action="{% url 'account_logout' %}" class="account__form">
+      <h1 class="account__form--title">{% trans "Sign Out" %}</h1>
 
-        <p class="m-3">{% trans 'Are you sure you want to sign out?' %}</p>
-
-        <form method="post" action="{% url 'account_logout' %}">
-          {% csrf_token %}
-          {% if redirect_field_value %}
-          <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-          {% endif %}
-          <a class="btn btn-secondary mt-3 mx-2 mt-sm-1 mb-md-4 d-inline-block" href="{% url 'profile' username=request.user %}">Cancel</a>
-          <button class="btn btn-danger mt-3 mx-2 mt-sm-1 mb-md-4 d-inline-block" type="submit">{% trans 'Sign Out' %}</button>
-        </form>
-
+      <p class="account__form--paragraph">{% trans 'Are you sure you want to sign out?' %}</p>
+      {% csrf_token %}
+      {% if redirect_field_value %}
+        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+      {% endif %}
+      <div class="account__form--buttons">
+        <a class="account__form--buttons--cancel" href="{% url 'profile' username=request.user %}">
+          Cancel
+        </a>
+        <button class="account__form--buttons--confirm" type="submit">
+          {% trans 'SignOut' %}
+        </button>
       </div>
-    </div>
+    </form>
   </div>
-</div>
-</div>
 {% endblock %}
