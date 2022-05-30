@@ -1037,6 +1037,17 @@ footer {
   margin-bottom: 0.5em;
 }
 
+/* Messages */
+.message-container {
+  padding: 1em;
+}
+
+.message-container__message {
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
 /* ---------- MEDIA ------------  */
 @media all and (max-width: 1287px) {
   .contact__main--container {
