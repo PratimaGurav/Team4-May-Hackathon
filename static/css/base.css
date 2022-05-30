@@ -235,6 +235,32 @@ img {
   margin-left: 0.4em;
 }
 
+/* Profile Delete Page */
+.profile__delete {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 2rem;
+  padding: 2em;
+}
+
+.profile__delete--title {
+  font-size: calc(60% + 0.8vmin);
+  padding-bottom: 3vh;
+}
+
+.profile__delete--title a {
+  color: blue;
+  color: var(--grad-2);
+  font-weight: 500;
+}
+
+.profile__delete--title a:hover {
+  color: var(--grad-1);
+}
+
 /*---------- HEADER ----------*/
 .navbar {
   font-size: 14px;
