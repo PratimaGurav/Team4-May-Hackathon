@@ -11,10 +11,11 @@
       <a href="{% url 'profile' username=request.user.username %}" aria-label="Go to profile page">your profile</a>?
     </div>
     <div class="profile__body--buttons">
-      <a class="btn btn-secondary mt-3 mx-2 mt-sm-1 mb-md-4 d-inline-block"
-        href="{% url 'profile' username=request.user %}" aria-label="Cancel deletion of the account">Cancel</a>
-      <button class="btn btn-danger mt-3 mx-2 mt-sm-1 mb-md-4 d-inline-block" type="submit"
-        aria-label="Confirm deletion of the account">Delete Profile</button>
+      <a class="profile__body--buttons--cancel" href="{% url 'profile' username=request.user %}"
+        aria-label="Cancel deletion of the account">Cancel</a>
+      <button class="profile__body--buttons--delete" type="submit" aria-label="Confirm deletion of the account">
+        Delete
+      </button>
     </div>
   </form>
 </div>
