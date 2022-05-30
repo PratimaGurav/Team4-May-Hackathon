@@ -81,7 +81,8 @@ img {
 }
 
 /* Profile */
-.profile {
+.profile,
+.account {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -174,13 +175,17 @@ img {
   color: white;
 }
 
-.profile__body--buttons {
+.profile__body--buttons,
+.account__form--buttons {
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
-.profile__body--buttons a {
+.profile__body--buttons a,
+.profile__body--buttons button,
+.account__form--buttons a,
+.account__form--buttons button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -195,7 +200,8 @@ img {
   box-shadow: 0 5px 18px rgba(0, 0, 0, 0.3);
 }
 
-.profile__body--buttons a:first-child {
+.profile__body--buttons a:first-child,
+.account__form--buttons a:first-child {
   margin-right: 0.7em;
 }
 
@@ -233,6 +239,74 @@ img {
 
 .fa-spin {
   margin-left: 0.4em;
+}
+
+/* Profile Delete Page */
+.profile__delete,
+.account__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2em;
+  font-size: calc(60% + 0.8vmin);
+}
+
+.profile__delete--title {
+  font-size: calc(60% + 0.8vmin);
+  padding-bottom: 3vh;
+}
+
+.profile__delete--title a {
+  color: blue;
+  color: var(--grad-2);
+  font-weight: 500;
+}
+
+.profile__delete--title a:hover {
+  color: var(--grad-1);
+}
+
+.profile__body--buttons .profile__body--buttons--cancel,
+.account__form--buttons .account__form--buttons--cancel {
+  font-weight: 500;
+  font-size: calc(60% + 0.8vmin);
+}
+
+.profile__body--buttons .profile__body--buttons--delete,
+.account__form--buttons .account__form--buttons--confirm {
+  background-color: #dc3545;
+  border: 1px solid #dc3545;
+  font-weight: 500;
+  font-size: calc(60% + 0.8vmin);
+}
+
+.profile__body--buttons .profile__body--buttons--delete:hover,
+.account__form--buttons .account__form--buttons--confirm:hover {
+  background-color: #c82333;
+  border: 1px solid #c82333;
+}
+
+/* ----- Allauth ----- */
+.account__form--title {
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: #233600;
+  padding-bottom: 1.5vh;
+}
+
+.account__form--paragraph {
+  font-size: 1.7rem;
+}
+
+.account__form--buttons {
+  margin-top: 3vh;
+}
+
+.account__form--buttons .account__form--buttons--cancel,
+.account__form--buttons .account__form--buttons--confirm {
+  font-size: 1.2rem !important;
 }
 
 /*---------- HEADER ----------*/
@@ -1037,6 +1111,17 @@ footer {
   margin-bottom: 0.5em;
 }
 
+/* Messages */
+.message-container {
+  padding: 0.5em 1em;
+}
+
+.message-container__message {
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
 /* ---------- MEDIA ------------  */
 @media all and (max-width: 1287px) {
   .contact__main--container {
@@ -1085,7 +1170,9 @@ footer {
 }
 
 @media all and (max-width: 976px) {
-  .profile {
+
+  .profile,
+  .account {
     max-width: 90%;
   }
 
@@ -1202,6 +1289,15 @@ footer {
 
   .profile__body--buttons a {
     padding: 0.3em 1.5em 0.4em 1.5em;
+  }
+
+  .profile__delete,
+  .account__form {
+    padding: 0.5em 1em;
+  }
+
+  .profile__body--buttons .profile__body--buttons--cancel {
+    padding: 0.2em 1em;
   }
 
   .profile__body--buttons a i {
