@@ -4,21 +4,19 @@
 {% block content %}
 {% if user.is_authenticated %}
 <div class="profile">
-<div class="container account-container chat_list">
-    <div class="row mt-3">
-    <div class="col-md-8 col-12 offset-md-2">
-        <form method="POST">
-                {% csrf_token %}
-                <h5 class="mb-md-5 mb-sm-1">Are you sure you want to delete your profile?</h5> 
-          <div class="form-group d-inline-block mt-4">
-            <a class="btn btn-secondary mt-3 mx-2 mt-sm-1 mb-md-4 d-inline-block" href="{% url 'profile' username=request.user %}" aria-label="Cancel deletion of the account">Cancel</a>
-            <button class="btn btn-danger mt-3 mx-2 mt-sm-1 mb-md-4 d-inline-block" type="submit" aria-label="Confirm deletion of the account">Delete Profile</button>
-
-          </div>
-        </form>
+  <form method="POST" class="profile__delete">
+    {% csrf_token %}
+    <div class="profile__delete--title">
+      Are you sure you want to delete
+      <a href="{% url 'profile' username=request.user.username %}" aria-label="Go to profile page">your profile</a>?
     </div>
-  </div>
-</div>
+    <div class="profile__body--buttons">
+      <a class="btn btn-secondary mt-3 mx-2 mt-sm-1 mb-md-4 d-inline-block"
+        href="{% url 'profile' username=request.user %}" aria-label="Cancel deletion of the account">Cancel</a>
+      <button class="btn btn-danger mt-3 mx-2 mt-sm-1 mb-md-4 d-inline-block" type="submit"
+        aria-label="Confirm deletion of the account">Delete Profile</button>
+    </div>
+  </form>
 </div>
 {% endif %}
 {% endblock content %}
