@@ -689,6 +689,7 @@ img {
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
+  margin: 0.9em 0.2em 0.2em 0.7em;
 }
 
 .message__avatar--avatar {
@@ -913,8 +914,9 @@ footer {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  width: 100%;
+  width: 80%;
   height: 100%;
+  flex-wrap: wrap;
 }
 
 .reaction-item {
@@ -946,6 +948,7 @@ footer {
 
 .message__reactions--choices {
   position: relative;
+  margin-top: auto;
 }
 
 .reactions__toggle {
