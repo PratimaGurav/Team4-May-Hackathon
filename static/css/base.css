@@ -944,6 +944,7 @@ footer {
 
 .reaction-item.reacted {
   border: 1px solid var(--base-color);
+  border-radius: 0.2em;
 }
 
 .message__reactions--choices {
@@ -1194,9 +1195,6 @@ footer {
     display: none;
   }
 
-  #chat-file {
-    margin-right: auto !important;
-  }
 
   .chats {
     grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
@@ -1275,6 +1273,68 @@ footer {
     min-width: 10rem;
     font-size: 0.8rem !important;
   }
+
+  /* Chat */
+
+  .message__header--time {
+    font-size: 0.5em;
+    margin-right: 0;
+    top: -0.3rem;
+    right: -0.2rem;
+  }
+
+  .message__body--text {
+    font-size: 1rem;
+    padding: 0.2em;
+  }
+
+  .message__body--image {
+    width: 15rem;
+  }
+
+  /* chat Emojis */
+  .reaction-item {
+    width: 2.3rem;
+    height: 1.7rem;
+  }
+
+  .reaction_emoji--img {
+    width: 1.5em;
+    height: 1.5em;
+  }
+
+  .reactions__toggle {
+    width: 2em;
+    height: 1.5em;
+    border-radius: 0.4em;
+    padding-right: 0.3em;
+  }
+
+  .reactions__toggle--plus {
+    top: -0.5rem;
+    right: 0rem;
+  }
+
+  /* Chat buttons */
+
+  .input__container--buttons button {
+    padding: 0.004em 0.8em 0.003em 0.8em;
+    font-size: 0.9rem;
+  }
+
+  .send-anonymously--container label {
+    margin-right: 0.2em;
+  }
+
+  .send-anonymously--container {
+    margin-bottom: 0.3rem;
+    margin-right: 1.2rem;
+    margin-left: 1.2rem;
+  }
+
+  .input__container--buttons input#chat-file {
+    font-size: 0.75rem !important;
+  }
 }
 
 @media screen and (max-width: 519px) {
@@ -1317,8 +1377,14 @@ footer {
     font-size: 1rem;
   }
 
+  /* Chat */
   .chats__navbar {
     width: 5rem;
+  }
+
+  .chats__navbar--item,
+  .message__body--text {
+    font-size: calc(60% + 0.8vmin);
   }
 
   .chat__room {
@@ -1329,12 +1395,16 @@ footer {
   .message {
     max-width: 100%;
   }
-}
 
-@media all and (max-width: 480px) {
   .profile__header--reward {
     position: absolute;
     top: -1.2rem;
     right: -1.2rem;
+  }
+}
+
+@media all and (max-width: 400px) {
+  .message__body--image {
+    width: 10rem;
   }
 }
