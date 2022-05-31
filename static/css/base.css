@@ -869,8 +869,8 @@ footer {
   font-size: 1.5rem;
 }
 
-.profile-cardhover {
-  color: var(--grad1-color) !important;
+.profile-card:hover {
+  color: var(--grad-1) !important;
 }
 
 .coder__name {
