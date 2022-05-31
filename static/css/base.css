@@ -944,6 +944,7 @@ footer {
 
 .reaction-item.reacted {
   border: 1px solid var(--base-color);
+  border-radius: 0.2em;
 }
 
 .message__reactions--choices {
