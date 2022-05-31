@@ -1303,6 +1303,18 @@ footer {
     height: 1.5em;
   }
 
+  .reactions__toggle {
+    width: 2em;
+    height: 1.5em;
+    border-radius: 0.4em;
+    padding-right: 0.3em;
+  }
+
+  .reactions__toggle--plus {
+    top: -0.5rem;
+    right: 0rem;
+  }
+
   /* Chat buttons */
 
   .input__container--buttons button {
