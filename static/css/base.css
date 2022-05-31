@@ -1292,6 +1292,19 @@ footer {
     width: 15rem;
   }
 
+  /* chat Emojis */
+  .reaction-item {
+    width: 2.3rem;
+    height: 1.7rem;
+  }
+
+  .reaction_emoji--img {
+    width: 1.5em;
+    height: 1.5em;
+  }
+
+  /* Chat buttons */
+
   .input__container--buttons button {
     padding: 0.004em 0.8em 0.003em 0.8em;
     font-size: 0.9rem;
@@ -1375,16 +1388,6 @@ footer {
     position: absolute;
     top: -1.2rem;
     right: -1.2rem;
-  }
-
-  .reaction-item {
-    width: 2.3rem;
-    height: 1.7rem;
-  }
-
-  .reaction_emoji--img {
-    width: 1.5em;
-    height: 1.5em;
   }
 }
 
