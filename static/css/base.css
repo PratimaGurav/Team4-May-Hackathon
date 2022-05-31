@@ -1275,6 +1275,11 @@ footer {
     min-width: 10rem;
     font-size: 0.8rem !important;
   }
+
+  /* Chat */
+  .message__body--image {
+    width: 15rem;
+  }
 }
 
 @media screen and (max-width: 519px) {
@@ -1317,8 +1322,14 @@ footer {
     font-size: 1rem;
   }
 
+  /* Chat */
   .chats__navbar {
     width: 5rem;
+  }
+
+  .chats__navbar--item,
+  .message__body--text {
+    font-size: calc(60% + 0.8vmin);
   }
 
   .chat__room {
@@ -1329,12 +1340,26 @@ footer {
   .message {
     max-width: 100%;
   }
-}
 
-@media all and (max-width: 480px) {
   .profile__header--reward {
     position: absolute;
     top: -1.2rem;
     right: -1.2rem;
+  }
+
+  .reaction-item {
+    width: 2.3rem;
+    height: 1.7rem;
+  }
+
+  .reaction_emoji--img {
+    width: 1.5em;
+    height: 1.5em;
+  }
+}
+
+@media all and (max-width: 400px) {
+  .message__body--image {
+    width: 10rem;
   }
 }
