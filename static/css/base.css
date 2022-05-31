@@ -1278,6 +1278,19 @@ footer {
   }
 
   /* Chat */
+
+  .message__header--time {
+    font-size: 0.5em;
+    margin-right: 0;
+    top: -0.3rem;
+    right: -0.2rem;
+  }
+
+  .message__body--text {
+    font-size: 1rem;
+    padding: 0.2em;
+  }
+
   .message__body--image {
     width: 15rem;
   }
