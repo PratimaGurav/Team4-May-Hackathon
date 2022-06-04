@@ -1401,6 +1401,10 @@ footer {
     top: -1.2rem;
     right: -1.2rem;
   }
+
+  .contact-form .btnContact {
+    width: 100%;
+  }
 }
 
 @media all and (max-width: 400px) {
