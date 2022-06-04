@@ -55,7 +55,7 @@ class ContactView(View):
         else:
             errors = form.errors
             for error in errors:
-                messages.error('Please, enter valid ' + self.request, error)
+                messages.error(self.request, 'Please, enter valid ' + error)
             # print form.errors
             print(form.errors)
             return render(request, self.template_name, {'form': form})
