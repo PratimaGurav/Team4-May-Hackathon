@@ -15,6 +15,7 @@
   --grad-4: #F4FCED;
 }
 
+
 /*------ Global Settings------*/
 *,
 *::before,
@@ -78,6 +79,12 @@ img {
 .h-100 {
   min-height: 100vh !important;
 }
+
+/* Navbar */
+.dropdown-menu {
+  --bs-dropdown-min-width: 9.5rem !important;
+}
+
 
 /* Profile */
 .profile,
