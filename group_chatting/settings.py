@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
     'django.contrib.staticfiles',
     'cloudinary_storage',
     'cloudinary',
@@ -59,6 +60,17 @@ INSTALLED_APPS = [
     'chat',
     'profiles',
 ]
+
+SOCIAL_ACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE': ['profile', 'email'],
+        'AUTH_PARAMS': {'access_type': 'online'},
+        'APP': {
+            'CLIENT_ID': os.environ.get('GOOGLE_CLIENT_ID'),
+            'CLIENT_SECRET': os.environ.get('GOOGLE_CLIENT_SECRET'),
+        }
+    }
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
