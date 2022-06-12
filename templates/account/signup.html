@@ -14,9 +14,9 @@
           <h1 class="p-3">{% trans "Sign Up" %}</h1>
           {% get_providers as socialaccount_providers %}
           {% if socialaccount_providers %}
-            <p>{% blocktrans with site.name as site_name %}Please sign in with one
-              of your existing third party accounts. Or, <a href="{{ signup_url }}">sign up</a>
-              for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
+            <p>{% blocktrans with site.name as site_name %}Please sign up with one
+              of your existing third party accounts. Or, <a href="{{ login_url }}">sign
+                in</a> if you already have an account.{% endblocktrans %}</p>
             <div class="socialaccount_ballot">
               <ul class="socialaccount_providers">
                 {% include "socialaccount/snippets/provider_list.html" with process="login" %}
