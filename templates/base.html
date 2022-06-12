@@ -78,14 +78,13 @@
               <img class="profile-img profile-mini d-inline-block mb-2" src="{{ user.user_profile.avatar_url }}"
                 alt="Profile image">
               {{user.user_profile.user.username|title}}</a>
-            <div class="dropdown-menu bg-success border-1 profile-menu rounded dropdown-menu-custom"
-              aria-labelledby="navbarDropdown">
-              <a class="dropdown-item nav-link text-center " href="{% url 'profile' username=request.user.username %}"
-                aria-label="Go to profile page">Profile</a>
-              <a class="dropdown-item nav-link text-center {% if request.resolver_match.url_name == 'account_logout' %} active {% endif %}"
-                href="{% url 'account_logout' %}" aria-label="Logout">Logout</a>
-            </div>
-          </li>
+              <ul class="dropdown-menu border-1 profile-menu rounded dropdown-menu-custom" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item nav-link text-center" href="{% url 'profile' username=request.user.username %}">Profile</a>
+                </li>
+                <li><a class="dropdown-item nav-link text-center {% if request.resolver_match.url_name == 'account_logout' %} active {% endif %} " href="{% url 'account_logout' %}">Logout</a>
+                </li>
+              </ul>
+            </li>
           {% else %}
           <li class="nav-item">
             <a class="nav-link {% if request.resolver_match.url_name == 'account_login' %} active {% endif %}"
