@@ -85,6 +85,52 @@ img {
   --bs-dropdown-min-width: 9.5rem !important;
 }
 
+/* socialaccount_providers */
+.socialaccount_providers {
+  background-color: var(--grad-2);
+  border-radius: 0.25rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 900;
+}
+
+.socialaccount_providers li {
+  width: 100%;
+}
+
+.socialaccount_provider.google {
+  width: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.socialaccount_providers:hover {
+  background-color: var(--grad-1);
+}
+
+.socialaccount_providers--image {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-image: url('../images/chrome_icon.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-color: #22224e;
+  background-color: white;
+  border-radius: 90%;
+  margin-right: 3vw;
+}
+
+.socialaccount_provider.google span {
+  color: white;
+  font-size: calc(60% + 0.8vmin);
+  margin-left: 0.3em;
+}
 
 /* Profile */
 .profile,
