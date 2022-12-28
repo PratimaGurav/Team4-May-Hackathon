@@ -8,7 +8,6 @@
 {% endblock %}
 
 
-
 {% block content %}
 {% comment %} Access for authorized user {% endcomment %}
   {% if user.is_authenticated %}
@@ -94,9 +93,6 @@
           </div>
           {% endfor %}
         </div>
-
-
-
         {% comment %} Input box {% endcomment %}
         <div class="input__container">
           <textarea id="chat-input" class="input__container--textarea"></textarea>
