@@ -589,7 +589,7 @@ img {
   justify-content: flex-start;
   font-size: 2vh;
   font-weight: 500;
-  color: var(--grad-1);
+  color: #191989;
   text-transform: capitalize;
 }
 
