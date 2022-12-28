@@ -458,7 +458,7 @@ img {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  max-width: 120rem;
+  max-width: 80rem;
   padding: 0 1em;
   margin: 2em auto;
 }
