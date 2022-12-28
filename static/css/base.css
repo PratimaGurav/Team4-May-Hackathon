@@ -514,6 +514,7 @@ img {
   width: 100%;
   font-size: 2rem;
   font-weight: 500;
+  text-transform: capitalize;
 }
 
 .chats__single--image {
@@ -589,6 +590,7 @@ img {
   font-size: 2vh;
   font-weight: 500;
   color: var(--grad-1);
+  text-transform: capitalize;
 }
 
 .chats__navbar--item:hover {
