@@ -37,6 +37,11 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 ALLOWED_HOSTS = ['connectedsy.herokuapp.com', 'localhost', '127.0.0.1',
                  'https://127.0.0.1/']
 
+# Add Render.com URL to allowed hosts
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
+
 
 # Application definition
 
@@ -51,6 +56,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
     'django.contrib.staticfiles',
     'cloudinary_storage',
     'cloudinary',
@@ -59,6 +65,17 @@ INSTALLED_APPS = [
     'chat',
     'profiles',
 ]
+
+SOCIAL_ACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE': ['profile', 'email'],
+        'AUTH_PARAMS': {'access_type': 'online'},
+        'APP': {
+            'CLIENT_ID': os.environ.get('GOOGLE_CLIENT_ID'),
+            'CLIENT_SECRET': os.environ.get('GOOGLE_CLIENT_SECRET'),
+        }
+    }
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -103,7 +120,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
-# ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = '/accounts/login/'

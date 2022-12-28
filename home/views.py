@@ -36,7 +36,7 @@ class HomeView(View):
 #         return render(request, 'contact-us.html', {})
 
 
-class ContactView(FormView):
+class ContactView(View):
     template_name = 'contact-us.html'
     form_class = ContactForm
     initial = {'key': 'value'}
@@ -48,7 +48,14 @@ class ContactView(FormView):
     def post(self, request, *args, **kwargs):
         form = self.form_class(request.POST)
         if form.is_valid():
+            # save form data
+            form.save()
             messages.success(self.request, 'Thank You, your form submission has been successful!!')
-          
-        return HttpResponseRedirect(self.request.path_info)
-        
+            return HttpResponseRedirect('/')
+        else:
+            errors = form.errors
+            for error in errors:
+                messages.error(self.request, 'Please, enter valid ' + error)
+            # print form.errors
+            print(form.errors)
+            return render(request, self.template_name, {'form': form})
