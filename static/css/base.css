@@ -120,10 +120,8 @@ img {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  background-color: #22224e;
   background-color: white;
   border-radius: 90%;
-  margin-right: 3vw;
 }
 
 .socialaccount_provider.google span {
