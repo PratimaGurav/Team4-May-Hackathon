@@ -349,6 +349,47 @@ The flowcharts were created using [Draw.io](https://www.lucidchart.com/).
     - Open the Heroku dashboard and check the status of your app.
     - If something is wrong, you can find an error message in the logs and fix it.
 
+---
+
+## Render Deployment
+
+### Create Database on ElephantSQL
+
+1. Go to [ElephantSQL](https://www.elephantsql.com/) and create a new account.
+
+2. Create a new instance of the database.
+
+    - ![ElephantSQL. Create a new instance](documentation/deployment/elephantsql_create_new_instance.png)
+
+3. Select a name for your database and select the free plan.
+
+    - ![ElephantSQL. Select a name for your database](documentation/deployment/elephantsql_name.png)
+
+4. Click "Select Region"
+
+    - ![ElephantSQL. Select a region](documentation/deployment/elephantsql_select_region.png)
+
+5. Select a region close to you.
+
+    - ![ElephantSQL. Select a region](documentation/deployment/elephantsql_select_region_near_you.png)
+
+6. Click "Review"
+
+    - ![ElephantSQL. Review](documentation/deployment/elephantsql_click_review.png)
+
+7. Click "Create Instance"
+
+    - ![ElephantSQL. Create Instance](documentation/deployment/elephantsql_click_create_instance.png)
+
+8. Click on the name of your database to open the dashboard.
+
+    - ![ElephantSQL. Open dashboard](documentation/deployment/elephantsql_click_db_name.png)
+
+9. You will see the dashboard of your database. You will need the URL of your database to connect it to your Django project.
+
+    - ![ElephantSQL. DB](documentation/deployment/elephantsql_db_url.png)
+
+
 
 #### How to Fork
 
