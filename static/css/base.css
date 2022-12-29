@@ -461,6 +461,7 @@ img {
   max-width: 80rem;
   padding: 0 1em;
   margin: 2em auto;
+  margin-bottom: 20vh;
 }
 
 .chat__list--title {
