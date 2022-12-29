@@ -1,4 +1,6 @@
-# 
+# Connectedsy
+
+Live site: [https://connectedsy-hachathon.onrender.com/](https://connectedsy-hachathon.onrender.com/)
 
 ![Logo](static/images/logo.png)
 
@@ -22,38 +24,7 @@ In addition to our target audience, our team aims to market Connectedsy towards 
 
 ![Site on a variety of device sizes](/documentation/readme/images/responsive.jpg)
 
-[Visit the site here](https://connectedsy.herokuapp.com/)
-
-## CONTENTS
-
-* [User Experience (UX)](https://github.com/PratimaGurav/Team4-May-Hackathon#user-experience-ux)
-  * [User Stories](https://github.com/PratimaGurav/Team4-May-Hackathon#user-stories)
-
-* [Design](https://github.com/PratimaGurav/Team4-May-Hackathon#design)
-  * [Colour Scheme](https://github.com/PratimaGurav/Team4-May-Hackathon#colour-scheme)
-  * [Typography](https://github.com/PratimaGurav/Team4-May-Hackathon#typography)
-  * [Imagery](https://github.com/PratimaGurav/Team4-May-Hackathon#imagery)
-  * [Wireframes](https://github.com/PratimaGurav/Team4-May-Hackathon#wireframes)
-  * [Features](https://github.com/PratimaGurav/Team4-May-Hackathon#features)
-  * [Accessibility](https://github.com/PratimaGurav/Team4-May-Hackathon#accessibility)
-
-* [Technologies Used](https://github.com/PratimaGurav/Team4-May-Hackathon#technologies-used)
-  * [Languages Used](https://github.com/PratimaGurav/Team4-May-Hackathon#languages-used)
-  * [Frameworks, Libraries & Programs Used](https://github.com/PratimaGurav/Team4-May-Hackathon#frameworks-libraries--programs-used)
-
-* [Deployment & Local Development](https://github.com/PratimaGurav/Team4-May-Hackathon#deployment--local-development)
-  * [Deployment](https://github.com/PratimaGurav/Team4-May-Hackathon#deployment)
-  * [Using Heroku](https://github.com/PratimaGurav/Team4-May-Hackathon#using-heroku)
-  * [Local Development](https://github.com/PratimaGurav/Team4-May-Hackathon#local-development)
-    * [How to Fork](https://github.com/PratimaGurav/Team4-May-Hackathon#how-to-fork)
-    * [How to Clone](https://github.com/PratimaGurav/Team4-May-Hackathon#how-to-clone)
-
-* [Testing](https://github.com/PratimaGurav/Team4-May-Hackathon#testing)
-  
-* [Credits](https://github.com/PratimaGurav/Team4-May-Hackathon#credits)
-  * [Content](https://github.com/PratimaGurav/Team4-May-Hackathon#content)
-  * [Media](https://github.com/PratimaGurav/Team4-May-Hackathon#media)
-  * [Acknowledgments](https://github.com/PratimaGurav/Team4-May-Hackathon#acknowledgments)
+[Visit the site here](https://connectedsy-hachathon.onrender.com/)
 
 - - -
 
@@ -178,7 +149,7 @@ We have been mindful during coding to ensure that the website is as accessible f
     + [jQuery User Interface](https://jqueryui.com/) was used to create interactive elements.
 - ### Databases:
     + [SQLite](https://www.sqlite.org/): was used as a development database.
-    + [PostgreSQL](https://www.postgresql.org/): the database used to store all the data.
+    + [elephantsql](https://www.elephantsql.com/): was used as a production database.
 - ### Other tools:
     + [Git](https://git-scm.com/): the version control system used to manage the code.
     + [Pip3](https://pypi.org/project/pip/): the package manager used to install the dependencies.
@@ -186,7 +157,7 @@ We have been mindful during coding to ensure that the website is as accessible f
     + [Spycopg2](https://www.python.org/dev/peps/pep-0249/): the database driver used to connect to the database.
     + [Django-allauth](https://django-allauth.readthedocs.io/en/latest/): the authentication library used to create the user accounts.
     + [Django-crispy-forms](https://django-cryptography.readthedocs.io/en/latest/): was used to control the rendering behavior of Django forms.
-    + [Heroku](https://dashboard.heroku.com/): the hosting service used to host the website.
+    + [Render](https://render.com/): the cloud platform used to host the website.
     + [GitHub](https://github.com/): used to host the website's source code.
     + [VSCode](https://code.visualstudio.com/): the IDE used to develop the website.
     + [Chrome DevTools](https://developer.chrome.com/docs/devtools/open/): was used to debug the website.
@@ -200,6 +171,7 @@ We have been mindful during coding to ensure that the website is as accessible f
     + [PEP8](https://pep8.org/): was used to validate Python code for the website.
     + [Cloudinary](https://cloudinary.com/): the image hosting service used to upload images and other media.
     + [Django-channels](https://channels.readthedocs.io/) real-time communication library.
+    + [RedisLab](https://redislabs.com/) real-time communication database.
 
 HTML, CSS, Javascript, Bootstrap5, Django, Channels, JQuery, JQuery UI, Redis
 
@@ -347,6 +319,191 @@ The flowcharts were created using [Draw.io](https://www.lucidchart.com/).
     - Open the Heroku dashboard and check the status of your app.
     - If something is wrong, you can find an error message in the logs and fix it.
 
+---
+
+## Render Deployment
+
+### Create Database on ElephantSQL
+
+1. Go to [ElephantSQL](https://www.elephantsql.com/) and create a new account.
+
+2. Create a new instance of the database.
+
+    - ![ElephantSQL. Create a new instance](documentation/deployment/elephantsql_create_new_instance.png)
+
+3. Select a name for your database and select the free plan.
+
+    - ![ElephantSQL. Select a name for your database](documentation/deployment/elephantsql_name.png)
+
+4. Click "Select Region"
+
+    - ![ElephantSQL. Select a region](documentation/deployment/elephantsql_select_region.png)
+
+5. Select a region close to you.
+
+    - ![ElephantSQL. Select a region](documentation/deployment/elephantsql_select_region_near_you.png)
+
+6. Click "Review"
+
+    - ![ElephantSQL. Review](documentation/deployment/elephantsql_click_review.png)
+
+7. Click "Create Instance"
+
+    - ![ElephantSQL. Create Instance](documentation/deployment/elephantsql_click_create_instance.png)
+
+8. Click on the name of your database to open the dashboard.
+
+    - ![ElephantSQL. Open dashboard](documentation/deployment/elephantsql_click_db_name.png)
+
+9. You will see the dashboard of your database. You will need the URL of your database to connect it to your Django project.
+
+    - ![ElephantSQL. DB](documentation/deployment/elephantsql_db_url.png)
+
+### Create REDIS_URL on Redis Labs
+
+1. Go to [Redis Labs](https://redislabs.com/) and create a new account.
+
+2. Create a new instance of the database.
+
+    - ![Redis Labs. Create a new instance](documentation/deployment/redislabs_create_new_instance.png)
+
+3. Click on the created instance and select the icon to copy the URL of your public endpoint for render.
+
+    - ![Redis Labs. Copy URL](documentation/deployment/redislabs_create_new_instance_key.png)
+
+
+### Create a new app on Render
+
+Link to the deployed application on Render: [Cool School](https://cool-school.onrender.com/)
+
+1. Create a new Render account if you don't already have one here [Render](https://render.com/).
+
+2. Create a new application on the following page here [New Render App](https://dashboard.render.com/), choose **Webserver**:
+
+    - ![New Render App](documentation/deployment/render_new_web_service.png)
+
+3. Select the GitHub option and connect the application to the repository you created.
+
+    - ![GitHub Option](documentation/deployment/render_configure_github_account.png)
+
+4. Search for the repository you created and click "Connect."
+
+    - ![Connect to GitHub](documentation/deployment/render_connect_repository.png)
+
+    - ![Connect to GitHub](documentation/deployment/render_connect_repository_connect.png)
+
+5. Create name for the application
+
+    - ![Create Application Name](documentation/deployment/render_create_name.png)
+
+6. Select the region where you want to deploy the application.
+
+    - ![Select Region](documentation/deployment/render_select_region.png)
+
+7. Select branch to deploy.
+
+    - ![Select Branch](documentation/deployment/render_select_branch.png)
+
+8. Select environment.
+
+    - ![Select Environment Variables](documentation/deployment/render_select_environment.png)
+
+9. Render build command: `./build.sh`
+
+    - ![Render Build Command](documentation/deployment/render_build_command.png)
+
+10. Render start command: `daphne <NAME OF YOUR APP>.asgi:application --port $PORT --bind 0.0.0.0 -v2` + You can delete `Procfile` from your repository.
+
+    - ![Render Start Command](documentation/deployment/render_start_command.png)
+
+11. Select Free plan.
+
+    - ![Select Free Plan](documentation/deployment/render_payment_info.png)
+
+12. Click on "Advanced" settings.
+
+    - ![Advanced Settings](documentation/deployment/render_advanced_settings.png)
+
+13. Add the following environment variables:
+
+    | Key      | Value          |
+    |-------------|-------------|
+    | WEB_CONCURRENCY | 4 |
+    | DATABASE_URL | ************* |
+    | SECRET_KEY | ************* |
+    | DEBUG | False |
+    | EMAIL_HOST_USER | ************* |
+    | EMAIL_HOST_PASSWORD | ************* |
+    | DISABLE_COLLECTSTATIC | 1 |
+    | CLOUDINARY_URL | ************* |
+    | CLOUDINARY_CLOUD_NAME | ************* |
+    | CLOUDINARY_API_KEY | ************* |
+    | CLOUDINARY_API_SECRET | ************* |
+    | STRIPE_CURRENCY | ************* |
+    | STRIPE_PUBLIC_KEY | ************* |
+    | STRIPE_SECRET_KEY | ************* |
+    | STRIPE_ENDPOINT_SECRET | ************* |
+    | REDIS_URL | ************* |
+
+    *DATABASE_URL value is takes from ElephantSQL dashboard, SECRET_KEY value is takes from your local env.py file, DEBUG value is set to False, EMAIL_HOST_USER and EMAIL_HOST_PASSWORD values are takes from your Gmail account. STRIPE_CURRENCY, STRIPE_PUBLIC_KEY, STRIPE_SECRET_KEY, STRIPE_ENDPOINT_SECRET values are takes from your Stripe account. CLOUDINARY_URL, CLOUDINARY_CLOUD_NAME, CLOUDINARY_API_KEY, CLOUDINARY_API_SECRET values are takes from your Cloudinary account. REDIS_URL value is takes from Redis Labs dashboard.*
+
+
+14. Open VS Code and create a new file called `build.sh` in the root directory of your project.
+
+    - ![Create Build.sh](documentation/deployment/render_create_build_sh.png)
+
+15. Copy the following code into the `build.sh` file:
+
+    ```bash
+      set -o errexit
+      pip install -r requirements.txt
+      python manage.py collectstatic --noinput
+      python manage.py makemigrations && python manage.py migrate
+    ```
+
+    -*pip install -r requirements.txt installs the packages detailed in your requirements.txt file.*
+    - *python manage.py collectstatic collects all static files to allow them to be served in the production environment.*
+    - *The –noinput flag allows the command to run with no additional input from the deploying developer.*
+    - *python manage.py makemigrations && python manage.py migrate are run to ensure all migrations are made to your production database.*
+
+16. Save the file `build.sh`.
+
+17. Go to `settings.py` file and add the following code to add Render.com to allowed hosts:
+
+    ```python
+        RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+        if RENDER_EXTERNAL_HOSTNAME:
+            ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
+    ```
+
+   *If you have heroku in your allowed hosts, delete it*
+
+18. Save the file `settings.py`.
+
+19. Go to `env.py` and change to DATEBASE_URL value to the one you got from ElephantSQL.
+
+    ```python
+        os.environ["DATABASE_URL"] = '*************'
+    ```
+
+20. Create a superuser for your database.
+
+    ```bash
+        python manage.py createsuperuser
+    ```
+
+21. Commit and push the changes to GitHub.
+
+22. Go back to Render and click "Create Web Service."
+
+    - ![Save Web Service](documentation/deployment/render_create_web_service.png)
+
+23. Wait for the completion of the deployment.
+
+24. Go to admin panel and change the settings for the admin by assigning a role of `Boss` to allow the full control of the website including role assignment.
+
+---
+
 
 #### How to Fork
 
@@ -435,6 +592,3 @@ Links used for researching Mental Health issues:
 * [Iuliia Konovalova](https://github.com/IuliiaKonovalova)
 * [Pratima Gurav](https://github.com/PratimaGurav)
 * [Stephen Brereton](https://github.com/StephenB92)
-
-
-## [BACK TO TOP](https://github.com/PratimaGurav/Team4-May-Hackathon#readme)
