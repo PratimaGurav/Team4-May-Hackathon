@@ -24,7 +24,7 @@ In addition to our target audience, our team aims to market Connectedsy towards 
 
 ![Site on a variety of device sizes](/documentation/readme/images/responsive.jpg)
 
-[Visit the site here](https://connectedsy.herokuapp.com/)
+[Visit the site here](https://connectedsy-hachathon.onrender.com/)
 
 - - -
 
