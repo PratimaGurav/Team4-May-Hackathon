@@ -143,7 +143,7 @@ img {
   padding: 2rem;
   width: 100%;
   max-width: 50rem;
-  margin: 2em;
+  margin: 0 auto;
 }
 
 .profile__header,
