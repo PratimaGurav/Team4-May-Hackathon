@@ -143,7 +143,6 @@ img {
   border-radius: 0.25em;
   padding: 2rem;
   width: 90%;
-  /* max-width: 50rem; */
   margin: 2em auto;
 }
 
@@ -158,7 +157,8 @@ img {
 
 .account__third--party,
 .login-or,
-form.login {
+form.login,
+form.signup {
   /* max-width: 20rem; */
   margin: 0 auto;
   width: 100%;
@@ -170,11 +170,20 @@ form.signup {
   text-align: left !important;
 }
 
+.forgot__password {
+  margin: 0 auto;
+  text-align: center;
+  display: block;
+  margin-bottom: 1em;
+
+}
+
 form.login button,
 form.signup button {
   /* set to center */
   margin: 0 auto;
   display: block;
+  padding: 0.5em 2em !important;
 
 }
 
