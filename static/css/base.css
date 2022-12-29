@@ -87,9 +87,10 @@ img {
 
 /* socialaccount_providers */
 .socialaccount_providers {
-  background-color: var(--grad-2);
+  /* background-color: var(--grad-2); */
+  color: #191989 !important;
   border-radius: 0.25rem;
-  color: white;
+  /* color: white; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -109,9 +110,9 @@ img {
   padding: 0.5rem;
 }
 
-.socialaccount_providers:hover {
+/* .socialaccount_providers:hover {
   background-color: var(--grad-1);
-}
+} */
 
 .socialaccount_providers--image {
   width: 2.5rem;
@@ -125,7 +126,7 @@ img {
 }
 
 .socialaccount_provider.google span {
-  color: white;
+  /* color: white; */
   font-size: calc(60% + 0.8vmin);
   margin-left: 0.3em;
 }
@@ -141,9 +142,56 @@ img {
   box-shadow: 0 5px 18px rgba(0, 0, 0, 0.6);
   border-radius: 0.25em;
   padding: 2rem;
+  width: 90%;
+  /* max-width: 50rem; */
+  margin: 2em auto;
+}
+
+.account {
+  max-width: 30rem !important;
+}
+
+.socialaccount_ballot {
   width: 100%;
-  max-width: 50rem;
+  /* background-color: #191989; */
+}
+
+.account__third--party,
+.login-or,
+form.login {
+  /* max-width: 20rem; */
   margin: 0 auto;
+  width: 100%;
+  text-align: center;
+}
+
+form.login,
+form.signup {
+  text-align: left !important;
+}
+
+form.login button,
+form.signup button {
+  /* set to center */
+  margin: 0 auto;
+  display: block;
+
+}
+
+.account__third--party {
+  margin-bottom: 1em;
+}
+
+.break {
+  width: 100%;
+  background-color: #191989;
+}
+
+.break>div {
+  background-color: rgb(46, 46, 46);
+  height: 1px;
+  width: 90%;
+  margin: 1em auto;
 }
 
 .profile__header,
