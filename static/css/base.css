@@ -87,10 +87,8 @@ img {
 
 /* socialaccount_providers */
 .socialaccount_providers {
-  /* background-color: var(--grad-2); */
   color: #191989 !important;
   border-radius: 0.25rem;
-  /* color: white; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -110,10 +108,6 @@ img {
   padding: 0.5rem;
 }
 
-/* .socialaccount_providers:hover {
-  background-color: var(--grad-1);
-} */
-
 .socialaccount_providers--image {
   width: 2.5rem;
   height: 2.5rem;
@@ -126,7 +120,6 @@ img {
 }
 
 .socialaccount_provider.google span {
-  /* color: white; */
   font-size: calc(60% + 0.8vmin);
   margin-left: 0.3em;
 }
@@ -152,14 +145,12 @@ img {
 
 .socialaccount_ballot {
   width: 100%;
-  /* background-color: #191989; */
 }
 
 .account__third--party,
 .login-or,
 form.login,
 form.signup {
-  /* max-width: 20rem; */
   margin: 0 auto;
   width: 100%;
   text-align: center;
@@ -180,7 +171,6 @@ form.signup {
 
 form.login button,
 form.signup button {
-  /* set to center */
   margin: 0 auto;
   display: block;
   padding: 0.5em 2em !important;
