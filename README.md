@@ -1,4 +1,6 @@
-# 
+# Connectedsy
+
+Live site: [https://connectedsy-hachathon.onrender.com/](https://connectedsy-hachathon.onrender.com/)
 
 ![Logo](static/images/logo.png)
 
@@ -43,7 +45,7 @@ In addition to our target audience, our team aims to market Connectedsy towards 
 
 * [Deployment & Local Development](https://github.com/PratimaGurav/Team4-May-Hackathon#deployment--local-development)
   * [Deployment](https://github.com/PratimaGurav/Team4-May-Hackathon#deployment)
-  * [Using Heroku](https://github.com/PratimaGurav/Team4-May-Hackathon#using-heroku)
+  * [Render Deployment](https://render.com/)
   * [Local Development](https://github.com/PratimaGurav/Team4-May-Hackathon#local-development)
     * [How to Fork](https://github.com/PratimaGurav/Team4-May-Hackathon#how-to-fork)
     * [How to Clone](https://github.com/PratimaGurav/Team4-May-Hackathon#how-to-clone)
@@ -186,7 +188,7 @@ We have been mindful during coding to ensure that the website is as accessible f
     + [Spycopg2](https://www.python.org/dev/peps/pep-0249/): the database driver used to connect to the database.
     + [Django-allauth](https://django-allauth.readthedocs.io/en/latest/): the authentication library used to create the user accounts.
     + [Django-crispy-forms](https://django-cryptography.readthedocs.io/en/latest/): was used to control the rendering behavior of Django forms.
-    + [Heroku](https://dashboard.heroku.com/): the hosting service used to host the website.
+    + [Render](https://render.com/): the cloud platform used to host the website.
     + [GitHub](https://github.com/): used to host the website's source code.
     + [VSCode](https://code.visualstudio.com/): the IDE used to develop the website.
     + [Chrome DevTools](https://developer.chrome.com/docs/devtools/open/): was used to debug the website.
