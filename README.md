@@ -149,7 +149,7 @@ We have been mindful during coding to ensure that the website is as accessible f
     + [jQuery User Interface](https://jqueryui.com/) was used to create interactive elements.
 - ### Databases:
     + [SQLite](https://www.sqlite.org/): was used as a development database.
-    + [PostgreSQL](https://www.postgresql.org/): the database used to store all the data.
+    + [elephantsql](https://www.elephantsql.com/): was used as a production database.
 - ### Other tools:
     + [Git](https://git-scm.com/): the version control system used to manage the code.
     + [Pip3](https://pypi.org/project/pip/): the package manager used to install the dependencies.
@@ -171,6 +171,7 @@ We have been mindful during coding to ensure that the website is as accessible f
     + [PEP8](https://pep8.org/): was used to validate Python code for the website.
     + [Cloudinary](https://cloudinary.com/): the image hosting service used to upload images and other media.
     + [Django-channels](https://channels.readthedocs.io/) real-time communication library.
+    + [RedisLab](https://redislabs.com/) real-time communication database.
 
 HTML, CSS, Javascript, Bootstrap5, Django, Channels, JQuery, JQuery UI, Redis
 
@@ -591,6 +592,3 @@ Links used for researching Mental Health issues:
 * [Iuliia Konovalova](https://github.com/IuliiaKonovalova)
 * [Pratima Gurav](https://github.com/PratimaGurav)
 * [Stephen Brereton](https://github.com/StephenB92)
-
-
-## [BACK TO TOP](https://github.com/PratimaGurav/Team4-May-Hackathon#readme)
