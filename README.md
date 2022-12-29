@@ -389,6 +389,19 @@ The flowcharts were created using [Draw.io](https://www.lucidchart.com/).
 
     - ![ElephantSQL. DB](documentation/deployment/elephantsql_db_url.png)
 
+### Create REDIS_URL on Redis Labs
+
+1. Go to [Redis Labs](https://redislabs.com/) and create a new account.
+
+2. Create a new instance of the database.
+
+    - ![Redis Labs. Create a new instance](documentation/deployment/redislabs_create_new_instance.png)
+
+3. Click on the created instance and select the icon to copy the URL of your public endpoint for render.
+
+    - ![Redis Labs. Copy URL](documentation/deployment/redislabs_create_new_instance_key.png)
+
+
 
 
 #### How to Fork
