@@ -132,6 +132,7 @@ if "DATABASE_URL" in os.environ:
     DATABASES = {
         "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
     }
+    ACCOUNT_DEFAULT_HTTP_PROTOCOL = "https"
 else:
     print("database = db.sqlite3")
     DATABASES = {
