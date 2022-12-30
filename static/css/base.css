@@ -371,6 +371,11 @@ form.signup button {
   font-size: calc(60% + 0.8vmin);
 }
 
+.profile__body--buttons .profile__body--buttons--cancel:hover,
+.account__form--buttons .account__form--buttons--cancel:hover {
+  background-color: var(--grad-1)
+}
+
 .profile__body--buttons .profile__body--buttons--delete,
 .account__form--buttons .account__form--buttons--confirm {
   background-color: #dc3545;
