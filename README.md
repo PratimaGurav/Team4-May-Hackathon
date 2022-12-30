@@ -88,9 +88,9 @@ The website is comprised of:
 3. Chat Room.
 ![Chat Rooms screenshot](/documentation/readme/images/chat-room.jpg)
 4. Sign-up.
-![Sign-up screenshot](/documentation/readme/images/sign-up.jpg)
+![Sign-up screenshot](/documentation/readme/images/signup.png)
 5. Sign-in.
-![Sign-in screenshot](/documentation/readme/images/sign-in.jpg)
+![Sign-in screenshot](/documentation/readme/images/login.png)
 6. Sign-out.
 ![Sign-out screenshot](/documentation/readme/images/sign-out.jpg)
 7. User Profile.
