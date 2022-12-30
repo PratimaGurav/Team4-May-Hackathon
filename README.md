@@ -2,7 +2,7 @@
 
 Live site: [https://connectedsy-hachathon.onrender.com/](https://connectedsy-hachathon.onrender.com/)
 
-![Logo](static/images/logo.png)
+![Logo](documentation/design/logo.png)
 
 Created for the Code Institute's May 2022 Hackathon, Getting Connected.
 
